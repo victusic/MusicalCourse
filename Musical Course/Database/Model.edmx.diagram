@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6eb28a30eeaa4688895309c355b1a870" Name="Diagram1">
+        <EntityTypeShape EntityType="MusicalBaseModel.Advertisement" Width="1.5" PointX="5.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicalBaseModel.Areas" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicalBaseModel.AutorisationHistory" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicalBaseModel.Groups" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicalBaseModel.Rolls" Width="1.5" PointX="0.625" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicalBaseModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicalBaseModel.TypeAdvertisement" Width="1.5" PointX="3" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicalBaseModel.Users" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <AssociationConnector Association="MusicalBaseModel.FK_Advertisement_Areas" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicalBaseModel.FK_Advertisement_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicalBaseModel.FK_Advertisement_TypeAdvertisement" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicalBaseModel.FK_Advertisement_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicalBaseModel.FK_Areas_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicalBaseModel.FK_AutorisationHistory_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicalBaseModel.FK_Groups_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicalBaseModel.FK_Users_Rolls" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

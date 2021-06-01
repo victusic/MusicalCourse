@@ -1,0 +1,662 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище MusicalBaseModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Advertisement">
+          <Key>
+            <PropertyRef Name="AdvertisementId" />
+          </Key>
+          <Property Name="AdvertisementId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeAdvertisement" Type="int" Nullable="false" />
+          <Property Name="Representative" Type="int" Nullable="false" />
+          <Property Name="Area" Type="int" />
+          <Property Name="Group" Type="int" />
+          <Property Name="Moderation" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Areas">
+          <Key>
+            <PropertyRef Name="AreaId" />
+          </Key>
+          <Property Name="AreaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Town" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Company" Type="nvarchar(max)" />
+          <Property Name="Representative" Type="int" Nullable="false" />
+          <Property Name="SiteType" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SiteDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Capacity" Type="int" Nullable="false" />
+          <Property Name="AvailabilityOfEquipment" Type="bit" Nullable="false" />
+          <Property Name="Chart" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PreliminaryCost" Type="int" Nullable="false" />
+          <Property Name="DescriptionOfTheTermsOfCooperation" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RecommendedFocusOfTheGroup" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Photo1" Type="image" />
+          <Property Name="Photo2" Type="image" />
+          <Property Name="Photo3" Type="image" />
+          <Property Name="Photo4" Type="image" />
+          <Property Name="Photo5" Type="image" />
+          <Property Name="Photo6" Type="image" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AutorisationHistory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="State" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Groups">
+          <Key>
+            <PropertyRef Name="BandId" />
+          </Key>
+          <Property Name="BandId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Representative" Type="int" Nullable="false" />
+          <Property Name="AvailabilityOfEquipment" Type="bit" Nullable="false" />
+          <Property Name="DescriptionOfTheActivity" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DesiredSite" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RecommendedCostOfTheSite" Type="int" Nullable="false" />
+          <Property Name="GroupDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DescriptionOfTheTermsOfCooperation" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Photo1" Type="image" />
+          <Property Name="Photo2" Type="image" />
+          <Property Name="Photo3" Type="image" />
+          <Property Name="Photo4" Type="image" />
+          <Property Name="Photo5" Type="image" />
+          <Property Name="Photo6" Type="image" />
+        </EntityType>
+        <EntityType Name="Rolls">
+          <Key>
+            <PropertyRef Name="RollId" />
+          </Key>
+          <Property Name="RollId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Roll" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TypeAdvertisement">
+          <Key>
+            <PropertyRef Name="AdvertisementId" />
+          </Key>
+          <Property Name="AdvertisementId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Advertisement" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Roll" Type="int" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Patronymic" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Mail" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Phone" Type="nchar" MaxLength="12" Nullable="false" />
+          <Property Name="Login" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Logo" Type="image" />
+          <Property Name="IsActivity" Type="int" Nullable="false" />
+          <Property Name="CountAdvertisement" Type="int" Nullable="false" />
+          <Property Name="RegistrationDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Advertisement_Areas">
+          <End Role="Areas" Type="Self.Areas" Multiplicity="0..1" />
+          <End Role="Advertisement" Type="Self.Advertisement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Areas">
+              <PropertyRef Name="AreaId" />
+            </Principal>
+            <Dependent Role="Advertisement">
+              <PropertyRef Name="Area" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Advertisement_Groups">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="0..1" />
+          <End Role="Advertisement" Type="Self.Advertisement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="BandId" />
+            </Principal>
+            <Dependent Role="Advertisement">
+              <PropertyRef Name="Group" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Advertisement_TypeAdvertisement">
+          <End Role="TypeAdvertisement" Type="Self.TypeAdvertisement" Multiplicity="1" />
+          <End Role="Advertisement" Type="Self.Advertisement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeAdvertisement">
+              <PropertyRef Name="AdvertisementId" />
+            </Principal>
+            <Dependent Role="Advertisement">
+              <PropertyRef Name="TypeAdvertisement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Advertisement_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Advertisement" Type="Self.Advertisement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Advertisement">
+              <PropertyRef Name="Representative" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Areas_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Areas" Type="Self.Areas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Areas">
+              <PropertyRef Name="Representative" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AutorisationHistory_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="AutorisationHistory" Type="Self.AutorisationHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="AutorisationHistory">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Groups_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Groups" Type="Self.Groups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Groups">
+              <PropertyRef Name="Representative" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Rolls">
+          <End Role="Rolls" Type="Self.Rolls" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rolls">
+              <PropertyRef Name="RollId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="Roll" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище MusicalBaseModelContainer">
+          <EntitySet Name="Advertisement" EntityType="Self.Advertisement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Areas" EntityType="Self.Areas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AutorisationHistory" EntityType="Self.AutorisationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Groups" EntityType="Self.Groups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rolls" EntityType="Self.Rolls" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeAdvertisement" EntityType="Self.TypeAdvertisement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Advertisement_Areas" Association="Self.FK_Advertisement_Areas">
+            <End Role="Areas" EntitySet="Areas" />
+            <End Role="Advertisement" EntitySet="Advertisement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Advertisement_Groups" Association="Self.FK_Advertisement_Groups">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Advertisement" EntitySet="Advertisement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Advertisement_TypeAdvertisement" Association="Self.FK_Advertisement_TypeAdvertisement">
+            <End Role="TypeAdvertisement" EntitySet="TypeAdvertisement" />
+            <End Role="Advertisement" EntitySet="Advertisement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Advertisement_Users" Association="Self.FK_Advertisement_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Advertisement" EntitySet="Advertisement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Areas_Users" Association="Self.FK_Areas_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Areas" EntitySet="Areas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AutorisationHistory_Users" Association="Self.FK_AutorisationHistory_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="AutorisationHistory" EntitySet="AutorisationHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Groups_Users" Association="Self.FK_Groups_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Groups" EntitySet="Groups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Rolls" Association="Self.FK_Users_Rolls">
+            <End Role="Rolls" EntitySet="Rolls" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MusicalBaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Advertisement">
+          <Key>
+            <PropertyRef Name="AdvertisementId" />
+          </Key>
+          <Property Name="AdvertisementId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeAdvertisement" Type="Int32" Nullable="false" />
+          <Property Name="Representative" Type="Int32" Nullable="false" />
+          <Property Name="Area" Type="Int32" />
+          <Property Name="Group" Type="Int32" />
+          <Property Name="Moderation" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Areas" Relationship="Self.FK_Advertisement_Areas" FromRole="Advertisement" ToRole="Areas" />
+          <NavigationProperty Name="Groups" Relationship="Self.FK_Advertisement_Groups" FromRole="Advertisement" ToRole="Groups" />
+          <NavigationProperty Name="TypeAdvertisement1" Relationship="Self.FK_Advertisement_TypeAdvertisement" FromRole="Advertisement" ToRole="TypeAdvertisement" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Advertisement_Users" FromRole="Advertisement" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Areas">
+          <Key>
+            <PropertyRef Name="AreaId" />
+          </Key>
+          <Property Name="AreaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Town" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Company" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Representative" Type="Int32" Nullable="false" />
+          <Property Name="SiteType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SiteDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Capacity" Type="Int32" Nullable="false" />
+          <Property Name="AvailabilityOfEquipment" Type="Boolean" Nullable="false" />
+          <Property Name="Chart" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PreliminaryCost" Type="Int32" Nullable="false" />
+          <Property Name="DescriptionOfTheTermsOfCooperation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecommendedFocusOfTheGroup" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Photo1" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Photo2" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Photo3" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Photo4" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Photo5" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Photo6" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Advertisement" Relationship="Self.FK_Advertisement_Areas" FromRole="Areas" ToRole="Advertisement" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Areas_Users" FromRole="Areas" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="AutorisationHistory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="State" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_AutorisationHistory_Users" FromRole="AutorisationHistory" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Groups">
+          <Key>
+            <PropertyRef Name="BandId" />
+          </Key>
+          <Property Name="BandId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Representative" Type="Int32" Nullable="false" />
+          <Property Name="AvailabilityOfEquipment" Type="Boolean" Nullable="false" />
+          <Property Name="DescriptionOfTheActivity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DesiredSite" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecommendedCostOfTheSite" Type="Int32" Nullable="false" />
+          <Property Name="GroupDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DescriptionOfTheTermsOfCooperation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Photo1" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Photo2" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Photo3" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Photo4" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Photo5" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Photo6" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Advertisement" Relationship="Self.FK_Advertisement_Groups" FromRole="Groups" ToRole="Advertisement" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Groups_Users" FromRole="Groups" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Rolls">
+          <Key>
+            <PropertyRef Name="RollId" />
+          </Key>
+          <Property Name="RollId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Roll" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="MusicalBaseModel.FK_Users_Rolls" FromRole="Rolls" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TypeAdvertisement">
+          <Key>
+            <PropertyRef Name="AdvertisementId" />
+          </Key>
+          <Property Name="AdvertisementId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Advertisement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Advertisement1" Relationship="Self.FK_Advertisement_TypeAdvertisement" FromRole="TypeAdvertisement" ToRole="Advertisement" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Roll" Type="Int32" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="12" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IsActivity" Type="Int32" Nullable="false" />
+          <Property Name="CountAdvertisement" Type="Int32" Nullable="false" />
+          <Property Name="RegistrationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Advertisement" Relationship="Self.FK_Advertisement_Users" FromRole="Users" ToRole="Advertisement" />
+          <NavigationProperty Name="Areas" Relationship="Self.FK_Areas_Users" FromRole="Users" ToRole="Areas" />
+          <NavigationProperty Name="AutorisationHistory" Relationship="Self.FK_AutorisationHistory_Users" FromRole="Users" ToRole="AutorisationHistory" />
+          <NavigationProperty Name="Groups" Relationship="Self.FK_Groups_Users" FromRole="Users" ToRole="Groups" />
+          <NavigationProperty Name="Rolls" Relationship="MusicalBaseModel.FK_Users_Rolls" FromRole="Users" ToRole="Rolls" />
+        </EntityType>
+        <Association Name="FK_Advertisement_Areas">
+          <End Role="Areas" Type="Self.Areas" Multiplicity="0..1" />
+          <End Role="Advertisement" Type="Self.Advertisement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Areas">
+              <PropertyRef Name="AreaId" />
+            </Principal>
+            <Dependent Role="Advertisement">
+              <PropertyRef Name="Area" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Advertisement_Groups">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="0..1" />
+          <End Role="Advertisement" Type="Self.Advertisement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="BandId" />
+            </Principal>
+            <Dependent Role="Advertisement">
+              <PropertyRef Name="Group" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Advertisement_TypeAdvertisement">
+          <End Role="TypeAdvertisement" Type="Self.TypeAdvertisement" Multiplicity="1" />
+          <End Role="Advertisement" Type="Self.Advertisement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeAdvertisement">
+              <PropertyRef Name="AdvertisementId" />
+            </Principal>
+            <Dependent Role="Advertisement">
+              <PropertyRef Name="TypeAdvertisement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Advertisement_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Advertisement" Type="Self.Advertisement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Advertisement">
+              <PropertyRef Name="Representative" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Areas_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Areas" Type="Self.Areas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Areas">
+              <PropertyRef Name="Representative" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AutorisationHistory_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="AutorisationHistory" Type="Self.AutorisationHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="AutorisationHistory">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Groups_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Groups" Type="Self.Groups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Groups">
+              <PropertyRef Name="Representative" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MusicalBaseEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Advertisement" EntityType="Self.Advertisement" />
+          <EntitySet Name="Areas" EntityType="Self.Areas" />
+          <EntitySet Name="AutorisationHistory" EntityType="Self.AutorisationHistory" />
+          <EntitySet Name="Groups" EntityType="Self.Groups" />
+          <EntitySet Name="Rolls" EntityType="Self.Rolls" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TypeAdvertisement" EntityType="Self.TypeAdvertisement" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <AssociationSet Name="FK_Advertisement_Areas" Association="Self.FK_Advertisement_Areas">
+            <End Role="Areas" EntitySet="Areas" />
+            <End Role="Advertisement" EntitySet="Advertisement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Advertisement_Groups" Association="Self.FK_Advertisement_Groups">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Advertisement" EntitySet="Advertisement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Advertisement_TypeAdvertisement" Association="Self.FK_Advertisement_TypeAdvertisement">
+            <End Role="TypeAdvertisement" EntitySet="TypeAdvertisement" />
+            <End Role="Advertisement" EntitySet="Advertisement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Advertisement_Users" Association="Self.FK_Advertisement_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Advertisement" EntitySet="Advertisement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Areas_Users" Association="Self.FK_Areas_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Areas" EntitySet="Areas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AutorisationHistory_Users" Association="Self.FK_AutorisationHistory_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="AutorisationHistory" EntitySet="AutorisationHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Groups_Users" Association="Self.FK_Groups_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Groups" EntitySet="Groups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Rolls" Association="MusicalBaseModel.FK_Users_Rolls">
+            <End Role="Rolls" EntitySet="Rolls" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_Users_Rolls">
+          <End Type="MusicalBaseModel.Rolls" Role="Rolls" Multiplicity="1" />
+          <End Type="MusicalBaseModel.Users" Role="Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rolls">
+              <PropertyRef Name="RollId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="Roll" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище MusicalBaseModelContainer" CdmEntityContainer="MusicalBaseEntities1">
+          <EntitySetMapping Name="Advertisement">
+            <EntityTypeMapping TypeName="MusicalBaseModel.Advertisement">
+              <MappingFragment StoreEntitySet="Advertisement">
+                <ScalarProperty Name="AdvertisementId" ColumnName="AdvertisementId" />
+                <ScalarProperty Name="TypeAdvertisement" ColumnName="TypeAdvertisement" />
+                <ScalarProperty Name="Representative" ColumnName="Representative" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Group" ColumnName="Group" />
+                <ScalarProperty Name="Moderation" ColumnName="Moderation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Areas">
+            <EntityTypeMapping TypeName="MusicalBaseModel.Areas">
+              <MappingFragment StoreEntitySet="Areas">
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="Town" ColumnName="Town" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Representative" ColumnName="Representative" />
+                <ScalarProperty Name="SiteType" ColumnName="SiteType" />
+                <ScalarProperty Name="SiteDescription" ColumnName="SiteDescription" />
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+                <ScalarProperty Name="AvailabilityOfEquipment" ColumnName="AvailabilityOfEquipment" />
+                <ScalarProperty Name="Chart" ColumnName="Chart" />
+                <ScalarProperty Name="PreliminaryCost" ColumnName="PreliminaryCost" />
+                <ScalarProperty Name="DescriptionOfTheTermsOfCooperation" ColumnName="DescriptionOfTheTermsOfCooperation" />
+                <ScalarProperty Name="RecommendedFocusOfTheGroup" ColumnName="RecommendedFocusOfTheGroup" />
+                <ScalarProperty Name="Photo1" ColumnName="Photo1" />
+                <ScalarProperty Name="Photo2" ColumnName="Photo2" />
+                <ScalarProperty Name="Photo3" ColumnName="Photo3" />
+                <ScalarProperty Name="Photo4" ColumnName="Photo4" />
+                <ScalarProperty Name="Photo5" ColumnName="Photo5" />
+                <ScalarProperty Name="Photo6" ColumnName="Photo6" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AutorisationHistory">
+            <EntityTypeMapping TypeName="MusicalBaseModel.AutorisationHistory">
+              <MappingFragment StoreEntitySet="AutorisationHistory">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="State" ColumnName="State" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Groups">
+            <EntityTypeMapping TypeName="MusicalBaseModel.Groups">
+              <MappingFragment StoreEntitySet="Groups">
+                <ScalarProperty Name="BandId" ColumnName="BandId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Representative" ColumnName="Representative" />
+                <ScalarProperty Name="AvailabilityOfEquipment" ColumnName="AvailabilityOfEquipment" />
+                <ScalarProperty Name="DescriptionOfTheActivity" ColumnName="DescriptionOfTheActivity" />
+                <ScalarProperty Name="DesiredSite" ColumnName="DesiredSite" />
+                <ScalarProperty Name="RecommendedCostOfTheSite" ColumnName="RecommendedCostOfTheSite" />
+                <ScalarProperty Name="GroupDescription" ColumnName="GroupDescription" />
+                <ScalarProperty Name="DescriptionOfTheTermsOfCooperation" ColumnName="DescriptionOfTheTermsOfCooperation" />
+                <ScalarProperty Name="Photo1" ColumnName="Photo1" />
+                <ScalarProperty Name="Photo2" ColumnName="Photo2" />
+                <ScalarProperty Name="Photo3" ColumnName="Photo3" />
+                <ScalarProperty Name="Photo4" ColumnName="Photo4" />
+                <ScalarProperty Name="Photo5" ColumnName="Photo5" />
+                <ScalarProperty Name="Photo6" ColumnName="Photo6" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rolls">
+            <EntityTypeMapping TypeName="MusicalBaseModel.Rolls">
+              <MappingFragment StoreEntitySet="Rolls">
+                <ScalarProperty Name="RollId" ColumnName="RollId" />
+                <ScalarProperty Name="Roll" ColumnName="Roll" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="MusicalBaseModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeAdvertisement">
+            <EntityTypeMapping TypeName="MusicalBaseModel.TypeAdvertisement">
+              <MappingFragment StoreEntitySet="TypeAdvertisement">
+                <ScalarProperty Name="AdvertisementId" ColumnName="AdvertisementId" />
+                <ScalarProperty Name="Advertisement" ColumnName="Advertisement" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="MusicalBaseModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Roll" ColumnName="Roll" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="IsActivity" ColumnName="IsActivity" />
+                <ScalarProperty Name="CountAdvertisement" ColumnName="CountAdvertisement" />
+                <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

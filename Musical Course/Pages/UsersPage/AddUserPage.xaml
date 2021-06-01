@@ -1,0 +1,28 @@
+﻿<Page x:Class="Musical_Course.Pages.UsersPage.AddUserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Musical_Course.Pages.UsersPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddUserPage">
+
+    <Grid>
+        <Image Source="/Musical Course;component/Resources/AddUser_bg.png" 
+               Stretch="UniformToFill" Panel.ZIndex="-1000"></Image>
+        <TextBlock x:Name="HelloText4" Foreground ="White" FontSize="42"
+                   FontFamily="Arial" HorizontalAlignment="Center"
+                   Margin="0, 0, 0, 20"><Run Text="Изменить статус"/><Run Text=" пользователя"/></TextBlock>
+
+        <Button Background="#00DDDDDD" BorderBrush="White"
+                BorderThickness="3" Content="Сохранить"
+                Foreground="White" FontFamily="Arial" FontSize="26"
+                Name="BtnAdd" Click="BtnAdd_Click" Width="151" Margin="238,397,410,10"/>
+        <Button Background="#00DDDDDD" BorderBrush="White"
+                BorderThickness="3" Content="Назад"
+                Foreground="White" FontFamily="Arial" FontSize="26"
+                Name="BtnGoBack" Click="BtnGoBack_Click" Width="151" Margin="400,397,248,10"/>
+        <TextBox Name="Active" Width="200" Height="30" Text="{Binding IsActivity}"></TextBox>
+    </Grid>
+</Page>

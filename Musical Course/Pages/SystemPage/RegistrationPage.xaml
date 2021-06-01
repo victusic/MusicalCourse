@@ -1,0 +1,94 @@
+﻿<Page x:Class="Musical_Course.Pages.RegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Musical_Course.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="RegistrationPage">
+    <Grid>
+        <Image Source="/Musical Course;component/Resources/IconReg_Background.jpg" 
+               Stretch="UniformToFill"></Image>
+        <TextBlock Foreground ="White" Text="Регистрация" FontSize="64"
+                   FontFamily="Arial" Margin="0,40,0,0" Height="74" VerticalAlignment="Top" Width="374" />
+        <TextBlock Foreground ="White" Text="Лого:" FontSize="36"
+                   FontFamily="Arial" Margin="774,500,0,179" HorizontalAlignment="Left" Width="86" />
+        <Button Background="#00DDDDDD" BorderBrush="White"
+                BorderThickness="3" Margin="865,490,0,170" Content="Загрузить"
+                Foreground="White" FontFamily="Arial" FontSize="36"
+                Name="Reg_BtnLogo" Click="Reg_BtnLogo_Click" HorizontalAlignment="Left" Width="194"/>
+        <TextBlock Foreground ="White" Text="Логин:" FontSize="36"
+                   FontFamily="Arial" Margin="753,164,0,515" HorizontalAlignment="Left" Width="107" />
+        <TextBlock Foreground ="White" Text="Пароль:" FontSize="36"
+                   FontFamily="Arial" Margin="726,239,0,440" HorizontalAlignment="Left" Width="134" />
+        <TextBlock Foreground ="White" Text="Почта:" FontSize="36"
+                   FontFamily="Arial" VerticalAlignment="Top" Margin="0,424,1088,0" 
+                   HorizontalAlignment="Right" ></TextBlock>
+        <TextBlock Foreground ="White" Text="Телефон:" FontSize="36"
+                   FontFamily="Arial" VerticalAlignment="Top" Margin="0,500,1085,0" 
+                   HorizontalAlignment="Right" Width="163" ></TextBlock>
+        <TextBlock Foreground ="White" Text="Роль:" FontSize="36"
+                   FontFamily="Arial" Margin="769,433,0,0" Height="41" VerticalAlignment="Top" HorizontalAlignment="Left" Width="91" RenderTransformOrigin="0.498,0.523" />
+        <TextBox Background="#00DDDDDD" BorderBrush="White"
+                 BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
+                 Margin="865,156,0,0" Name="RegBox_Auth" HorizontalAlignment="Left" Width="375" Height="60" VerticalAlignment="Top"/>
+        <PasswordBox Background="#00DDDDDD" BorderBrush="White"
+                 BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
+                 Margin="865,233,0,0" Name="PasswordBox_Auth" HorizontalAlignment="Left" Width="375" Height="60" VerticalAlignment="Top"/>
+        <TextBox Height="60" Background="#00DDDDDD" BorderBrush="White"
+                 BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
+                 Margin="0,414,708,0" Name="RegBox_Mail" HorizontalAlignment="Right" Width="375" VerticalAlignment="Top"/>
+        <TextBox Height="60" Background="#00DDDDDD" BorderBrush="White"
+                 BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
+                 Margin="0,490,708,0" Name="RegBox_Phone" HorizontalAlignment="Right" Width="375" VerticalAlignment="Top"/>
+        <TextBlock Foreground ="White" Text="Имя:" FontSize="36"
+                   FontFamily="Arial" VerticalAlignment="Top" Margin="0,156,1091,0" 
+                   HorizontalAlignment="Right" ></TextBlock>
+        <TextBox Background="#00DDDDDD" BorderBrush="White"
+                 BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
+                 Margin="0,150,708,0" Name="RegBox_Name" HorizontalAlignment="Right" Width="375" Height="60" VerticalAlignment="Top"/>
+        <TextBlock Foreground ="White" Text="Фамилия:" FontSize="36"
+                   FontFamily="Arial" VerticalAlignment="Top" Margin="0,239,1088,0" 
+                   HorizontalAlignment="Right" ></TextBlock>
+        <TextBox Background="#00DDDDDD" BorderBrush="White"
+                 BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
+                 Margin="0,233,708,0" Name="RegBox_Surname" Height="60" VerticalAlignment="Top" HorizontalAlignment="Right" Width="375"/>
+        <TextBlock Foreground ="White" Text="Отчество:" FontSize="36"
+                   FontFamily="Arial" VerticalAlignment="Top" Margin="0,318,1084,0" 
+                   HorizontalAlignment="Right" ></TextBlock>
+        <TextBox Height="60" Background="#00DDDDDD" BorderBrush="White"
+                 BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
+                 Margin="0,313,708,0" Name="RegBox_Patronymic" VerticalAlignment="Top" HorizontalAlignment="Right" Width="375"/>
+        <Button Background="#00DDDDDD" BorderBrush="White"
+                BorderThickness="3" Margin="490,0,0,55" Content="Регистрация"
+                Foreground="White" FontFamily="Arial" FontSize="42"
+                Name="Reg_BtnGo" Click="Reg_BtnGo_Click" Height="60" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="300"/>
+        <ComboBox Name="phonesList" 
+                BorderBrush="White" Margin="865,0,0,246"
+                BorderThickness="3" Foreground="Black" FontFamily="Arial"
+                FontSize="42" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="375">
+            <TextBlock>Продюссер группы</TextBlock>
+            <TextBlock>Менеджер площадки</TextBlock>
+            <TextBlock>Администратор</TextBlock>
+        </ComboBox>
+        <Button Content="Есть аккаунт? Войти" Foreground="White"
+                   FontFamily="Arial" FontSize="16" HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom" Margin="0, 0, 0, 5"
+                   Background="#00DDDDDD" BorderThickness="0" Name="HyperBack" Click="HyperBack_Click" 
+                ></Button>
+        <TextBox Height="60" Background="#00DDDDDD" BorderBrush="White"
+            BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
+            Margin="0,313,40,0" x:Name="RegBox_code" VerticalAlignment="Top" HorizontalAlignment="Right" Width="375"/>
+        <TextBlock Foreground ="White" Text="Код:" FontSize="36"
+            FontFamily="Arial" Margin="796,326,0,353" HorizontalAlignment="Left" Width="64" />
+        <Button Background="#00DDDDDD" BorderBrush="White"
+            BorderThickness="3" Margin="490,0,0,55" Content="Продолжить"
+            Foreground="White" FontFamily="Arial" FontSize="42"
+            x:Name="RegMail_BtnGo" Click="RegMail_BtnGo_Click" Height="60" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="300"/>
+        <Button Background="#00DDDDDD" BorderBrush="White"
+            BorderThickness="3" Margin="490,0,0,55" Content="Продолжить"
+            Foreground="White" FontFamily="Arial" FontSize="42"
+            x:Name="RegPhone_BtnGo" Height="60" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="300" Click="RegPhone_BtnGo_Click"/>
+    </Grid>
+</Page>

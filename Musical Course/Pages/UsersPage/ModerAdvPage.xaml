@@ -1,0 +1,31 @@
+﻿<Page x:Class="Musical_Course.Pages.UsersPage.ModerAdvPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Musical_Course.Pages.UsersPage"
+      mc:Ignorable="d" Background="DarkGray"
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="ModerAdvPage">
+
+    <Grid>
+        <!--Указать состояния - 
+        0 - не проверялось
+        1 - прошло провреку и опубликованно
+        2 - заблокированно
+        (возможно в будущем указать причины блокировки по разным числам)
+        -->
+        <TextBlock x:Name="HelloText4" Foreground ="White" FontSize="42"
+                   FontFamily="Arial" HorizontalAlignment="Center"
+                   Margin="0, 0, 0, 20"><Run Text="Допуск объявления"/></TextBlock>
+        <Button Background="#00DDDDDD" BorderBrush="White"
+                BorderThickness="3" Content="Сохранить"
+                Foreground="White" FontFamily="Arial" FontSize="26"
+                Name="BtnAdd" Click="BtnAdd_Click" Width="151" Margin="238,397,410,10"/>
+        <Button Background="#00DDDDDD" BorderBrush="White"
+                BorderThickness="3" Content="Назад"
+                Foreground="White" FontFamily="Arial" FontSize="26"
+                Name="BtnGoBack" Click="BtnGoBack_Click" Width="151" Margin="400,397,248,10"/>
+        <TextBox Name="Active" Width="200" Height="30" Text="{Binding Moderation}"></TextBox>
+    </Grid>
+</Page>

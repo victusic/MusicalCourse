@@ -1,0 +1,480 @@
+﻿<Page x:Class="Musical_Course.ManagerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Musical_Course"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="ManagerPage">
+
+    <Grid >
+        <Image Source="/Musical Course;component/Resources/registration_background.jpg" 
+               Stretch="UniformToFill"></Image>
+        <Grid Margin="65,0,0,0" Name="PreviewGrid" Panel.ZIndex="10">
+            <TextBlock Name="HelloText" Text="Приветствеующий текст" Foreground ="White" FontSize="84"
+                   FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Center"
+                   Margin="0, 0, 0, 120"></TextBlock>
+        </Grid>
+
+        <Grid Margin="65,0,0,0" Name="AdvertisementGrid" Panel.ZIndex="10">
+            <Image Source="/Musical Course;component/Resources/registration_background.jpg" 
+               Stretch="UniformToFill"></Image>
+            <TextBlock Name="HelloText2" Text="Управление объвлениями" Foreground ="White" FontSize="84"
+                   FontFamily="Arial" HorizontalAlignment="Center"
+                   Margin="0, 0, 0, 20"></TextBlock>
+            <DataGrid Name="Tts" AutoGenerateColumns="False" Margin="50, 100, 50, 80" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="№" Width="35" Binding="{Binding AdvertisementId}"/>
+                    <DataGridTextColumn Header="Тип"  Width="45*" Binding="{Binding TypeAdvertisement}" />
+                    <DataGridTextColumn Header="Автор" Width="180*" Binding="{Binding Representative}"/>
+                    <DataGridTextColumn Header="Площадка" Width="250" Binding="{Binding Area}"/>
+                    <DataGridTextColumn Header="Группа" Width="250*" Binding="{Binding Group}" />
+                    <DataGridTextColumn Header="Модерация" Width="150*" Binding="{Binding Moderation}"/>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Изменить статус"></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Background="#00DDDDDD" BorderBrush="White"
+                BorderThickness="3" Content="Удалить"
+                Foreground="White" FontFamily="Arial" FontSize="26"
+                Name="BtnDeleteAds" Click="BtnDeleteAds_Click" Width="151" Margin="1014,654,50,20"/>
+            <Button Background="#00DDDDDD" BorderBrush="White"
+                BorderThickness="3" Content="Добавить"
+                Foreground="White" FontFamily="Arial" FontSize="26"
+                Name="BtnAddAds" Click="BtnAddAds_Click" Width="151" Margin="50,654,1014,20"/>
+        </Grid>
+        <Grid Margin="65,0,0,0" Name="UsersGrid" Panel.ZIndex="10">
+            <Image Source="/Musical Course;component/Resources/autorisation_background.jpg"
+                    Stretch="UniformToFill"></Image>
+                <TextBlock Name="HelloText3" Text="Просмотр базы пользователей" Foreground ="White" FontSize="84"
+                   FontFamily="Arial" HorizontalAlignment="Center"
+                   Margin="0, 0, 0, 20"></TextBlock>
+                <DataGrid Name="Tts1" AutoGenerateColumns="False" Margin="50, 100, 50, 80" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="№" Width="35" Binding="{Binding UserId}"/>
+                        <DataGridTextColumn Header="Тип"  Width="50" Binding="{Binding Roll}" />
+                        <DataGridTextColumn Header="Фамилия" Width="100" Binding="{Binding Surname}"/>
+                        <DataGridTextColumn Header="Имя" Width="100" Binding="{Binding Name}"/>
+                        <DataGridTextColumn Header="Отчество" Width="100" Binding="{Binding Patronymic}" />
+                        <DataGridTextColumn Header="Почта" Width="100" Binding="{Binding Mail}"/>
+                        <DataGridTextColumn Header="Телефон" Width="100" Binding="{Binding Phone}"/>
+                        <DataGridTextColumn Header="Логин" Width="100" Binding="{Binding Login}"/>
+                        <DataGridTextColumn Header="Пароль" Width="100" Binding="{Binding Password}"/>
+                        <DataGridTextColumn Header="Онлайн" Width="100" Binding="{Binding IsActivity}"/>
+                        <DataGridTextColumn Header="Объявления" Width="150" Binding="{Binding CountAdvertisement}"/>
+                        <DataGridTemplateColumn Header="Статус" Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Изменить"></Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button Background="#00DDDDDD" BorderBrush="White"
+                BorderThickness="3" Content="Удалить"
+                Foreground="White" FontFamily="Arial" FontSize="26"
+                Name="BtnDeleteUser" Click="BtnDeleteUser_Click" Width="151" Margin="1014,654,50,20"/>
+                <Button Background="#00DDDDDD" BorderBrush="White"
+                BorderThickness="3" Content="Добавить"
+                Foreground="White" FontFamily="Arial" FontSize="26"
+                Name="BtnAddUser" Click="BtnAddUser_Click" Width="151" Margin="50,654,1014,20"/>
+            </Grid>
+        
+        <Grid Margin="65,0,0,0" Name="GroupGrid" Panel.ZIndex="10">
+            <Image Source="/Musical Course;component/Resources/aMKIbShBgpg.jpg"
+                    Stretch="UniformToFill"></Image>
+            <TextBlock Name="HelloText4" Text="Просмотр групп" Foreground ="White" FontSize="84"
+                   FontFamily="Arial" HorizontalAlignment="Center"
+                   Margin="0, 0, 0, 20"></TextBlock>
+            <DataGrid Name="Tts2" AutoGenerateColumns="False" Margin="50, 100, 50, 80" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="№" Width="30" Binding="{Binding BandId}"/>
+                    <DataGridTextColumn Header="Название"  Width="70" Binding="{Binding Name}" />
+                    <DataGridTextColumn Header="Продюссер" Width="80" Binding="{Binding Representative}"/>
+                    <DataGridTextColumn Header="Оборудование" Width="100" Binding="{Binding AvailabilityOfEquipment}"/>
+                    <DataGridTextColumn Header="Деятельность" Width="100" Binding="{Binding DescriptionOfTheActivity}" />
+                    <DataGridTextColumn Header="Площадка" Width="100" Binding="{Binding DesiredSite}"/>
+                    <DataGridTextColumn Header="Стоимость" Width="100" Binding="{Binding RecommendedCostOfTheSite}"/>
+                    <DataGridTextColumn Header="Описание" Width="100" Binding="{Binding GroupDescription}"/>
+                    <DataGridTextColumn Header="Условия" Width="100" Binding="{Binding DescriptionOfTheTermsOfCooperation}"/>
+                    <DataGridTextColumn Header="1" Width="40" Binding="{Binding Photo1}"/>
+                    <DataGridTextColumn Header="2" Width="40" Binding="{Binding Photo2}"/>
+                    <DataGridTextColumn Header="3" Width="40" Binding="{Binding Photo3}"/>
+                    <DataGridTextColumn Header="4" Width="40" Binding="{Binding Photo4}"/>
+                    <DataGridTextColumn Header="5" Width="40" Binding="{Binding Photo5}"/>
+                    <DataGridTextColumn Header="6" Width="40" Binding="{Binding Photo6}"/>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Редактировать" Click="BtnEdit_Click"></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Background="#00DDDDDD" BorderBrush="White"
+                BorderThickness="3" Content="Удалить"
+                Foreground="White" FontFamily="Arial" FontSize="26"
+                Name="BtnDelete" Click="BtnDeleteGroup_Click" Width="151" Margin="1014,654,50,20"/>
+            <Button Background="#00DDDDDD" BorderBrush="White"
+                BorderThickness="3" Content="Добавить"
+                Foreground="White" FontFamily="Arial" FontSize="26"
+                Name="BtnAdd" Click="BtnAddGroup_Click" Width="151" Margin="50,654,1014,20"/>
+        </Grid>
+
+        <!--Главный фрэйм-->
+
+        <Grid x:Name="BG" PreviewMouseLeftButtonDown="BG_PreviewMouseLeftButtonDown">
+
+            <Grid.Background>
+
+                <ImageBrush x:Name="img_bg"
+                                Stretch="None"/>
+
+            </Grid.Background>
+
+        </Grid>
+
+        <!-- Навигационная панель-->
+
+        <Grid x:Name="nav_pnl"
+                    HorizontalAlignment="Left"
+                    Width="65"
+                    Background="#2E333A"
+                    Panel.ZIndex="10" >
+
+
+            <StackPanel x:Name="st_pnl">
+
+                <!--Боковая панель -->
+
+                <Grid Height="90">
+
+                    <!--Кнопка меню-->
+
+                    <TextBlock  Grid.Row="1"
+                                    Grid.Column="0"
+                                    Margin="73,-20,0,0"
+                                    Text="МЕНЮ"
+                                    Foreground="White"
+                                    FontSize="22"
+                                    Background="Transparent"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    Style="{StaticResource font_style}">
+                            
+                            <!-- Эффект тени-->
+
+                        <TextBlock.Effect>
+
+                            <DropShadowEffect  
+                                    BlurRadius="10"
+                                    ShadowDepth="1"
+                                    Direction="-90"
+                                    Color="White"/>
+
+                        </TextBlock.Effect>
+
+                    </TextBlock>
+
+                    <ToggleButton x:Name="Tg_Btn"
+                                      Grid.Column="0"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Left"
+                                      Margin="18,-20,0,0"
+                                      Height="30"
+                                      Width="30"
+                                      BorderThickness="0"
+                                      Style="{StaticResource tb_style}" Unchecked="Tg_Btn_Unchecked" Checked="Tg_Btn_Checked">
+
+                        <!--Изображение кнопки-->
+
+                        <ToggleButton.Background>
+
+                            <ImageBrush ImageSource="/Resources/MenuIcon.png"
+                                            Stretch="Fill"/>
+
+                        </ToggleButton.Background>
+
+                        <!--Событийность кнопки-->
+
+                        <ToggleButton.Triggers>
+
+                            <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+
+                                <BeginStoryboard>
+
+                                    <Storyboard x:Name="HideStackPanel">
+
+                                        <DoubleAnimation    
+                                                
+                                                Storyboard.TargetName="nav_pnl"
+                                                Storyboard.TargetProperty="Width"
+                                                BeginTime="0:0:0"
+                                                From="300" To="65"
+                                                Duration="0:0:0.2">
+
+                                        </DoubleAnimation>
+
+                                    </Storyboard>
+
+                                </BeginStoryboard>
+
+                            </EventTrigger>
+
+                            <EventTrigger RoutedEvent="ToggleButton.Checked">
+
+                                <BeginStoryboard>
+
+                                    <Storyboard x:Name="ShowStackPanel">
+
+                                        <DoubleAnimation
+                                                
+                                                Storyboard.TargetName="nav_pnl"
+                                                Storyboard.TargetProperty="Width"
+                                                BeginTime="0:0:0"
+                                                From="65" To="300"
+                                                Duration="0:0:0.3"
+                                                
+                                                >
+
+                                        </DoubleAnimation>
+
+                                    </Storyboard>
+
+                                </BeginStoryboard>
+
+                            </EventTrigger>
+
+                        </ToggleButton.Triggers>
+
+
+                    </ToggleButton>
+
+                </Grid>
+
+                <!--Зона основных кнопок-->
+
+                <ListView  x:Name="LV"
+                               Background="Transparent"
+                               BorderBrush="Transparent"
+                               ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+                    <!--Нулевая кнопка-->
+
+                    <ListViewItem HorizontalAlignment="Left"
+                                      Margin="3,0,0,15" MouseEnter="ListViewItem_MouseEnter"
+                                      >
+
+                        <StackPanel Orientation="Horizontal" Name="Panel0"
+                                        Width="300" MouseLeftButtonDown="Panel0_MouseLeftButtonDown">
+
+                            <Image Source="/Resources/HomeIcon.png"
+                                       Stretch="Fill"
+                                       Height="45" Width="45"/>
+
+                            <TextBlock Text="Главная страница"
+                                           Margin="25,0,0,0"
+                                           Style="{StaticResource font_style}"/>
+
+                        </StackPanel>
+
+                        <ListViewItem.ToolTip>
+
+                            <ToolTip x:Name="tt_ome"
+                                         Content="Главная страница"
+                                         Style="{StaticResource tt_style}"/>
+
+                        </ListViewItem.ToolTip>
+
+                    </ListViewItem>
+
+                    <!--Первая кнопка-->
+
+                    <ListViewItem HorizontalAlignment="Left"
+                                      Margin="3,0,0,15" MouseEnter="ListViewItem_MouseEnter"
+                                      >
+
+                        <StackPanel Orientation="Horizontal" Name="Panel1"
+                                        Width="300" MouseLeftButtonDown="Panel1_MouseLeftButtonDown" >
+
+                            <Image Source="/Resources/AdvertisementIcon.png"
+                                       Stretch="Fill"
+                                       Height="45" Width="45"/>
+
+                            <TextBlock Text="Объявления"
+                                           Margin="25,0,0,0"
+                                           Style="{StaticResource font_style}"/>
+
+                        </StackPanel>
+
+                        <ListViewItem.ToolTip>
+
+                            <ToolTip x:Name="tt_home"
+                                         Content="Объявления"
+                                         Style="{StaticResource tt_style}"/>
+
+                        </ListViewItem.ToolTip>
+
+                    </ListViewItem>
+
+                    <!-- Вторая кнопка-->
+
+                    <ListViewItem HorizontalAlignment="Left"
+                                      Margin="3,0,0,15" MouseEnter="ListViewItem_MouseEnter"
+                                      >
+
+                        <StackPanel Orientation="Horizontal" Name="Panel2"
+                                        Width="300" MouseLeftButtonDown="Panel2_MouseLeftButtonDown">
+
+                            <Image Source="/Resources/UsersIcon.png"
+                                       Stretch="Fill"
+                                       Height="45" Width="45"/>
+
+                            <TextBlock Text="База пользователей"
+                                           Margin="25,0,0,0"
+                                           Style="{StaticResource font_style}"/>
+
+                        </StackPanel>
+
+                        <ListViewItem.ToolTip>
+
+                            <ToolTip x:Name="tt_contacts"
+                                         Content="База пользователей"
+                                         Style="{StaticResource tt_style}"/>
+
+                        </ListViewItem.ToolTip>
+
+                    </ListViewItem>
+
+                    <!-- Третья кнопка-->
+
+                    <ListViewItem HorizontalAlignment="Left"
+                                      Margin="3,0,0,15" MouseEnter="ListViewItem_MouseEnter"
+                                      >
+
+                        <StackPanel Orientation="Horizontal" Name="Panel3"
+                                        Width="300" MouseLeftButtonDown="Panel3_MouseLeftButtonDown">
+
+                            <Image Source="/Resources/GroupIcon.png"
+                                       Stretch="Fill"
+                                       Height="45" Width="45"/>
+
+                            <TextBlock Text="Группы"
+                                           Margin="25,0,0,0"
+                                           Style="{StaticResource font_style}"/>
+
+                        </StackPanel>
+
+                        <ListViewItem.ToolTip>
+
+                            <ToolTip x:Name="tt_messages"
+                                         Content="Группы"
+                                         Style="{StaticResource tt_style}"/>
+
+                        </ListViewItem.ToolTip>
+
+                    </ListViewItem>
+
+                    <!--Седьмая кнопка-->
+
+                    <ListViewItem HorizontalAlignment="Left" 
+                                          Margin="3,0,0,15" MouseEnter="ListViewItem_MouseEnter"
+                                          >
+
+                        <StackPanel Orientation="Horizontal" Name="Panel7"
+                                            Width="300" MouseLeftButtonDown="Panel7_MouseLeftButtonDown">
+
+                            <Image Source="/Resources/ExitIcon.png"
+                                           Stretch="Fill"
+                                           Height="45" Width="45"/>
+
+                            <TextBlock Text="Выход"
+                                               Margin="25,0,0,0"
+                                           
+                                    Style="{StaticResource font_style}"/>
+
+                        </StackPanel>
+
+                        <ListViewItem.ToolTip>
+
+                            <ToolTip x:Name="tt_nout"
+                                             Content="Выход"
+                                             Style="{StaticResource tt_style}"/>
+
+                        </ListViewItem.ToolTip>
+
+                    </ListViewItem>
+
+
+                    <!-- Работа кнопок-->
+
+                    <ListView.ItemContainerStyle>
+
+                        <Style TargetType="ListViewItem">
+
+                            <Setter Property="Template">
+
+                                <Setter.Value>
+
+                                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+
+                                        <Border x:Name="Bd"
+                                                    Height="50"
+                                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                                    Background="{TemplateBinding Background}"
+                                                    Padding="{TemplateBinding Padding}"
+                                                    SnapsToDevicePixels="True">
+
+                                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+
+                                        </Border>
+
+                                        <ControlTemplate.Triggers>
+
+                                            <MultiTrigger>
+
+                                                <MultiTrigger.Conditions>
+
+                                                    <Condition Property="IsMouseOver" Value="True"/>
+
+                                                </MultiTrigger.Conditions>
+
+                                                <Setter Property="Background"
+                                                            TargetName="Bd"
+                                                            Value="#404D5B"/>
+
+                                                <Setter Property="BorderBrush"
+                                                            TargetName="Bd"
+                                                            Value="#404D5B"/>
+
+                                            </MultiTrigger>
+
+                                        </ControlTemplate.Triggers>
+
+                                    </ControlTemplate>
+
+                                </Setter.Value>
+
+                            </Setter>
+
+                        </Style>
+
+                    </ListView.ItemContainerStyle>
+
+                </ListView>
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
