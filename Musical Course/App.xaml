@@ -5,6 +5,9 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 
+        <Style TargetType="TextBox">
+            <Setter Property="MaxLength" Value="25"></Setter>
+        </Style>
 
         <ImageBrush x:Key="tb_mouse_over"
                     ImageSource="/Resources/MenuActiveIcon.png"/>
