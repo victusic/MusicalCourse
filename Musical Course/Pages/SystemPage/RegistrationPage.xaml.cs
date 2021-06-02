@@ -133,29 +133,31 @@ namespace Musical_Course.Pages
                 MessageBox.Show(errors.ToString(), "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
-
-
             else
             {
                 try
                 {
-                    string logindChek = "SELECT * FROM Users WHERE Mail ='" + _currentUser.Mail + "'";
-                    var sql1 = MusicalBaseEntities1.GetContext().Users.SqlQuery(logindChek).ToArray();
-                    string MailChek = "SELECT * FROM Users WHERE Login ='" + _currentUser.Login + "'";
-                    var sql2 = MusicalBaseEntities1.GetContext().Users.SqlQuery(logindChek).ToArray();
+                    string MailChek = "SELECT * FROM Users WHERE Mail ='" + _currentUser.Mail + "'";
+                    var sql1 = MusicalBaseEntities1.GetContext().Users.SqlQuery(MailChek).ToArray();
+                    string LoginChek = "SELECT * FROM Users WHERE Login ='" + _currentUser.Login + "'";
+                    var sql2 = MusicalBaseEntities1.GetContext().Users.SqlQuery(LoginChek).ToArray();
                     string PhoneCheck = "SELECT * FROM Users WHERE Phone ='" + _currentUser.Phone + "'";
-                    var sql3 = MusicalBaseEntities1.GetContext().Users.SqlQuery(logindChek).ToArray();
-                    if (sql1.Length != 0)
+                    var sql3 = MusicalBaseEntities1.GetContext().Users.SqlQuery(PhoneCheck).ToArray();
+                    if (sql1.Length != 0 || sql2.Length != 0 || sql3.Length != 0)
                     {
-                        MessageBox.Show("Введённый вами почта уже присутсвует", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
-                    if (sql2.Length != 0)
-                    {
-                        MessageBox.Show("Введённый вами логин уже занят", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
-                    if (sql3.Length != 0)
-                    {
-                        MessageBox.Show("Введённый вами номер телефона уже используется", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
+                        if (sql1.Length != 0)
+                        {
+                            MessageBox.Show("Введённый вами почта уже присутсвует", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                        if (sql2.Length != 0)
+                        {
+                            MessageBox.Show("Введённый вами логин уже занят", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                        if (sql3.Length != 0)
+                        {
+                            MessageBox.Show("Введённый вами номер телефона уже используется", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                        //MessageBox.Show("Введённый вами данные, а имеено некоторые из них: почта логин или номер телефона уже используются", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                     else
                     {

@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -64,34 +66,65 @@ namespace Musical_Course.Pages
                     {
                         if (LoginBox_Auth.Text == user.Login && PasswordBox_Auth.Password == user.Password)
                         {
-                            userId = user.UserId;
-                            GlobalLeVar.LoginStat = user.Name;
-                            if (user.Roll == 1)
-                            {
-                                Manager.Frame.Navigate(new AdministratorPage());
-                                MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
-                                Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
+                            if(user.IsActivity == 0){
+                                userId = user.UserId;
+                                GlobalLeVar.LoginStat = user.Name;
+                                if (user.Roll == 1)
+                                {
+                                    Manager.Frame.Navigate(new AdministratorPage());
+                                    MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                                    Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
+                                }
+                                else if (user.Roll == 2)
+                                {
+                                    Manager.Frame.Navigate(new ModeratorPage());
+                                    MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                                    Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
+                                }
+                                else if (user.Roll == 3)
+                                {
+                                    Manager.Frame.Navigate(new ProducerPage());
+                                    MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                                    Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
+                                    /*MailAddress from = new MailAddress("dlya_d_raboty_raboty@mail.ru", "Sound Production");
+                                    MailAddress to = new MailAddress(user.Mail);
+                                    MailMessage m = new MailMessage(from, to);
+                                    m.Subject = "Тест";
+                                    m.Body = "С вашего аккаунта " + user.Login + " был совершён вход в систему " + DateTime.Now + " - если это не вы, обратитесь в нашу службу поддержки";
+                                    m.IsBodyHtml = true;
+                                    // адрес smtp-сервера и порт, с которого будем отправлять письмо
+                                    SmtpClient smtp = new SmtpClient("smtp.mail.ru", 2525);
+                                    smtp.Credentials = new NetworkCredential("dlya_d_raboty_raboty@mail.ru", "DHDKI55544DIEJDO5854565");
+                                    smtp.EnableSsl = true;
+                                    smtp.Send(m);*/
+                                }
+                                else if (user.Roll == 4)
+                                {
+                                    Manager.Frame.Navigate(new ManagerPage());
+                                    MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                                    Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
+                                    /*MailAddress from = new MailAddress("dlya_d_raboty_raboty@mail.ru", "Sound Production");
+                                    MailAddress to = new MailAddress(user.Mail);
+                                    MailMessage m = new MailMessage(from, to);
+                                    m.Subject = "Тест";
+                                    m.Body = "С вашего аккаунта " + user.Login + " был совершён вход в систему " + DateTime.Now + " - если это не вы, обратитесь в нашу службу поддержки";
+                                    m.IsBodyHtml = true;
+                                    // адрес smtp-сервера и порт, с которого будем отправлять письмо
+                                    SmtpClient smtp = new SmtpClient("smtp.mail.ru", 2525);
+                                    smtp.Credentials = new NetworkCredential("dlya_d_raboty_raboty@mail.ru", "DHDKI55544DIEJDO5854565");
+                                    smtp.EnableSsl = true;
+                                    smtp.Send(m);*/
+                                }
+                                errors = 0;
+                                break;
                             }
-                            else if (user.Roll == 2)
+                            else
                             {
-                                Manager.Frame.Navigate(new ModeratorPage());
-                                MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
-                                Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
+                                errors += 4;
+                                userId = user.UserId;
+                                break;
                             }
-                            else if (user.Roll == 3)
-                            {
-                                Manager.Frame.Navigate(new ProducerPage());
-                                MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
-                                Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
-                            }
-                            else if (user.Roll == 4)
-                            {
-                                Manager.Frame.Navigate(new ManagerPage());
-                                MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
-                                Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
-                            }
-                            errors = 0;
-                            break;
+
                         }
                         else if (LoginBox_Auth.Text == user.Login)
                         {
@@ -112,8 +145,13 @@ namespace Musical_Course.Pages
                         if (errors == 2)
                         {
                             HistoriAdd(false, userId);
+                            MessageBox.Show("Пароль неверный", "Ошибка входа", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
-                        MessageBox.Show("Jib,rf d[jlf");
+                        if (errors == 4)
+                        {
+                            HistoriAdd(false, userId);
+                            MessageBox.Show("Ваш аккаунт был заблокирован, за подробностями обратититесь на нашу почту", "Ошибка входа", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
                     }
                 }
                 catch (Exception ex)
