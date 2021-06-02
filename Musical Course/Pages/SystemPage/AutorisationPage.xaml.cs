@@ -62,13 +62,14 @@ namespace Musical_Course.Pages
                 int errors = 0;
                 try
                 {
-                    foreach (var user in MusicalBaseEntities1.GetContext().Users)
+                    foreach (var user in MusicalBaseEntities2.GetContext().Users)
                     {
                         if (LoginBox_Auth.Text == user.Login && PasswordBox_Auth.Password == user.Password)
                         {
                             if(user.IsActivity == 0){
                                 userId = user.UserId;
                                 GlobalLeVar.LoginStat = user.Name;
+                                GlobalLeVar.UserIdStat = user.UserId;
                                 if (user.Roll == 1)
                                 {
                                     Manager.Frame.Navigate(new AdministratorPage());
@@ -168,8 +169,8 @@ namespace Musical_Course.Pages
                 HistoryLogin.UserId = user_id;
                 HistoryLogin.Date = DateTime.Now;
                 HistoryLogin.State = state;
-                MusicalBaseEntities1.GetContext().AutorisationHistory.Add(HistoryLogin);
-                MusicalBaseEntities1.GetContext().SaveChanges();
+                MusicalBaseEntities2.GetContext().AutorisationHistory.Add(HistoryLogin);
+                MusicalBaseEntities2.GetContext().SaveChanges();
             }
             catch (Exception ex)
             {

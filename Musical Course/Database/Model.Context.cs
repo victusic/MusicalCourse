@@ -13,20 +13,19 @@ namespace Musical_Course.Database
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MusicalBaseEntities1 : DbContext
+    public partial class MusicalBaseEntities2 : DbContext
     {
-        private static MusicalBaseEntities1 _context;
-
-        public MusicalBaseEntities1()
-            : base("name=MusicalBaseEntities1")
+        private static MusicalBaseEntities2 _context;
+        public MusicalBaseEntities2()
+        : base("name=MusicalBaseEntities")
         {
         }
 
-        public static MusicalBaseEntities1 GetContext()
+        public static MusicalBaseEntities2 GetContext()
         {
             if (_context == null)
             {
-                _context = new MusicalBaseEntities1();
+                _context = new MusicalBaseEntities2();
             }
             return _context;
         }

@@ -57,8 +57,8 @@ namespace Musical_Course
             AdvertisementGrid.Visibility = Visibility.Hidden;
             UsersGrid.Visibility = Visibility.Hidden;
             //Бд
-            //Tts.ItemsSource = MusicalBaseEntities.GetContext().Advertisement.ToList();
-            Tts1.ItemsSource = MusicalBaseEntities1.GetContext().Users.ToList();
+            Tts.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToList();
+            Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Users.ToList();
         }
         private void BG_PreviewMouseLeftButtonDown1(object sender, MouseButtonEventArgs e)
         {
@@ -144,8 +144,8 @@ namespace Musical_Course
         {
             if(Visibility == Visibility.Visible)
             {
-                Tts.ItemsSource = MusicalBaseEntities1.GetContext().Advertisement.ToArray();
-                MusicalBaseEntities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                //Tts.ItemsSource = MusicalBaseEntities1.GetContext().Advertisement.ToArray();
+                MusicalBaseEntities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
             }
         }
 
@@ -153,8 +153,8 @@ namespace Musical_Course
         {
             if (Visibility == Visibility.Visible)
             {
-                Tts.ItemsSource = MusicalBaseEntities1.GetContext().Users.ToArray();
-                MusicalBaseEntities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                Tts.ItemsSource = MusicalBaseEntities2.GetContext().Users.ToArray();
+                MusicalBaseEntities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
             }
         }
     }

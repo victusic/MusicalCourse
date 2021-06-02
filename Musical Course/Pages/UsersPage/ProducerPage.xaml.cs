@@ -59,9 +59,9 @@ namespace Musical_Course
             UsersGrid.Visibility = Visibility.Hidden;
             GroupGrid.Visibility = Visibility.Hidden;
             //Бд
-            Tts.ItemsSource = MusicalBaseEntities1.GetContext().Advertisement.ToList();
-            Tts1.ItemsSource = MusicalBaseEntities1.GetContext().Users.ToList();
-            Tts2.ItemsSource = MusicalBaseEntities1.GetContext().Groups.ToList();
+            Tts.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToList();
+            Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Users.ToList();
+            Tts2.ItemsSource = MusicalBaseEntities2.GetContext().Groups.ToList();
         }
         private void Tg_Btn_Checked(object sender, RoutedEventArgs e)
         {
@@ -110,7 +110,7 @@ namespace Musical_Course
         }
         private void Tts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MusicalBaseEntities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+            MusicalBaseEntities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
         }
 
         private void BG_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -170,7 +170,7 @@ namespace Musical_Course
 
         private void BtnAddAds_Click(object sender, RoutedEventArgs e)
         {
-            Manager.Frame.Navigate(new AddAdsPage());
+            Manager.Frame.Navigate(new AddAdsPage(null));
         }
 
         private void BtnDeleteAds_Click(object sender, RoutedEventArgs e)

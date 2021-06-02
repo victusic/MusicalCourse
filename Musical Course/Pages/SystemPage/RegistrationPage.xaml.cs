@@ -43,7 +43,7 @@ namespace Musical_Course.Pages
 
             DataContext = _currentUser;
 
-            List.ItemsSource = MusicalBaseEntities1.GetContext().Rolls.ToList();
+            List.ItemsSource = MusicalBaseEntities2.GetContext().Rolls.ToList();
         }
 
         private void HyperBack_Click(object sender, RoutedEventArgs e)
@@ -74,8 +74,8 @@ namespace Musical_Course.Pages
                         _currentUser.IsActivity = 0;
                         _currentUser.CountAdvertisement = 0;
                         _currentUser.RegistrationDate = DateTime.Now;
-                        MusicalBaseEntities1.GetContext().Users.Add(_currentUser);
-                        MusicalBaseEntities1.GetContext().SaveChanges();
+                        MusicalBaseEntities2.GetContext().Users.Add(_currentUser);
+                        MusicalBaseEntities2.GetContext().SaveChanges();
                         MessageBox.Show("Регистрация прошла успешно", "Регистрация выполнена", MessageBoxButton.OK, MessageBoxImage.Information);
                         Manager.Frame.Navigate(new AutorisationPage());
                     }
@@ -138,11 +138,11 @@ namespace Musical_Course.Pages
                 try
                 {
                     string MailChek = "SELECT * FROM Users WHERE Mail ='" + _currentUser.Mail + "'";
-                    var sql1 = MusicalBaseEntities1.GetContext().Users.SqlQuery(MailChek).ToArray();
+                    var sql1 = MusicalBaseEntities2.GetContext().Users.SqlQuery(MailChek).ToArray();
                     string LoginChek = "SELECT * FROM Users WHERE Login ='" + _currentUser.Login + "'";
-                    var sql2 = MusicalBaseEntities1.GetContext().Users.SqlQuery(LoginChek).ToArray();
+                    var sql2 = MusicalBaseEntities2.GetContext().Users.SqlQuery(LoginChek).ToArray();
                     string PhoneCheck = "SELECT * FROM Users WHERE Phone ='" + _currentUser.Phone + "'";
-                    var sql3 = MusicalBaseEntities1.GetContext().Users.SqlQuery(PhoneCheck).ToArray();
+                    var sql3 = MusicalBaseEntities2.GetContext().Users.SqlQuery(PhoneCheck).ToArray();
                     if (sql1.Length != 0 || sql2.Length != 0 || sql3.Length != 0)
                     {
                         if (sql1.Length != 0)

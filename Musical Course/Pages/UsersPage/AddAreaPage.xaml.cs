@@ -1,5 +1,4 @@
-﻿using Musical_Course.Pages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,18 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Musical_Course
+namespace Musical_Course.Pages.UsersPage
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для AddAreaPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddAreaPage : Page
     {
-        public MainWindow()
+        public AddAreaPage()
         {
             InitializeComponent();
-            Frame.Navigate(new ManagerPage());
-            Manager.Frame = Frame;
         }
     }
 }

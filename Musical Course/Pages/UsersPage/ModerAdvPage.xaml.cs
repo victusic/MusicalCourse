@@ -33,12 +33,6 @@ namespace Musical_Course.Pages.UsersPage
 
             DataContext = _currentAdvertisement;
         }
-    
-
-        private void BtnGoBack_Click(object sender, RoutedEventArgs e)
-        {
-            Manager.Frame.GoBack();
-        }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
@@ -49,12 +43,11 @@ namespace Musical_Course.Pages.UsersPage
                 MessageBox.Show(errors.ToString());
                 return;
             }
-
             if (_currentAdvertisement.AdvertisementId == _currentAdvertisement.AdvertisementId)
             {
                 try
                 {
-                    MusicalBaseEntities1.GetContext().SaveChanges();
+                    MusicalBaseEntities2.GetContext().SaveChanges();
                     MessageBox.Show("Информация сохранена");
                 }
                 catch (Exception ex)
@@ -64,5 +57,12 @@ namespace Musical_Course.Pages.UsersPage
             }
             Manager.Frame.GoBack();
         }
+
+        private void BtnGoBack_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.Frame.GoBack();
+        }
+
+        
     }
 }

@@ -44,7 +44,7 @@ namespace Musical_Course.Pages.UsersPage
                 return;
             }
 
-            if (_currentusers.UserId == 0)
+            /*if (_currentusers.UserId == 0)
             {
                 try
                 {
@@ -56,12 +56,12 @@ namespace Musical_Course.Pages.UsersPage
                 {
                     MessageBox.Show(ex.Message.ToString());
                 }
-            }
-            else if (_currentusers.UserId == _currentusers.UserId)
+            }*/
+            if (_currentusers.UserId == _currentusers.UserId)
             {
                 try
                 {
-                    MusicalBaseEntities1.GetContext().SaveChanges();
+                    MusicalBaseEntities2.GetContext().SaveChanges();
                     MessageBox.Show("Информация сохранена");
                 }
                 catch (Exception ex)

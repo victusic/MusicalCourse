@@ -55,13 +55,13 @@ namespace Musical_Course
                 HelloText.Text = "Здравствуйте, " + GlobalLeVar.LoginStat;
             }
             PreviewGrid.Visibility = Visibility.Visible;
+            AreaGrid.Visibility = Visibility.Hidden;
             AdvertisementGrid.Visibility = Visibility.Hidden;
-            UsersGrid.Visibility = Visibility.Hidden;
-            GroupGrid.Visibility = Visibility.Hidden;
+            VivsibleAdvertisementGrid.Visibility = Visibility.Hidden;
             //Бд
-            Tts.ItemsSource = MusicalBaseEntities1.GetContext().Advertisement.ToList();
-            Tts1.ItemsSource = MusicalBaseEntities1.GetContext().Users.ToList();
-            Tts2.ItemsSource = MusicalBaseEntities1.GetContext().Groups.ToList();
+            Tts.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToList();
+            Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToList();
+            Tts2.ItemsSource = MusicalBaseEntities2.GetContext().Groups.ToList();
         }
         private void Tg_Btn_Checked(object sender, RoutedEventArgs e)
         {
@@ -71,46 +71,42 @@ namespace Musical_Course
         private void Panel0_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             PreviewGrid.Visibility = Visibility.Visible;
+            AreaGrid.Visibility = Visibility.Hidden;
             AdvertisementGrid.Visibility = Visibility.Hidden;
-            UsersGrid.Visibility = Visibility.Hidden;
-            GroupGrid.Visibility = Visibility.Hidden;
+            VivsibleAdvertisementGrid.Visibility = Visibility.Hidden;
         }
 
         private void Panel7_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            PreviewGrid.Visibility = Visibility.Hidden;
-            AdvertisementGrid.Visibility = Visibility.Hidden;
-            UsersGrid.Visibility = Visibility.Hidden;
-            GroupGrid.Visibility = Visibility.Hidden;
             Manager.Frame.Navigate(new AutorisationPage());
         }
 
-        private void Panel6_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            PreviewGrid.Visibility = Visibility.Hidden;
-            AdvertisementGrid.Visibility = Visibility.Hidden;
-            UsersGrid.Visibility = Visibility.Hidden;
-            GroupGrid.Visibility = Visibility.Hidden;
-        }
 
         private void Panel2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             PreviewGrid.Visibility = Visibility.Hidden;
-            AdvertisementGrid.Visibility = Visibility.Hidden;
-            UsersGrid.Visibility = Visibility.Visible;
-            GroupGrid.Visibility = Visibility.Hidden;
+            AreaGrid.Visibility = Visibility.Hidden;
+            AdvertisementGrid.Visibility = Visibility.Visible;
+            VivsibleAdvertisementGrid.Visibility = Visibility.Hidden;
         }
 
         private void Panel1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             PreviewGrid.Visibility = Visibility.Hidden;
-            AdvertisementGrid.Visibility = Visibility.Visible;
-            UsersGrid.Visibility = Visibility.Hidden;
-            GroupGrid.Visibility = Visibility.Hidden;
+            AreaGrid.Visibility = Visibility.Visible;
+            AdvertisementGrid.Visibility = Visibility.Hidden;
+            VivsibleAdvertisementGrid.Visibility = Visibility.Hidden;
+        }
+        private void Panel3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            PreviewGrid.Visibility = Visibility.Hidden;
+            AreaGrid.Visibility = Visibility.Hidden;
+            AdvertisementGrid.Visibility = Visibility.Hidden;
+            VivsibleAdvertisementGrid.Visibility = Visibility.Visible;
         }
         private void Tts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MusicalBaseEntities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+            MusicalBaseEntities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
         }
 
         private void BG_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -145,47 +141,31 @@ namespace Musical_Course
             }
         }
 
-        private void Panel3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            PreviewGrid.Visibility = Visibility.Hidden;
-            AdvertisementGrid.Visibility = Visibility.Hidden;
-            UsersGrid.Visibility = Visibility.Hidden;
-            GroupGrid.Visibility = Visibility.Visible;
-        }
-
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-            //Manager.Frame.Navigate(new EditGroupManagerPage());
+
         }
 
-        private void BtnAddGroup_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Manager.Frame.Navigate(new AddGroupManagerPage());
+            //управление объявлениями
+            Manager.Frame.Navigate(new AddAdsPage((sender as Button).DataContext as Advertisement));
         }
 
-        private void BtnDeleteGroup_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnAddUser_Click(object sender, RoutedEventArgs e)
-        {
-            //Manager.Frame.Navigate(new AddUserPage());
-        }
-
-        private void BtnDeleteUser_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void BtnAddAds_Click(object sender, RoutedEventArgs e)
+        private void BtnDeleteAds1_Click(object sender, RoutedEventArgs e)
         {
-            Manager.Frame.Navigate(new AddAdsPage());
-        }
-        private void BtnDeleteAds_Click(object sender, RoutedEventArgs e)
-        {
-
+            //управление объявлениями
         }
 
+        private void BtnAddAds1_Click(object sender, RoutedEventArgs e)
+        {
+            //управление объявлениями
+            Manager.Frame.Navigate(new AddAdsPage(null));
+        }
     }
 }

@@ -111,6 +111,9 @@
     <Compile Include="Pages\UsersPage\AddAdsPage.xaml.cs">
       <DependentUpon>AddAdsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\UsersPage\AddAreaPage.xaml.cs">
+      <DependentUpon>AddAreaPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\UsersPage\AddGroupManagerPage.xaml.cs">
       <DependentUpon>AddGroupManagerPage.xaml</DependentUpon>
     </Compile>
@@ -140,6 +143,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\UsersPage\AddAdsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\UsersPage\AddAreaPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -378,7 +385,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Database\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

@@ -61,15 +61,13 @@ namespace Musical_Course
             AutorisationHistoryGrid.Visibility = Visibility.Hidden;
             RegistrationHistoryGrid.Visibility = Visibility.Hidden;
             //Бд
-            Tts.ItemsSource = MusicalBaseEntities1.GetContext().Advertisement.ToList();
-            //Tts1.ItemsSource = MusicalBaseEntities.GetContext().Users.ToList();
-            Tts2.ItemsSource = MusicalBaseEntities1.GetContext().Groups.ToList();
-            Tts3.ItemsSource = MusicalBaseEntities1.GetContext().Areas.ToList();
-            Tts4.ItemsSource = MusicalBaseEntities1.GetContext().AutorisationHistory.ToList();
-            //Tts5.ItemsSource = MusicalBaseEntities.GetContext().RegistrationsHistory.ToList();
-
+            Tts.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToList();
+            Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Users.ToList();
+            Tts2.ItemsSource = MusicalBaseEntities2.GetContext().Groups.ToList();
+            Tts3.ItemsSource = MusicalBaseEntities2.GetContext().Areas.ToList();
+            Tts4.ItemsSource = MusicalBaseEntities2.GetContext().AutorisationHistory.ToList();
+            Tts5.ItemsSource = MusicalBaseEntities2.GetContext().Users.ToList();
         }
-
         private void BG_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Tg_Btn.IsChecked = false;
@@ -203,8 +201,8 @@ namespace Musical_Course
         }
         private void Tts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Tts.ItemsSource = MusicalBaseEntities1.GetContext().Advertisement.ToArray();
-            MusicalBaseEntities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+            Tts.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToArray();
+            MusicalBaseEntities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
         }
 
         private void BtnAddGroup_Click(object sender, RoutedEventArgs e)
@@ -228,7 +226,7 @@ namespace Musical_Course
 
         private void BtnAddAds_Click(object sender, RoutedEventArgs e)
         {
-            Manager.Frame.Navigate(new AddAdsPage());
+            //Manager.Frame.Navigate(new AddAdsPage(null));
         }
         private void BtnDeleteAds_Click(object sender, RoutedEventArgs e)
         {
@@ -251,7 +249,16 @@ namespace Musical_Course
             if (Visibility == Visibility.Visible)
             {
                 //Tts1.ItemsSource = MusicalBaseEntities.GetContext().Users.ToArray();
-                MusicalBaseEntities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                MusicalBaseEntities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+            }
+        }
+
+        private void Tts_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (Visibility == Visibility.Visible)
+            {
+                //Tts1.ItemsSource = MusicalBaseEntities.GetContext().Users.ToArray();
+                MusicalBaseEntities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
             }
         }
     }

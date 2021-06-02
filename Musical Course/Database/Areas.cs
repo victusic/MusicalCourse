@@ -21,25 +21,11 @@ namespace Musical_Course.Database
         }
     
         public int AreaId { get; set; }
-        public string Town { get; set; }
-        public string Location { get; set; }
-        public string Company { get; set; }
-        public int Representative { get; set; }
-        public string SiteType { get; set; }
-        public string SiteDescription { get; set; }
-        public int Capacity { get; set; }
-        public bool AvailabilityOfEquipment { get; set; }
-        public string Chart { get; set; }
-        public int PreliminaryCost { get; set; }
-        public string DescriptionOfTheTermsOfCooperation { get; set; }
-        public string RecommendedFocusOfTheGroup { get; set; }
-        public byte[] Photo1 { get; set; }
-        public byte[] Photo2 { get; set; }
-        public byte[] Photo3 { get; set; }
-        public byte[] Photo4 { get; set; }
-        public byte[] Photo5 { get; set; }
-        public byte[] Photo6 { get; set; }
         public string Name { get; set; }
+        public int Representative { get; set; }
+        public string Town { get; set; }
+        public string Description { get; set; }
+        public byte[] Photo1 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Advertisement> Advertisement { get; set; }

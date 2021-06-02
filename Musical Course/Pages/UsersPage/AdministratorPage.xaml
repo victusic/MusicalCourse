@@ -24,7 +24,7 @@
             <TextBlock Name="HelloText2" Text="Управление объвлениями" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 20"></TextBlock>
-            <DataGrid Name="Tts" AutoGenerateColumns="False" Margin="50, 100, 50, 80" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True">
+            <DataGrid Name="Tts" AutoGenerateColumns="False" Margin="50, 100, 50, 80" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True" IsVisibleChanged="Tts_IsVisibleChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Width="35" Binding="{Binding AdvertisementId}"/>
                     <DataGridTextColumn Header="Тип"  Width="45*" Binding="{Binding TypeAdvertisement}" />
@@ -155,9 +155,10 @@
                    Margin="0, 0, 0, 20"></TextBlock>
             <DataGrid Name="Tts5" AutoGenerateColumns="False" Margin="50, 100, 50, 60" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="№" Width="350" Binding="{Binding id}"/>
-                    <DataGridTextColumn Header="Имя"  Width="250" Binding="{Binding UserId}" />
-                    <DataGridTextColumn Header="Дата и время" Width="*" Binding="{Binding Date}"/>
+                    <DataGridTextColumn Header="№" Width="350" Binding="{Binding UserId}"/>
+                    <DataGridTextColumn Header="Имя"  Width="250" Binding="{Binding Roll}" />
+                    <DataGridTextColumn Header="Имя"  Width="250" Binding="{Binding Login}" />
+                    <DataGridTextColumn Header="Дата и время" Width="*" Binding="{Binding RegistrationDate}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
