@@ -9,6 +9,6 @@ namespace Musical_Course.Classes
     class GlobalLeVar
     {
         public static string LoginStat = "Виктор";
-        public static int UserIdStat = 2;
+        public static int UserIdStat = 5;
     }
 }

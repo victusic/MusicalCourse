@@ -8,16 +8,18 @@
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="AddAreaPage">
     <Grid>
-        <!--TextBlock x:Name="HelloText4" Foreground ="White" FontSize="42"
+        <TextBlock x:Name="HelloText4" Foreground ="White" FontSize="42"
                    FontFamily="Arial" HorizontalAlignment="Center"
-                   Margin="0, 0, 0, 20"><Run Text="Добавить"/><Run Text=" площадку"/></>
-
-        <TextBox Background="#00DDDDDD" BorderBrush="White"
+                   Margin="0, 0, 0, 20" Text="Добавить площадку"/>
+        <TextBox Background="#00DDDDDD" BorderBrush="White" Text="{Binding Name}"
                  BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
                  Margin="0,106,906,0" Name="AddBox_Name" HorizontalAlignment="Right" Width="152" Height="34" VerticalAlignment="Top"/>
-        <TextBox Background="#00DDDDDD" BorderBrush="White"
+        <TextBox Background="#00DDDDDD" BorderBrush="White" Text="{Binding Town}"
                  BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
                  Margin="0,164,906,0" Name="AddBox_Prod" HorizontalAlignment="Right" Width="152" Height="34" VerticalAlignment="Top"/>
+        <TextBox Background="#00DDDDDD" BorderBrush="White" Text="{Binding Description}"
+            BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
+            Margin="0,228,906,0" x:Name="AddBox_Work" HorizontalAlignment="Right" Width="152" Height="34" VerticalAlignment="Top"/>
         <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Добавить"
                 Foreground="White" FontFamily="Arial" FontSize="26"
@@ -26,46 +28,5 @@
                 BorderThickness="3" Content="Назад"
                 Foreground="White" FontFamily="Arial" FontSize="26"
                 Name="BtnGoBack" Click="BtnGoBack_Click" Width="151" Margin="400,397,248,10"/>
-
-        <TextBox Background="#00DDDDDD" BorderBrush="White"
-            BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
-            Margin="0,228,906,0" x:Name="AddBox_Work" HorizontalAlignment="Right" Width="152" Height="34" VerticalAlignment="Top"/>
-
-        <TextBox Background="#00DDDDDD" BorderBrush="White"
-            BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
-            Margin="0,289,906,0" x:Name="AddBox_Place" HorizontalAlignment="Right" Width="152" Height="34" VerticalAlignment="Top"/>
-
-        <TextBox Background="#00DDDDDD" BorderBrush="White"
-            BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
-            Margin="0,351,906,0" x:Name="AddBox_Price" HorizontalAlignment="Right" Width="152" Height="34" VerticalAlignment="Top"/>
-
-        <TextBox Background="#00DDDDDD" BorderBrush="White"
-            BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
-            Margin="0,410,906,0" x:Name="AddBox_Desc" HorizontalAlignment="Right" Width="150" Height="34" VerticalAlignment="Top"/>
-
-
-        <Button Background="#00DDDDDD" BorderBrush="White"
-                BorderThickness="3" Content="Загрузить"
-                Foreground="White" FontFamily="Arial" FontSize="18"
-                Name="BtnPhotoOne" Click="BtnAdd_PhotoOne_Click" Margin="602,91,88,599"/>
-        <Button Background="#00DDDDDD" BorderBrush="White"
-                BorderThickness="3" Content="Загрузить"
-                Foreground="White" FontFamily="Arial" FontSize="18"
-                Name="BtnPhotoTwo" Click="BtnAdd_PhotoTwo_Click" Margin="602,160,88,522"/>
-        <Button Background="#00DDDDDD" BorderBrush="White"
-                BorderThickness="3" Content="Загрузить"
-                Foreground="White" FontFamily="Arial" FontSize="18"
-                Name="BtnPhotoThree" Click="BtnAdd_PhotoThree_Click" Margin="602,228,88,463"/>
-        <Button Background="#00DDDDDD" BorderBrush="White"
-                BorderThickness="3" Content="Загрузить"
-                Foreground="White" FontFamily="Arial" FontSize="18"
-                Name="BtnPhotoFour" Click="BtnAdd_PhotoFour_Click" Margin="602,275,88,411"/>
-        <Button Background="#00DDDDDD" BorderBrush="White"
-                BorderThickness="3" Content="Загрузить"
-                Foreground="White" FontFamily="Arial" FontSize="18"
-                Name="BtnPhotoFive" Click="BtnAdd_PhotoFive_Click" Margin="602,347,88,335"/>
-        <CheckBox Margin="174,449,610,253">
-            <TextBox Height="92" TextWrapping="Wrap" FontSize="16" Text="Наличие оборудования" Width="177"/>
-        </CheckBox>-->
     </Grid>
 </Page>

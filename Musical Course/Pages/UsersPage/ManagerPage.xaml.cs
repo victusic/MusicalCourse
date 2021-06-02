@@ -33,7 +33,6 @@ namespace Musical_Course
             TimeSpan time12 = new TimeSpan(12, 0, 0);
             TimeSpan time18 = new TimeSpan(18, 0, 0);
             TimeSpan time24 = new TimeSpan(23, 59, 59);
-            InitializeComponent();
             if (time >= time0 && time < time6)
             {
                 HelloText.Text = "Доброй ночи, " + GlobalLeVar.LoginStat;
@@ -59,9 +58,9 @@ namespace Musical_Course
             AdvertisementGrid.Visibility = Visibility.Hidden;
             VivsibleAdvertisementGrid.Visibility = Visibility.Hidden;
             //Бд
-            Tts.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToList();
+            Tts.ItemsSource = MusicalBaseEntities2.GetContext().Areas.ToList();
             Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToList();
-            Tts2.ItemsSource = MusicalBaseEntities2.GetContext().Groups.ToList();
+            Tts2.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToList();
         }
         private void Tg_Btn_Checked(object sender, RoutedEventArgs e)
         {
@@ -143,7 +142,8 @@ namespace Musical_Course
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-
+            //Площадка редактирование
+            Manager.Frame.Navigate(new AddAreaPage((sender as Button).DataContext as Areas));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -166,6 +166,21 @@ namespace Musical_Course
         {
             //управление объявлениями
             Manager.Frame.Navigate(new AddAdsPage(null));
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            // площадка добавление
+            Manager.Frame.Navigate(new AddAreaPage(null));
+        }
+
+        private void Tts_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (Visibility == Visibility.Visible)
+            {
+                Tts.ItemsSource = MusicalBaseEntities2.GetContext().Areas.ToList();
+                //MusicalBaseEntities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+            }
         }
     }
 }
