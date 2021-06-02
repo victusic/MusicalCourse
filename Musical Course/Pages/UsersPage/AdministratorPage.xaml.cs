@@ -207,7 +207,7 @@ namespace Musical_Course
 
         private void BtnAddGroup_Click(object sender, RoutedEventArgs e)
         {
-            Manager.Frame.Navigate(new AddGroupManagerPage());
+            //Manager.Frame.Navigate(new AddGroupManagerPage());
         }
 
         private void BtnEditGroup_Click(object sender, RoutedEventArgs e)

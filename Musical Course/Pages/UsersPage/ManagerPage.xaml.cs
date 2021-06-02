@@ -182,5 +182,22 @@ namespace Musical_Course
                 //MusicalBaseEntities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
             }
         }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            //удаление площадок
+            var AreasForRemoving = Tts.SelectedItems.Cast<Areas>().ToList();
+
+            try
+            {
+                MusicalBaseEntities2.GetContext().Areas.RemoveRange(AreasForRemoving);
+                MusicalBaseEntities2.GetContext().SaveChanges();
+                Tts.ItemsSource = MusicalBaseEntities2.GetContext().Areas.ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
     }
 }

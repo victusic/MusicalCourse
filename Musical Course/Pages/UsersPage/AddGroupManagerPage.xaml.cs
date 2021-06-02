@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Musical_Course.Classes;
+using Musical_Course.Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,22 +22,67 @@ namespace Musical_Course.Pages.UsersPage
     /// </summary>
     public partial class AddGroupManagerPage : Page
     {
-        public AddGroupManagerPage()
+        private Groups _currentGroups = new Groups();
+        public AddGroupManagerPage(Groups selectedGroups)
         {
             InitializeComponent();
+
+            if (selectedGroups != null)
+            {
+                _currentGroups = selectedGroups;
+            }
+
+            DataContext = _currentGroups;
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
-            try
+
+            if (string.IsNullOrWhiteSpace(Convert.ToString(_currentGroups.Name)))
             {
-                MessageBox.Show("Информация сохранена!");
+                errors.AppendLine("Заполните поле названия");
             }
-            catch (Exception ex)
+            if (string.IsNullOrWhiteSpace(Convert.ToString(_currentGroups.DescriptionAreas)))
             {
-                MessageBox.Show(ex.Message.ToString());
+                errors.AppendLine("Заполните поле с желаемой ареной");
             }
+            if (string.IsNullOrWhiteSpace(Convert.ToString(_currentGroups.Description)))
+            {
+                errors.AppendLine("Заполните поле описания");
+            }
+            if (errors.Length > 0)
+            {
+                MessageBox.Show(errors.ToString());
+                return;
+            }
+            _currentGroups.Producer = GlobalLeVar.UserIdStat;
+            if (_currentGroups.BandId == 0)
+            {
+                try
+                {
+                    MusicalBaseEntities2.GetContext().Groups.Add(_currentGroups);
+                    MusicalBaseEntities2.GetContext().SaveChanges();
+                    MessageBox.Show("Информация сохранена");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+            else if (_currentGroups.BandId == _currentGroups.BandId)
+            {
+                try
+                {
+                    MusicalBaseEntities2.GetContext().SaveChanges();
+                    MessageBox.Show("Информация сохранена");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+            Manager.Frame.GoBack();
         }
 
         private void BtnGoBack_Click(object sender, RoutedEventArgs e)
@@ -43,29 +90,5 @@ namespace Musical_Course.Pages.UsersPage
             Manager.Frame.GoBack();
         }
 
-        private void BtnAdd_PhotoOne_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnAdd_PhotoTwo_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnAdd_PhotoThree_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnAdd_PhotoFour_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnAdd_PhotoFive_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

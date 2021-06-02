@@ -43,7 +43,7 @@
             <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Удалить"
                 Foreground="White" FontFamily="Arial" FontSize="26"
-                Name="BtnDelete" Width="151" Margin="1014,654,50,20"/>
+                Name="BtnDelete" Width="151" Margin="1014,654,50,20" Click="BtnDelete_Click"/>
             <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Добавить"
                 Foreground="White" FontFamily="Arial" FontSize="26"

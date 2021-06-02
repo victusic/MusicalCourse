@@ -86,7 +86,7 @@ namespace Musical_Course.Pages.UsersPage
 
         private void BtnGoBack_Click(object sender, RoutedEventArgs e)
         {
-
+            Manager.Frame.GoBack();
         }
     }
 }
