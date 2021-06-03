@@ -87,7 +87,7 @@
             <TextBlock Name="HelloText2" Text="Просмотр объвлений" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 20"></TextBlock>
-            <DataGrid Name="Tts2" AutoGenerateColumns="False" Margin="50, 100, 50, 80" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True">
+            <DataGrid Name="Tts2" AutoGenerateColumns="False" Margin="50,163,50,47" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Width="35" Binding="{Binding AdvertisementId}"/>
                     <!--<DataGridTextColumn Header="Тип"  Width="45*" Binding="{Binding TypeAdvertisement}" />-->
@@ -105,14 +105,7 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
-            <Button Background="#00DDDDDD" BorderBrush="White"
-                BorderThickness="3" Content="Удалить"
-                Foreground="White" FontFamily="Arial" FontSize="26"
-                Name="BtnDeleteAds2" Width="151" Margin="1014,654,50,20"/>
-            <Button Background="#00DDDDDD" BorderBrush="White"
-                BorderThickness="3" Content="Добавить"
-                Foreground="White" FontFamily="Arial" FontSize="26"
-                Name="BtnAddAds2" Width="151" Margin="50,654,1014,20"/>
+            <TextBox Margin="50,103,50,547" Name="SearchBox" TextChanged="SearchBox_TextChanged" ></TextBox>
         </Grid>
         <!--Главный фрэйм-->
 

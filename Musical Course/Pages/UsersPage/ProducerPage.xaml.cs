@@ -222,5 +222,34 @@ namespace Musical_Course
                 Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToList();
             }
         }
+
+        private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(SearchBox.Text))
+            {
+                try
+                {
+                    Tts2.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.Where(p =>
+                    p.Users.Login.ToString().ToLower().Contains(SearchBox.Text.ToLower()) ||
+                    p.Areas.Name.ToString().ToLower().Contains(SearchBox.Text.ToLower()) ||
+                    p.Groups.Name.ToString().ToLower().Contains(SearchBox.Text.ToLower())).ToList();
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка в получении данных", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                try
+                {
+                    Tts2.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToList();
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка в получении данных", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
     }
 }
