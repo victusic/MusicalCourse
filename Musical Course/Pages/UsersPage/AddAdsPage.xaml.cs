@@ -44,47 +44,54 @@ namespace Musical_Course.Pages.UsersPage
         {
             StringBuilder errors = new StringBuilder();
 
-            if (string.IsNullOrWhiteSpace(Convert.ToString(_currentAdvertisement.Area)) || string.IsNullOrWhiteSpace(Convert.ToString(_currentAdvertisement.Group)))
+            if (string.IsNullOrWhiteSpace(Convert.ToString(_currentAdvertisement.Area)) && string.IsNullOrWhiteSpace(Convert.ToString(_currentAdvertisement.Group)))
             {
                 errors.AppendLine("Укажите объявление, которое хотите опубликовать");
             }
-            _currentAdvertisement.Representative = GlobalLeVar.UserIdStat;
-            _currentAdvertisement.Moderation = 0;
-            if (_currentAdvertisement.Area != 0 && _currentAdvertisement.Group != 0)
+            else
             {
-                MessageBox.Show("Укажите номер только одного объявления нужного вам типа");
-            }
-            if (string.IsNullOrWhiteSpace(Convert.ToString(_currentAdvertisement.Group)))
-            {
-                _currentAdvertisement.TypeAdvertisement = 1;
-            }
-            if (string.IsNullOrWhiteSpace(Convert.ToString(_currentAdvertisement.Area)))
-            {
-                _currentAdvertisement.TypeAdvertisement = 2;
-            }
-            if (_currentAdvertisement.AdvertisementId == 0)
-            {
-                try
+                if (_currentAdvertisement.Area != null && _currentAdvertisement.Group != null)
                 {
-                    MusicalBaseEntities2.GetContext().Advertisement.Add(_currentAdvertisement);
-                    MusicalBaseEntities2.GetContext().SaveChanges();
-                    MessageBox.Show("Информация сохранена, далее она будет пройти проверку, после чего будет опубликованна в общий доступ");
+                    MessageBox.Show("Укажите номер только одного объявления нужного вам типа");
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message.ToString());
-                }
-            }
-            else if (_currentAdvertisement.AdvertisementId == _currentAdvertisement.AdvertisementId)
-            {
-                try
-                {
-                    MusicalBaseEntities2.GetContext().SaveChanges();
-                    MessageBox.Show("Информация сохранена");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message.ToString());
+                    if (string.IsNullOrWhiteSpace(Convert.ToString(_currentAdvertisement.Group)))
+                    {
+                        _currentAdvertisement.TypeAdvertisement = 1;
+                    }
+                    if (string.IsNullOrWhiteSpace(Convert.ToString(_currentAdvertisement.Area)))
+                    {
+                        _currentAdvertisement.TypeAdvertisement = 2;
+                    }
+                    _currentAdvertisement.Representative = GlobalLeVar.UserIdStat;
+                    _currentAdvertisement.Moderation = 0;
+                    if (_currentAdvertisement.AdvertisementId == 0)
+                    {
+                        try
+                        {
+                            MusicalBaseEntities2.GetContext().Advertisement.Add(_currentAdvertisement);
+                            MusicalBaseEntities2.GetContext().SaveChanges();
+                            MessageBox.Show("Информация сохранена, далее она будет пройти проверку, после чего будет опубликованна в общий доступ");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message.ToString());
+                        }
+                    }
+                    else if (_currentAdvertisement.AdvertisementId == _currentAdvertisement.AdvertisementId)
+                    {
+                        try
+                        {
+                            MusicalBaseEntities2.GetContext().SaveChanges();
+                            MessageBox.Show("Информация сохранена");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message.ToString());
+                        }
+                    }
+                    Manager.Frame.GoBack();
                 }
             }
         }

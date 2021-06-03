@@ -25,12 +25,12 @@
                 Name="BtnGoBack" Click="BtnGoBack_Click" Width="151" Margin="400,397,248,10"/>
         <TextBlock Foreground ="White" Text="Площадка:" FontSize="18"
             FontFamily="Arial" Height="22" Margin="0,0,706,525" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="96" />
-        <TextBox Background="#00DDDDDD" BorderBrush="White" Text="{Binding Areas}"
+        <TextBox Background="#00DDDDDD" BorderBrush="White" Text="{Binding Area}"
             BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
             Margin="0,173,510,0" x:Name="AddBoxPlace" HorizontalAlignment="Right" Width="152" Height="34" VerticalAlignment="Top"/>
         <TextBlock Foreground ="White" Text="Группа: " FontSize="18"
             FontFamily="Arial" Height="20" Margin="0,0,706,483" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="65" />
-        <TextBox Background="#00DDDDDD" BorderBrush="White" Text="{Binding Groups}"
+        <TextBox Background="#00DDDDDD" BorderBrush="White" Text="{Binding Group}"
             BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
             Margin="0,217,510,0" x:Name="AddBoxGroup" HorizontalAlignment="Right" Width="152" Height="34" VerticalAlignment="Top"/>
     </Grid>

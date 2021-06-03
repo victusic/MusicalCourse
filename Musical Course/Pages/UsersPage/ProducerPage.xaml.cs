@@ -144,16 +144,30 @@ namespace Musical_Course
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //объявления редактировать
+            Manager.Frame.Navigate(new AddAdsPage((sender as Button).DataContext as Advertisement));
         }
 
         private void BtnDeleteAds1_Click(object sender, RoutedEventArgs e)
         {
             //объявления удалить
+            var AdvertisementForRemoving = Tts1.SelectedItems.Cast<Advertisement>().ToList();
+
+            try
+            {
+                MusicalBaseEntities2.GetContext().Advertisement.RemoveRange(AdvertisementForRemoving);
+                MusicalBaseEntities2.GetContext().SaveChanges();
+                Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private void BtnAddAds1_Click(object sender, RoutedEventArgs e)
         {
             //объявления добавить
+            Manager.Frame.Navigate(new AddAdsPage(null));
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -195,6 +209,14 @@ namespace Musical_Course
             if (Visibility == Visibility.Visible)
             {
                 Tts.ItemsSource = MusicalBaseEntities2.GetContext().Groups.ToList();
+            }
+        }
+
+        private void Tts1_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (Visibility == Visibility.Visible)
+            {
+                Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToList();
             }
         }
     }

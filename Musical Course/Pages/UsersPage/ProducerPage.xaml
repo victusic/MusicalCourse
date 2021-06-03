@@ -54,7 +54,7 @@
             <TextBlock Text="Управление объвлениями" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 20"></TextBlock>
-            <DataGrid Name="Tts1" AutoGenerateColumns="False" Margin="50, 100, 50, 80" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True">
+            <DataGrid Name="Tts1" AutoGenerateColumns="False" Margin="50, 100, 50, 80" IsReadOnly="True" IsVisibleChanged="Tts1_IsVisibleChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Width="35" Binding="{Binding AdvertisementId}"/>
                     <DataGridTextColumn Header="Тип"  Width="45*" Binding="{Binding TypeAdvertisement}" />
