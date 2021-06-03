@@ -92,10 +92,11 @@
             <DataGrid Name="Tts2" AutoGenerateColumns="False" Margin="50, 100, 50, 80" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Width="35" Binding="{Binding AdvertisementId}"/>
-                    <DataGridTextColumn Header="Тип"  Width="45*" Binding="{Binding TypeAdvertisement}" />
-                    <DataGridTextColumn Header="Автор" Width="180*" Binding="{Binding Representative}"/>
-                    <DataGridTextColumn Header="Площадка" Width="250" Binding="{Binding Area}"/>
-                    <DataGridTextColumn Header="Группа" Width="250*" Binding="{Binding Group}" />
+                    <!--<DataGridTextColumn Header="Тип"  Width="45*" Binding="{Binding TypeAdvertisement}" />-->
+                    <DataGridTextColumn Header="№ Автора" Width="180*" Binding="{Binding Representative}"/>
+                    <DataGridTextColumn Header="Автор" Width="180*" Binding="{Binding Users.Login}"/>
+                    <DataGridTextColumn Header="Площадка" Width="250" Binding="{Binding Areas.Name}"/>
+                    <DataGridTextColumn Header="Группа" Width="250*" Binding="{Binding Groups.Name}" />
                     <DataGridTextColumn Header="Модерация" Width="150*" Binding="{Binding Moderation}"/>
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>

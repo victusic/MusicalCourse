@@ -154,7 +154,7 @@ namespace Musical_Course
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            Manager.Frame.Navigate(new PrintManagerPage((sender as Button).DataContext as Advertisement));
         }
 
         private void BtnDeleteAds1_Click(object sender, RoutedEventArgs e)

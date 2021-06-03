@@ -61,6 +61,7 @@ namespace Musical_Course
             //Бд
             Tts.ItemsSource = MusicalBaseEntities2.GetContext().Groups.ToList();
             Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToList();
+            //Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.Where(p => p.Representative.ToString().ToLower().Contains(Convert.ToString(GlobalLeVar.UserIdStat))).ToList();
             Tts2.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToList();
         }
         private void Tg_Btn_Checked(object sender, RoutedEventArgs e)
@@ -173,6 +174,7 @@ namespace Musical_Course
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             //объявления печать
+            Manager.Frame.Navigate(new PrintProducerPage((sender as Button).DataContext as Advertisement));
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
@@ -216,6 +218,7 @@ namespace Musical_Course
         {
             if (Visibility == Visibility.Visible)
             {
+                //Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.Where(p => p.Users.ToString().ToLower().Contains(Convert.ToString(GlobalLeVar.UserIdStat))).ToList();
                 Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToList();
             }
         }
