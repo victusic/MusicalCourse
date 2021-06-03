@@ -60,8 +60,10 @@
                     <DataGridTextColumn Header="Телефон" Width="100" Binding="{Binding Phone}"/>
                     <DataGridTextColumn Header="Логин" Width="100" Binding="{Binding Login}"/>
                     <DataGridTextColumn Header="Пароль" Width="100" Binding="{Binding Password}"/>
-                    <DataGridTextColumn Header="Онлайн" Width="100" Binding="{Binding IsActivity}"/>
+                    <DataGridTextColumn Header="Логотип" Width="100" Binding="{Binding Logo}"/>
+                    <DataGridTextColumn Header="Статус" Width="100" Binding="{Binding IsActivity}"/>
                     <DataGridTextColumn Header="Объявления" Width="150" Binding="{Binding CountAdvertisement}"/>
+                    <DataGridTextColumn Header="Дата регистрации" Width="150" Binding="{Binding RegistrationDate}"/>
                     <DataGridTemplateColumn Header="Статус" Width="*">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -83,19 +85,10 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Width="30" Binding="{Binding BandId}"/>
                     <DataGridTextColumn Header="Название"  Width="70" Binding="{Binding Name}" />
-                    <DataGridTextColumn Header="Продюссер" Width="80" Binding="{Binding Representative}"/>
-                    <DataGridTextColumn Header="Оборудование" Width="100" Binding="{Binding AvailabilityOfEquipment}"/>
-                    <DataGridTextColumn Header="Деятельность" Width="100" Binding="{Binding DescriptionOfTheActivity}" />
-                    <DataGridTextColumn Header="Площадка" Width="100" Binding="{Binding DesiredSite}"/>
-                    <DataGridTextColumn Header="Стоимость" Width="100" Binding="{Binding RecommendedCostOfTheSite}"/>
-                    <DataGridTextColumn Header="Описание" Width="100" Binding="{Binding GroupDescription}"/>
-                    <DataGridTextColumn Header="Условия" Width="100" Binding="{Binding DescriptionOfTheTermsOfCooperation}"/>
+                    <DataGridTextColumn Header="Продюссер" Width="80" Binding="{Binding Producer}"/>
+                    <DataGridTextColumn Header="Описание" Width="100" Binding="{Binding Description}"/>
+                    <DataGridTextColumn Header="Желаемая площадка" Width="100" Binding="{Binding DescriptionAreas}"/>
                     <DataGridTextColumn Header="1" Width="40" Binding="{Binding Photo1}"/>
-                    <DataGridTextColumn Header="2" Width="40" Binding="{Binding Photo2}"/>
-                    <DataGridTextColumn Header="3" Width="40" Binding="{Binding Photo3}"/>
-                    <DataGridTextColumn Header="4" Width="40" Binding="{Binding Photo4}"/>
-                    <DataGridTextColumn Header="5" Width="40" Binding="{Binding Photo5}"/>
-                    <DataGridTextColumn Header="6" Width="40" Binding="{Binding Photo6}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
@@ -109,24 +102,11 @@
             <DataGrid Name="Tts3" AutoGenerateColumns="False" Margin="50, 100, 50, 60" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Width="35" Binding="{Binding AreaId}"/>
-                    <DataGridTextColumn Header="Город"  Width="100" Binding="{Binding Town}" />
-                    <DataGridTextColumn Header="Локация" Width="100" Binding="{Binding location}"/>
-                    <DataGridTextColumn Header="Компания" Width="100" Binding="{Binding Company}"/>
-                    <DataGridTextColumn Header="Менеджер" Width="100" Binding="{Binding Representative}" />
-                    <DataGridTextColumn Header="Тип площадки" Width="80" Binding="{Binding SiteType}"/>
-                    <DataGridTextColumn Header="Описание площадки" Width="*" Binding="{Binding SiteDescription}"/>
-                    <DataGridTextColumn Header="Вместимость" Width="50" Binding="{Binding Capacity}"/>
-                    <DataGridTextColumn Header="Наличие оборудования" Width="100" Binding="{Binding AvailabilityOfEquipment}"/>
-                    <DataGridTextColumn Header="Планировка" Width="150" Binding="{Binding Chart}"/>
-                    <DataGridTextColumn Header="Базовая стоимость" Width="100" Binding="{Binding PreliminaryCost}"/>
-                    <DataGridTextColumn Header="Условия сотрудничества" Width="150" Binding="{Binding DescriptionOfTheTermsOfCooperation}"/>
-                    <DataGridTextColumn Header="Направления групп" Width="150" Binding="{Binding RecommendedFocusOfTheGroup}"/>
-                    <DataGridTextColumn Header="Изображение 1" Width="100" Binding="{Binding Photo1}"/>
-                    <DataGridTextColumn Header="Изображение 2" Width="100" Binding="{Binding Photo2}"/>
-                    <DataGridTextColumn Header="Изображение 3" Width="100" Binding="{Binding Photo3}"/>
-                    <DataGridTextColumn Header="Изображение 4" Width="100" Binding="{Binding Photo4}"/>
-                    <DataGridTextColumn Header="Изображение 5" Width="100" Binding="{Binding Photo5}"/>
-                    <DataGridTextColumn Header="Изображение 6" Width="100" Binding="{Binding Photo6}"/>
+                    <DataGridTextColumn Header="Название"  Width="200" Binding="{Binding Name}" />
+                    <DataGridTextColumn Header="Владелец" Width="200" Binding="{Binding Representative}"/>
+                    <DataGridTextColumn Header="Город" Width="200" Binding="{Binding Town}"/>
+                    <DataGridTextColumn Header="Описание" Width="200" Binding="{Binding Description}" />
+                    <DataGridTextColumn Header="Фотография" Width="80" Binding="{Binding Photo1}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
@@ -141,7 +121,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Width="250" Binding="{Binding id}"/>
                     <DataGridTextColumn Header="Имя"  Width="200" Binding="{Binding UserId}" />
-                    <DataGridTextColumn Header="Статус" Width="150" Binding="{Binding Status}"/>
+                    <DataGridTextColumn Header="Статус" Width="150" Binding="{Binding State}"/>
                     <DataGridTextColumn Header="Дата и время" Width="*" Binding="{Binding Date}"/>
                 </DataGrid.Columns>
             </DataGrid>

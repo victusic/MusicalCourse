@@ -61,8 +61,10 @@
                     <DataGridTextColumn Header="Телефон" Width="100" Binding="{Binding Phone}"/>
                     <DataGridTextColumn Header="Логин" Width="100" Binding="{Binding Login}"/>
                     <DataGridTextColumn Header="Пароль" Width="100" Binding="{Binding Password}"/>
-                    <DataGridTextColumn Header="Онлайн" Width="100" Binding="{Binding IsActivity}"/>
+                    <DataGridTextColumn Header="Логотип" Width="100" Binding="{Binding Logo}"/>
+                    <DataGridTextColumn Header="Статус" Width="100" Binding="{Binding IsActivity}"/>
                     <DataGridTextColumn Header="Объявления" Width="150" Binding="{Binding CountAdvertisement}"/>
+                    <DataGridTextColumn Header="Дата регистрации" Width="150" Binding="{Binding RegistrationDate}"/>
                     <DataGridTemplateColumn Header="Статус" Width="*">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
