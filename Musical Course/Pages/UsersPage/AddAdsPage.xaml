@@ -18,11 +18,11 @@
         <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Сохранить"
                 Foreground="White" FontFamily="Arial" FontSize="26"
-                Name="BtnAdd" Click="BtnAdd_Click" Width="151" Margin="238,397,410,10"/>
+                Name="BtnAdd" Click="BtnAdd_Click" Width="151" Margin="0,0,651,10" HorizontalAlignment="Right" Height="53" VerticalAlignment="Bottom"/>
         <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Назад"
                 Foreground="White" FontFamily="Arial" FontSize="26"
-                Name="BtnGoBack" Click="BtnGoBack_Click" Width="151" Margin="400,397,248,10"/>
+                Name="BtnGoBack" Click="BtnGoBack_Click" Height="53" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="151" Margin="655,0,0,10"/>
         <TextBlock Foreground ="White" Text="Площадка:" FontSize="18"
             FontFamily="Arial" Height="22" Margin="0,0,706,525" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="96" />
         <TextBox Background="#00DDDDDD" BorderBrush="White" Text="{Binding Area}"

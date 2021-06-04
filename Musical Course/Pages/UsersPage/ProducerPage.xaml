@@ -16,7 +16,7 @@
                    FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 120"></TextBlock>
         </Grid>
-        <Grid Margin="65,0,0,0" Name="GroupGrid" Panel.ZIndex="100">
+        <Grid Margin="65,0,0,0" Name="GroupGrid" Panel.ZIndex="10">
             <Image Source="/Musical Course;component/Resources/aMKIbShBgpg.jpg"
                     Stretch="UniformToFill"></Image>
             <TextBlock Text="Просмотр групп" Foreground ="White" FontSize="84"
@@ -42,11 +42,11 @@
             <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Удалить"
                 Foreground="White" FontFamily="Arial" FontSize="26"
-                Name="BtnDelete" Click="BtnDelete_Click" Width="151" Margin="1014,654,50,20"/>
+                Name="BtnDelete" Click="BtnDelete_Click" Margin="0,0,50,20" Height="46" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="151"/>
             <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Добавить"
                 Foreground="White" FontFamily="Arial" FontSize="26"
-                Name="BtnAdd" Click="BtnAdd_Click" Width="151" Margin="50,654,1014,20"/>
+                Name="BtnAdd" Click="BtnAdd_Click" Width="151" Margin="50,0,0,20" HorizontalAlignment="Left" Height="46" VerticalAlignment="Bottom"/>
         </Grid>
         <Grid Margin="65,0,0,0" Name="AdvertisementGrid" Panel.ZIndex="10">
             <Image Source="/Musical Course;component/Resources/registration_background.jpg" 
@@ -74,11 +74,11 @@
             <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Удалить"
                 Foreground="White" FontFamily="Arial" FontSize="26"
-                Name="BtnDeleteAds1" Width="151" Margin="1014,654,50,20" Click="BtnDeleteAds1_Click"/>
+                Name="BtnDeleteAds1" Width="151" Margin="0,0,50,20" Click="BtnDeleteAds1_Click" Height="46" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
             <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Добавить"
                 Foreground="White" FontFamily="Arial" FontSize="26"
-                Name="BtnAddAds1" Width="151" Margin="50,654,1014,20" Click="BtnAddAds1_Click"/>
+                Name="BtnAddAds1" Width="151" Margin="50,0,0,20" Click="BtnAddAds1_Click" Height="46" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
         </Grid>
 
         <Grid Margin="65,0,0,0" Name="VivsibleAdvertisementGrid" Panel.ZIndex="10">
@@ -105,7 +105,9 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
-            <TextBox Margin="50,103,50,547" Name="SearchBox" TextChanged="SearchBox_TextChanged" ></TextBox>
+            <TextBox VerticalAlignment="Top" Foreground="White" BorderBrush='White' BorderThickness="3" FontSize="20" 
+                     Background="#00000000"  Name="SearchBox" Height="37"
+                     TextChanged="SearchBox_TextChanged" Text="Поиск" Margin="50,111,765,0"  />
         </Grid>
         <!--Главный фрэйм-->
 

@@ -43,13 +43,13 @@
             <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Удалить"
                 Foreground="White" FontFamily="Arial" FontSize="26"
-                Name="BtnDelete" Width="151" Margin="1014,654,50,20" Click="BtnDelete_Click"/>
+                Name="BtnDelete" Margin="0,0,50,20" Click="BtnDelete_Click" HorizontalAlignment="Right" Width="151" Height="46" VerticalAlignment="Bottom"/>
             <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Добавить"
                 Foreground="White" FontFamily="Arial" FontSize="26"
-                Name="BtnAdd" Width="151" Margin="50,654,1014,20" Click="BtnAdd_Click"/>
+                Name="BtnAdd" Margin="50,0,0,20" Click="BtnAdd_Click" Height="46" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="151"/>
         </Grid>
-        
+
         <Grid Margin="65,0,0,0" Name="AdvertisementGrid" Panel.ZIndex="10">
             <Image Source="/Musical Course;component/Resources/registration_background.jpg" 
                Stretch="UniformToFill"></Image>
@@ -76,20 +76,20 @@
             <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Удалить"
                 Foreground="White" FontFamily="Arial" FontSize="26"
-                Name="BtnDeleteAds1" Width="151" Margin="1014,654,50,20" Click="BtnDeleteAds1_Click"/>
+                Name="BtnDeleteAds1" Width="151" Margin="0,0,50,20" Click="BtnDeleteAds1_Click" Height="46" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
             <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Добавить"
                 Foreground="White" FontFamily="Arial" FontSize="26"
-                Name="BtnAddAds1" Width="151" Margin="50,654,1014,20" Click="BtnAddAds1_Click"/>
+                Name="BtnAddAds1" Width="151" Margin="50,0,0,20" Click="BtnAddAds1_Click" Height="46" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
         </Grid>
 
-        <Grid Margin="65,0,0,0" Name="VivsibleAdvertisementGrid" Panel.ZIndex="100">
+        <Grid Margin="65,0,0,0" Name="VivsibleAdvertisementGrid" Panel.ZIndex="10">
             <Image Source="/Musical Course;component/Resources/registration_background.jpg" 
                Stretch="UniformToFill"></Image>
             <TextBlock Name="HelloText2" Text="Просмотр объвлений" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 20"></TextBlock>
-            <DataGrid Name="Tts2" AutoGenerateColumns="False" Margin="50,178,50,80" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True">
+            <DataGrid Name="Tts2" AutoGenerateColumns="False" Margin="50,170,70,60" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Width="35" Binding="{Binding AdvertisementId}"/>
                     <!--<DataGridTextColumn Header="Тип"  Width="45*" Binding="{Binding TypeAdvertisement}" />-->
@@ -107,7 +107,9 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
-            <TextBox Margin="50,103,50,547" Name="SearchBox" TextChanged="SearchBox_TextChanged" ></TextBox>
+            <TextBox VerticalAlignment="Top" Foreground="White" BorderBrush='White' BorderThickness="3" FontSize="20" 
+                     Background="#00000000"  Name="SearchBox" Height="37"
+                     TextChanged="SearchBox_TextChanged" Text="Поиск" Margin="50,111,765,0"  />
         </Grid>
 
         <!--Главный фрэйм-->
