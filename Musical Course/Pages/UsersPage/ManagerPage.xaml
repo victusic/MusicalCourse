@@ -50,13 +50,13 @@
                 Name="BtnAdd" Margin="50,0,0,20" Click="BtnAdd_Click" Height="46" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="151"/>
         </Grid>
 
-        <Grid Margin="65,0,0,0" Name="AdvertisementGrid" Panel.ZIndex="10">
+        <Grid Margin="65,0,0,0" Name="AdvertisementGrid" Panel.ZIndex="100">
             <Image Source="/Musical Course;component/Resources/registration_background.jpg" 
                Stretch="UniformToFill"></Image>
             <TextBlock Text="Управление объвлениями" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 20"></TextBlock>
-            <DataGrid Name="Tts1" AutoGenerateColumns="False" Margin="50, 100, 50, 80" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True">
+            <DataGrid Name="Tts1" AutoGenerateColumns="False" Margin="50, 100, 50, 80" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True" IsVisibleChanged="Tts1_IsVisibleChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Width="35" Binding="{Binding AdvertisementId}"/>
                     <DataGridTextColumn Header="Тип"  Width="45*" Binding="{Binding TypeAdvertisement}" />
@@ -95,7 +95,6 @@
                     <!--<DataGridTextColumn Header="Тип"  Width="45*" Binding="{Binding TypeAdvertisement}" />-->
                     <DataGridTextColumn Header="№ Автора" Width="180*" Binding="{Binding Representative}"/>
                     <DataGridTextColumn Header="Автор" Width="180*" Binding="{Binding Users.Login}"/>
-                    <DataGridTextColumn Header="Площадка" Width="250" Binding="{Binding Areas.Name}"/>
                     <DataGridTextColumn Header="Группа" Width="250*" Binding="{Binding Groups.Name}" />
                     <DataGridTextColumn Header="Модерация" Width="150*" Binding="{Binding Moderation}"/>
                     <DataGridTemplateColumn>
@@ -317,7 +316,7 @@
                         <StackPanel Orientation="Horizontal" Name="Panel2"
                                         Width="300" MouseLeftButtonDown="Panel2_MouseLeftButtonDown">
 
-                            <Image Source="/Musical Course;component/Resources/MyAdvertisement.png"
+                            <Image Source="/Musical Course;component/Resources/WeAdvertisementIcon.png"
                                        Stretch="Fill"
                                        Height="45" Width="45"/>
 

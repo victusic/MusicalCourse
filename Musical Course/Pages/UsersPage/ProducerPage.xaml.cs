@@ -24,6 +24,7 @@ namespace Musical_Course
     /// </summary>
     public partial class ProducerPage : Page
     {
+        public string mmm = Convert.ToString(GlobalLeVar.UserIdStat);
         public ProducerPage()
         {
             InitializeComponent();
@@ -59,10 +60,9 @@ namespace Musical_Course
             GroupGrid.Visibility = Visibility.Hidden;
             VivsibleAdvertisementGrid.Visibility = Visibility.Hidden;
             //Бд
-            Tts.ItemsSource = MusicalBaseEntities2.GetContext().Groups.ToList();
-            Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToList();
-            //Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.Where(p => p.Representative.ToString().ToLower().Contains(Convert.ToString(GlobalLeVar.UserIdStat))).ToList();
-            Tts2.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToList();
+            Tts.ItemsSource = MusicalBaseEntities2.GetContext().Groups.Where(p => p.Producer.ToString().ToLower().Contains(mmm.ToLower())).ToList();
+            Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.Where(p =>p.Representative.ToString().ToLower().Contains(mmm.ToLower())).ToList();
+            Tts2.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.Where(p => p.TypeAdvertisement.ToString().ToLower().Contains("1".ToLower())).ToList();
         }
         private void Tg_Btn_Checked(object sender, RoutedEventArgs e)
         {
@@ -157,7 +157,7 @@ namespace Musical_Course
             {
                 MusicalBaseEntities2.GetContext().Advertisement.RemoveRange(AdvertisementForRemoving);
                 MusicalBaseEntities2.GetContext().SaveChanges();
-                Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToList();
+                Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.Where(p => p.Representative.ToString().ToLower().Contains(mmm.ToLower())).ToList();
             }
             catch (Exception ex)
             {
@@ -192,7 +192,7 @@ namespace Musical_Course
             {
                 MusicalBaseEntities2.GetContext().Groups.RemoveRange(GroupsForRemoving);
                 MusicalBaseEntities2.GetContext().SaveChanges();
-                Tts.ItemsSource = MusicalBaseEntities2.GetContext().Groups.ToList();
+                Tts.ItemsSource = MusicalBaseEntities2.GetContext().Groups.Where(p => p.Producer.ToString().ToLower().Contains(mmm.ToLower())).ToList();
             }
             catch (Exception ex)
             {
@@ -210,7 +210,7 @@ namespace Musical_Course
         {
             if (Visibility == Visibility.Visible)
             {
-                Tts.ItemsSource = MusicalBaseEntities2.GetContext().Groups.ToList();
+                Tts.ItemsSource = MusicalBaseEntities2.GetContext().Groups.Where(p => p.Producer.ToString().ToLower().Contains(mmm.ToLower())).ToList();
             }
         }
 
@@ -218,8 +218,7 @@ namespace Musical_Course
         {
             if (Visibility == Visibility.Visible)
             {
-                //Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.Where(p => p.Users.ToString().ToLower().Contains(Convert.ToString(GlobalLeVar.UserIdStat))).ToList();
-                Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToList();
+                Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.Where(p => p.Representative.ToString().ToLower().Contains(mmm.ToLower())).ToList();
             }
         }
 
