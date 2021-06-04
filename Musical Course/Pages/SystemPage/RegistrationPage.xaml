@@ -67,7 +67,9 @@
         <ComboBox Name="List" 
                 BorderBrush="White" Margin="865,0,0,246"
                 BorderThickness="3" Foreground="Black" FontFamily="Arial"
-                FontSize="42" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="375" SelectedItem="{Binding Rolls}" DisplayMemberPath="Roll">
+                FontSize="42" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="375">
+            <TextBlock>Менеджер площадки</TextBlock>
+            <TextBlock>Продюссер группы</TextBlock>
         </ComboBox>
         <Button Content="Есть аккаунт? Войти" Foreground="White"
                    FontFamily="Arial" FontSize="16" HorizontalAlignment="Center"

@@ -42,8 +42,6 @@ namespace Musical_Course.Pages
             RegPhone_BtnGo.Visibility = Visibility.Hidden;
 
             DataContext = _currentUser;
-
-            List.ItemsSource = MusicalBaseEntities2.GetContext().Rolls.ToList();
         }
 
         private void HyperBack_Click(object sender, RoutedEventArgs e)
@@ -94,7 +92,7 @@ namespace Musical_Course.Pages
         private void RegMail_BtnGo_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
-
+          
             if (string.IsNullOrWhiteSpace(_currentUser.Login))
             {
                 errors.AppendLine("Введите логин");
@@ -123,11 +121,18 @@ namespace Musical_Course.Pages
             {
                 errors.AppendLine("Введите ваше отчество");
             }
-            //доделать
-            /*if (_currentUser.Roll == 0)
+            if (List.Text == "Продюссер группы")
+            {
+                _currentUser.Roll = 3;
+            }
+            else if (List.Text == "Менеджер площадки")
+            {
+                _currentUser.Roll = 4;
+            }
+            if (_currentUser.Roll == 0)
             {
                 errors.AppendLine("Укажите роль");
-            }*/
+            }
             if (errors.Length > 0)
             {
                 MessageBox.Show(errors.ToString(), "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -221,5 +226,6 @@ namespace Musical_Course.Pages
                 MessageBox.Show("Код указан неверный", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
     }
 }
