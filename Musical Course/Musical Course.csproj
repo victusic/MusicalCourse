@@ -347,7 +347,6 @@
     <Resource Include="Resources\info_circle_icon_184897_12.png" />
     <Resource Include="Resources\journals_icon_184876.png" />
     <Resource Include="Resources\journals_icon_1848777.png" />
-    <Resource Include="Resources\journal_text_icon_184879.png" />
     <Resource Include="Resources\journal_text_icon_184879_1.png" />
     <Resource Include="Resources\journal_text_icon_184879_2.png" />
     <Resource Include="Resources\justify_icon_184873.png" />
@@ -413,6 +412,8 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\AdvertisementIcon0.png" />
+    <Resource Include="Resources\journal_text_icon_184879.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -14,8 +14,8 @@
             <Image Source="/Musical Course;component/Resources/glav_background.jpg" 
                Stretch="UniformToFill"></Image>
             <TextBlock Name="HelloText" Text="Добро пожаловать!" Foreground ="White" FontSize="84"
-                   FontFamily="Arial" VerticalAlignment="Top" HorizontalAlignment="Center"
-                   Margin="230,252,231,0"></TextBlock>
+                   FontFamily="Arial" VerticalAlignment="Top"
+                   Margin="230,252,231,0"/>
         </Grid>
 
         <Grid Margin="65,0,0,0" Name="AdvertisementGrid" Panel.ZIndex="10">
@@ -24,7 +24,7 @@
             <TextBlock Name="HelloText2" Text="Управление объвлениями" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 20"></TextBlock>
-            <DataGrid Name="Tts" AutoGenerateColumns="False" Margin="50, 100, 50, 80" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True" IsVisibleChanged="Tts_IsVisibleChanged">
+            <DataGrid Name="Tts" AutoGenerateColumns="False" Margin="50, 100, 50, 60" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True" IsVisibleChanged="Tts_IsVisibleChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Width="35" Binding="{Binding AdvertisementId}"/>
                     <DataGridTextColumn Header="Тип"  Width="45*" Binding="{Binding TypeAdvertisement}" />
@@ -42,14 +42,14 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
-        
+
         <Grid Margin="65,0,0,0" Name="UsersGrid" Panel.ZIndex="10">
             <Image Source="/Musical Course;component/Resources/autorisation_background.jpg"
                     Stretch="UniformToFill"></Image>
             <TextBlock Name="HelloText3" Text="Просмотр базы пользователей" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 20"></TextBlock>
-            <DataGrid Name="Tts1" AutoGenerateColumns="False" Margin="50, 100, 50, 80" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True" IsVisibleChanged="Tts1_IsVisibleChanged">
+            <DataGrid Name="Tts1" AutoGenerateColumns="False" Margin="50, 100, 50, 60" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True" IsVisibleChanged="Tts1_IsVisibleChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Width="35" Binding="{Binding UserId}"/>
                     <DataGridTextColumn Header="Тип"  Width="50" Binding="{Binding Roll}" />
@@ -74,14 +74,14 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
-       
+
         <Grid Margin="65,0,0,0" Name="GroupGrid" Panel.ZIndex="10">
             <Image Source="/Musical Course;component/Resources/aMKIbShBgpg.jpg"
                     Stretch="UniformToFill"></Image>
             <TextBlock Name="HelloText4" Text="Просмотр групп" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 20"></TextBlock>
-            <DataGrid Name="Tts2" AutoGenerateColumns="False" Margin="50, 100, 50, 80" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True">
+            <DataGrid Name="Tts2" AutoGenerateColumns="False" Margin="50, 100, 50, 60" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Width="30" Binding="{Binding BandId}"/>
                     <DataGridTextColumn Header="Название"  Width="70" Binding="{Binding Name}" />
@@ -92,7 +92,7 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
-       
+
         <Grid Margin="65,0,0,0" Name="AreaGrid" Panel.ZIndex="10">
             <Image Source="/Musical Course;component/Resources/825cfc_bb4413e301654a2c802f03390aa74ff4.jpg" 
                Stretch="UniformToFill" Panel.ZIndex="-1000"></Image>
@@ -110,7 +110,7 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
-       
+
         <Grid Margin="65,0,0,0" Name="AutorisationHistoryGrid" Panel.ZIndex="10">
             <Image Source="/Musical Course;component/Resources/IconReg_Background.jpg" 
                Stretch="UniformToFill" Panel.ZIndex="-1000"></Image>
@@ -126,7 +126,7 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
-      
+
         <Grid Margin="65,0,0,0" Name="RegistrationHistoryGrid" Panel.ZIndex="10">
             <Image Source="/Musical Course;component/Resources/4560442-arms-up-podiums-concerts-lights.jpg"
                     Stretch="UniformToFill"></Image>

@@ -8,27 +8,27 @@
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="AddAreaPage">
     <Grid>
-        <Image Source="/Musical Course;component/Resources/AreaIconSmall3.png"></Image>
+        <Image Source="/Musical Course;component/Resources/IconReg_Background.jpg"></Image>
         <TextBlock x:Name="HelloText4" Foreground ="White" FontSize="42"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 60, 0, 20" Text="Добавить площадку"/>
         <TextBlock Foreground ="White" Text="Название:" FontSize="18"
-                   FontFamily="Arial" Height="22" Margin="0,0,714,502" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="86" />
+                   FontFamily="Arial" Margin="0,196,714,502" HorizontalAlignment="Right" Width="86" />
         <TextBox Background="#00DDDDDD" BorderBrush="White" Text="{Binding Name}"
                  BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
-                 Margin="571,0,557,496" Name="AddBox_Name" Height="34" VerticalAlignment="Bottom"/>
+                 Margin="571,190,557,496" Name="AddBox_Name"/>
         <TextBlock Foreground ="White" Text="Город:" FontSize="18"
-                   FontFamily="Arial" Height="22" Margin="0,0,714,462" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="56" />
+                   FontFamily="Arial" Margin="510,236,714,462" />
         <TextBox Background="#00DDDDDD" BorderBrush="White" Text="{Binding Town}"
                  BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
-                 Margin="0,229,557,0" Name="AddBox_Prod" HorizontalAlignment="Right" Width="152" Height="34" VerticalAlignment="Top"/>
+                 Margin="571,229,557,457" Name="AddBox_Prod"/>
         <TextBlock Foreground ="White" Text="Описание:" FontSize="18"
-                   FontFamily="Arial" Height="22" Margin="0,0,714,364" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="86" />
+                   FontFamily="Arial" Margin="480,334,714,364" />
         <TextBox Background="#00DDDDDD" BorderBrush="White" Text="{Binding Description}"
             BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
-            Margin="0,327,557,0" x:Name="AddBox_Work" HorizontalAlignment="Right" Width="152" Height="34" VerticalAlignment="Top"/>
+            Margin="571,327,557,359" x:Name="AddBox_Work"/>
         <Button Background="#00DDDDDD" BorderBrush="White"
-                BorderThickness="3" Content="Добавить"
+                BorderThickness="3" Content="Сохранить"
                 Foreground="White" FontFamily="Arial" FontSize="26"
                 Name="BtnAdd" Click="BtnAdd_Click" Margin="480,0,0,46" Height="53" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="151"/>
         <Button Background="#00DDDDDD" BorderBrush="White"

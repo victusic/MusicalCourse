@@ -15,14 +15,14 @@
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 60, 0, 20"><Run Text="Добавить"/><Run Text=" группу"/></TextBlock>
         <TextBlock Foreground ="White" Text="Название:" FontSize="18"
-                   FontFamily="Arial" Height="22" Margin="0,0,714,502" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="86" />
+                   FontFamily="Arial" Margin="520,262,674,436" />
         <TextBox Background="#00DDDDDD" BorderBrush="White" Text="{Binding Name}"
                  BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
-                 Margin="0,0,557,497" Name="AddBox_Name" HorizontalAlignment="Right" Width="152" Height="34" VerticalAlignment="Bottom"/>
+                 Margin="612,255,516,431" Name="AddBox_Name"/>
 
         <TextBox Background="#00DDDDDD" BorderBrush="White" Text="{Binding Description}"
                  BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
-                 Margin="0,0,557,458" Name="AddBox_Prod" HorizontalAlignment="Right" Width="152" Height="34" VerticalAlignment="Bottom"/>
+                 Margin="612,294,516,392" Name="AddBox_Prod"/>
         <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Сохранить"
                 Foreground="White" FontFamily="Arial" FontSize="26" 
@@ -33,10 +33,10 @@
                 Name="BtnGoBack" Click="BtnGoBack_Click"  Height="53" VerticalAlignment="Bottom" Margin="0,0,478,46" HorizontalAlignment="Right" Width="152"/>
         <TextBox Background="#00DDDDDD" BorderBrush="White" Text="{Binding DescriptionAreas}"
             BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
-            Margin="0,0,557,380" x:Name="AddBox_Work" HorizontalAlignment="Right" Width="152" Height="34" VerticalAlignment="Bottom"/>
+            Margin="612,372,516,314" x:Name="AddBox_Work" />
         <TextBlock Foreground ="White" Text="Продюсер:" FontSize="18"
-            FontFamily="Arial" Height="22" Margin="0,0,714,465" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="91" />
+            FontFamily="Arial" Margin="516,299,674,399" />
         <TextBlock Foreground ="White" Text="Описание:" FontSize="18"
-            FontFamily="Arial" Height="22" Margin="0,0,711,385" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="91" />
+            FontFamily="Arial" Margin="518,379,670,319" />
     </Grid>
 </Page>

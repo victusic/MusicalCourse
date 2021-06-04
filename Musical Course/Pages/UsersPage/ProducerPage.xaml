@@ -314,7 +314,7 @@
                         <StackPanel Orientation="Horizontal" Name="Panel2"
                                         Width="300" MouseLeftButtonDown="Panel2_MouseLeftButtonDown">
 
-                            <Image Source="/Musical Course;component/Resources/AddUser_bg.png"
+                            <Image Source="/Musical Course;component/Resources/AdvertisementIcon0.png"
                                        Stretch="Fill"
                                        Height="45" Width="45"/>
 

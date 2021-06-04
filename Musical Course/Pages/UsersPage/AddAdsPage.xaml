@@ -13,25 +13,25 @@
                Stretch="UniformToFill" Panel.ZIndex="-1000"></Image>
         <TextBlock x:Name="HelloText4" Foreground ="White" FontSize="42"
                    FontFamily="Arial" HorizontalAlignment="Center"
-                   Margin="0, 0, 0, 20" Text="Работа с объявлением" ></TextBlock>
+                   Margin="0, 60, 0, 20" Text="Работа с объявлением" ></TextBlock>
 
         <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Сохранить"
                 Foreground="White" FontFamily="Arial" FontSize="26"
-                Name="BtnAdd" Click="BtnAdd_Click" Width="151" Margin="0,0,651,10" HorizontalAlignment="Right" Height="53" VerticalAlignment="Bottom"/>
+                Name="BtnAdd" Click="BtnAdd_Click" Margin="478,0,0,10" Height="53" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="151"/>
         <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Назад"
                 Foreground="White" FontFamily="Arial" FontSize="26"
-                Name="BtnGoBack" Click="BtnGoBack_Click" Height="53" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="151" Margin="655,0,0,10"/>
+                Name="BtnGoBack" Click="BtnGoBack_Click" Height="53" VerticalAlignment="Bottom" Margin="0,0,474,10" HorizontalAlignment="Right" Width="151"/>
         <TextBlock Foreground ="White" Text="Площадка:" FontSize="18"
-            FontFamily="Arial" Height="22" Margin="0,0,706,525" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="96" />
+            FontFamily="Arial" Width="96" Height="22" Margin="512,279,672,419"/>
         <TextBox Background="#00DDDDDD" BorderBrush="White" Text="{Binding Area}"
             BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
-            Margin="0,173,510,0" x:Name="AddBoxPlace" HorizontalAlignment="Right" Width="152" Height="34" VerticalAlignment="Top"/>
+            Margin="612,273,516,413" x:Name="AddBoxPlace"/>
         <TextBlock Foreground ="White" Text="Группа: " FontSize="18"
-            FontFamily="Arial" Height="20" Margin="0,0,706,483" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="65" />
+            FontFamily="Arial"  Width="65" Height="20" Margin="542,324,672,376" />
         <TextBox Background="#00DDDDDD" BorderBrush="White" Text="{Binding Group}"
             BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
-            Margin="0,217,510,0" x:Name="AddBoxGroup" HorizontalAlignment="Right" Width="152" Height="34" VerticalAlignment="Top"/>
+            Margin="612,317,516,369" x:Name="AddBoxGroup"/>
     </Grid>
 </Page>

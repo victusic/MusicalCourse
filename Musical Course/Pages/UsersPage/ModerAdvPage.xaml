@@ -15,17 +15,18 @@
         2 - заблокированно
         (возможно в будущем указать причины блокировки по разным числам)
         -->
+        <Image Source="/Musical Course;component/Resources/IconReg_Background.jpg"></Image>
         <TextBlock x:Name="HelloText4" Foreground ="White" FontSize="42"
                    FontFamily="Arial" HorizontalAlignment="Center"
-                   Margin="0, 0, 0, 20"><Run Text="Допуск объявления"/></TextBlock>
+                   Margin="0, 60, 0, 20"><Run Text="Допуск объявления"/></TextBlock>
         <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Сохранить"
                 Foreground="White" FontFamily="Arial" FontSize="26"
-                Name="BtnAdd" Click="BtnAdd_Click" Width="151" Margin="238,397,410,10"/>
+                Name="BtnAdd" Click="BtnAdd_Click" Margin="478,0,0,10" Height="53" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="151"/>
         <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Назад"
                 Foreground="White" FontFamily="Arial" FontSize="26"
-                Name="BtnGoBack" Click="BtnGoBack_Click" Width="151" Margin="400,397,248,10"/>
-        <TextBox Name="Active" Width="200" Height="30" Text="{Binding Moderation}"></TextBox>
+                Name="BtnGoBack" Click="BtnGoBack_Click"  Height="53" VerticalAlignment="Bottom" Margin="0,0,474,10" HorizontalAlignment="Right" Width="151"/>
+        <TextBox Name="Active" Width="200" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Moderation}"></TextBox>
     </Grid>
 </Page>
