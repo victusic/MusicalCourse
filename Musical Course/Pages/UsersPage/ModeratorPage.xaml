@@ -12,6 +12,7 @@
         <!--Главная страница-->
         
         <Grid Margin="65,0,0,0" Name="PreviewGrid">
+            <Image Source="/Musical Course;component/Resources/HelloBackground.jpg"></Image>
             <TextBlock Name="HelloText" Text="Приветствеующий текст" Foreground ="White" FontSize="84"
                    FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 120"></TextBlock>
@@ -19,7 +20,8 @@
         
         <!--Объявления-->
         
-        <Grid Margin="65,0,0,0" Name="AdvertisementGrid" Background="Red" Panel.ZIndex="10">
+        <Grid Margin="65,0,0,0" Name="AdvertisementGrid" Panel.ZIndex="10">
+            <Image Source="/Musical Course;component/Resources/AdvertisimentBackground.jpg"></Image>
             <TextBlock Name="HelloText2" Text="Управление объвлениями" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 20"></TextBlock>
@@ -45,7 +47,7 @@
         <!--Пользователи-->
 
         <Grid Margin="65,0,0,0" Name="UsersGrid" Panel.ZIndex="10">
-            <Image Source="/Musical Course;component/Resources/autorisation_background.jpg"
+            <Image Source="/Musical Course;component/Resources/UsersBackground.jpg"
                     Stretch="UniformToFill"></Image>
             <TextBlock Name="HelloText3" Text="Просмотр базы пользователей" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"

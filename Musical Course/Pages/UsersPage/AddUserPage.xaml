@@ -9,7 +9,7 @@
       Title="AddUserPage">
 
     <Grid>
-        <Image Source="/Musical Course;component/Resources/AddUser_bg.png" 
+        <Image Source="/Musical Course;component/Resources/AddUsersBackground.png" 
                Stretch="UniformToFill" Panel.ZIndex="-1000"></Image>
         <TextBlock x:Name="HelloText4" Foreground ="White" FontSize="42"
                    FontFamily="Arial" HorizontalAlignment="Center"

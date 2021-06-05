@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Musical_Course.Pages.UsersPage"
-      mc:Ignorable="d" Background="DarkGray"
+      mc:Ignorable="d"
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="ModerAdvPage">
 
@@ -15,7 +15,7 @@
         2 - заблокированно
         (возможно в будущем указать причины блокировки по разным числам)
         -->
-        <Image Source="/Musical Course;component/Resources/IconReg_Background.jpg"></Image>
+        <Image Source="/Musical Course;component/Resources/ModerationAdvertisementBackground.jpg"></Image>
         <TextBlock x:Name="HelloText4" Foreground ="White" FontSize="42"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 60, 0, 20"><Run Text="Допуск объявления"/></TextBlock>

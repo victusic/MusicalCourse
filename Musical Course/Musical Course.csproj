@@ -277,20 +277,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\autorisation_background.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\glav_background.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\registration_background.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\AddUser_bg.png" />
-    <Resource Include="Resources\825cfc_bb4413e301654a2c802f03390aa74ff4.jpg" />
-    <Resource Include="Resources\4560442-arms-up-podiums-concerts-lights.jpg" />
-    <Resource Include="Resources\aMKIbShBgpg.jpg" />
-    <Resource Include="Resources\IconReg_Background.jpg" />
     <Resource Include="Resources\AreaIconSmall.png" />
     <Resource Include="Resources\HomeIcon.png" />
     <Resource Include="Resources\MenuActiveIcon.png" />
@@ -317,7 +303,27 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\UsersBackground.jpg" />
+    <Resource Include="Resources\RegistrationHistoryBackground.jpg" />
+    <Resource Include="Resources\RegistrationBackground.jpg" />
+    <Resource Include="Resources\ModerationAdvertisementBackground.jpg" />
+    <Resource Include="Resources\IntroBackground.jpg" />
+    <Resource Include="Resources\HelloBackground.jpg" />
+    <Resource Include="Resources\GroupsBackground.jpg" />
+    <Resource Include="Resources\DopBackground.jpg" />
+    <Resource Include="Resources\AutorisationHistoryBackground.jpg" />
+    <Resource Include="Resources\AutorisationBackground.jpg" />
+    <Resource Include="Resources\AreasBackground.jpg" />
+    <Resource Include="Resources\AdvertisimentBackground.jpg" />
+    <Resource Include="Resources\AddUsersBackground.png" />
+    <Resource Include="Resources\AddGroupsBackground.jpg" />
+    <Resource Include="Resources\AddAreasBackground.jpg" />
+    <Resource Include="Resources\AddAdvertisementBackground.jpg" />
+    <Resource Include="Resources\AboutBackground.png" />
     <Resource Include="Resources\WeAdvertisementIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Background\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

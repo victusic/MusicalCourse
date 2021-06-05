@@ -9,15 +9,14 @@
       Title="ProducerPage">
 
     <Grid>
-        <Image Source="/Musical Course;component/Resources/registration_background.jpg" 
-               Stretch="UniformToFill"></Image>
-        <Grid Margin="65,0,0,0" Name="PreviewGrid" Background="Aquamarine">
+        <Image Source="/Musical Course;component/Resources/HelloBackground.jpg"></Image>
+        <Grid Margin="65,0,0,0" Name="PreviewGrid">
             <TextBlock Name="HelloText" Text="Приветствеующий текст" Foreground ="White" FontSize="84"
                    FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 120"></TextBlock>
         </Grid>
         <Grid Margin="65,0,0,0" Name="GroupGrid" Panel.ZIndex="10">
-            <Image Source="/Musical Course;component/Resources/aMKIbShBgpg.jpg"
+            <Image Source="/Musical Course;component/Resources/GroupsBackground.jpg"
                     Stretch="UniformToFill"></Image>
             <TextBlock Text="Просмотр групп" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
@@ -49,7 +48,7 @@
                 Name="BtnAdd" Click="BtnAdd_Click" Width="151" Margin="50,0,0,20" HorizontalAlignment="Left" Height="46" VerticalAlignment="Bottom"/>
         </Grid>
         <Grid Margin="65,0,0,0" Name="AdvertisementGrid" Panel.ZIndex="10">
-            <Image Source="/Musical Course;component/Resources/registration_background.jpg" 
+            <Image Source="/Musical Course;component/Resources/DopBackground.jpg" 
                Stretch="UniformToFill"></Image>
             <TextBlock Text="Управление объвлениями" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
@@ -82,7 +81,7 @@
         </Grid>
 
         <Grid Margin="65,0,0,0" Name="VivsibleAdvertisementGrid" Panel.ZIndex="10">
-            <Image Source="/Musical Course;component/Resources/registration_background.jpg" 
+            <Image Source="/Musical Course;component/Resources/AdvertisimentBackground.jpg" 
                Stretch="UniformToFill"></Image>
             <TextBlock Name="HelloText2" Text="Просмотр объвлений" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"

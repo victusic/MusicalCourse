@@ -23,6 +23,10 @@ namespace Musical_Course.Pages.SystemPage
         public AboutProgramPage()
         {
             InitializeComponent();
+            Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.NoResize;
+            Application.Current.MainWindow.WindowState = System.Windows.WindowState.Normal;
+            Application.Current.MainWindow.Width = 1280;
+            Application.Current.MainWindow.Height = 720;
         }
 
         private void BtnGoBack_Click(object sender, RoutedEventArgs e)

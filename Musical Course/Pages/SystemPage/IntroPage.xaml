@@ -9,7 +9,7 @@
       Title="IntroPage">
 
     <Grid>
-        <Image Source="/Musical Course;component/Resources/glav_background.jpg" Stretch="UniformToFill"/>
+        <Image Source="/Musical Course;component/Resources/IntroBackground.jpg"/>
         <TextBlock Foreground ="White" Text="Musical Contract" FontSize="84"
                    FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 280"></TextBlock>

@@ -63,9 +63,69 @@ namespace Musical_Course.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AboutBackground {
+            get {
+                object obj = ResourceManager.GetObject("AboutBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AddAdvertisementBackground {
+            get {
+                object obj = ResourceManager.GetObject("AddAdvertisementBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AddAreasBackground {
+            get {
+                object obj = ResourceManager.GetObject("AddAreasBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AddGroupsBackground {
+            get {
+                object obj = ResourceManager.GetObject("AddGroupsBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AddUsersBackground {
+            get {
+                object obj = ResourceManager.GetObject("AddUsersBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AdvertisementIcon {
             get {
                 object obj = ResourceManager.GetObject("AdvertisementIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AdvertisimentBackground {
+            get {
+                object obj = ResourceManager.GetObject("AdvertisimentBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +143,29 @@ namespace Musical_Course.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap autorisation_background {
+        internal static System.Drawing.Bitmap AreasBackground {
             get {
-                object obj = ResourceManager.GetObject("autorisation_background", resourceCulture);
+                object obj = ResourceManager.GetObject("AreasBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AutorisationBackground {
+            get {
+                object obj = ResourceManager.GetObject("AutorisationBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AutorisationHistoryBackground {
+            get {
+                object obj = ResourceManager.GetObject("AutorisationHistoryBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +183,9 @@ namespace Musical_Course.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ExitIcon {
+        internal static System.Drawing.Bitmap DopBackground {
             get {
-                object obj = ResourceManager.GetObject("ExitIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("DopBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +193,9 @@ namespace Musical_Course.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap glav_background {
+        internal static System.Drawing.Bitmap ExitIcon {
             get {
-                object obj = ResourceManager.GetObject("glav_background", resourceCulture);
+                object obj = ResourceManager.GetObject("ExitIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +213,39 @@ namespace Musical_Course.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GroupsBackground {
+            get {
+                object obj = ResourceManager.GetObject("GroupsBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HelloBackground {
+            get {
+                object obj = ResourceManager.GetObject("HelloBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap HomeIcon {
             get {
                 object obj = ResourceManager.GetObject("HomeIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IntroBackground {
+            get {
+                object obj = ResourceManager.GetObject("IntroBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +273,29 @@ namespace Musical_Course.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap registration_background {
+        internal static System.Drawing.Bitmap ModerationAdvertisementBackground {
             get {
-                object obj = ResourceManager.GetObject("registration_background", resourceCulture);
+                object obj = ResourceManager.GetObject("ModerationAdvertisementBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RegistrationBackground {
+            get {
+                object obj = ResourceManager.GetObject("RegistrationBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RegistrationHistoryBackground {
+            get {
+                object obj = ResourceManager.GetObject("RegistrationHistoryBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +306,16 @@ namespace Musical_Course.Properties {
         internal static System.Drawing.Bitmap RegistrationHistoryIcon {
             get {
                 object obj = ResourceManager.GetObject("RegistrationHistoryIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UsersBackground {
+            get {
+                object obj = ResourceManager.GetObject("UsersBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

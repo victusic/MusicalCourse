@@ -8,7 +8,7 @@
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="RegistrationPage">
     <Grid>
-        <Image Source="/Musical Course;component/Resources/IconReg_Background.jpg" 
+        <Image Source="/Musical Course;component/Resources/RegistrationBackground.jpg" 
                Stretch="UniformToFill"></Image>
         <TextBlock Foreground ="White" Text="Регистрация" FontSize="64"
                    FontFamily="Arial" Margin="0,40,0,0" Height="74" VerticalAlignment="Top" Width="374" />

@@ -8,7 +8,7 @@
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="AutorisationPage">
     <Grid>
-        <Image Source="/Musical Course;component/Resources/IconReg_Background.jpg" 
+        <Image Source="/Musical Course;component/Resources/AutorisationBackground.jpg" 
                Stretch="UniformToFill" Panel.ZIndex="-1000"></Image>
         <TextBlock Foreground ="White" Text="Авторизация" FontSize="64"
                    FontFamily="Arial" VerticalAlignment="Top" Margin="0, 50, 0, 0" 

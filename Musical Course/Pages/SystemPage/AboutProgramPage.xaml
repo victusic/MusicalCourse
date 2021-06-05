@@ -9,7 +9,7 @@
       Title="AboutProgramPage">
 
     <Grid>
-        <Image Source="/Musical Course;component/Resources/glav_background.jpg" Stretch="UniformToFill"/>
+        <Image Source="/Musical Course;component/Resources/AboutBackground.png" Stretch="UniformToFill"/>
         <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Назад"
                 Foreground="White" FontFamily="Arial" FontSize="26"

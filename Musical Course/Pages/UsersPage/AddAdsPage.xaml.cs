@@ -26,6 +26,10 @@ namespace Musical_Course.Pages.UsersPage
         public AddAdsPage(Advertisement selectedAdvertisement)
         {
             InitializeComponent();
+            Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.NoResize;
+            Application.Current.MainWindow.WindowState = System.Windows.WindowState.Normal;
+            Application.Current.MainWindow.Width = 1280;
+            Application.Current.MainWindow.Height = 720;
 
             if (selectedAdvertisement != null)
             {
@@ -37,6 +41,7 @@ namespace Musical_Course.Pages.UsersPage
 
         private void BtnGoBack_Click(object sender, RoutedEventArgs e)
         {
+            Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
             Manager.Frame.GoBack();
         }
 
@@ -91,6 +96,7 @@ namespace Musical_Course.Pages.UsersPage
                             MessageBox.Show(ex.Message.ToString());
                         }
                     }
+                    Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
                     Manager.Frame.GoBack();
                 }
             }

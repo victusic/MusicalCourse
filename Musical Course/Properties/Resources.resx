@@ -118,29 +118,62 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AboutBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AboutBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddAdvertisementBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddAdvertisementBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddAreasBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddAreasBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddGroupsBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddGroupsBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddUsersBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddUsersBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AdvertisementIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AdvertisementIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AdvertisimentBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AdvertisimentBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AreaIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AreaIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AreasBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AreasBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AutorisationBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AutorisationBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AutorisationHistoryBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AutorisationHistoryBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AutorisationHistoryIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AutorisationHistoryIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="autorisation_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\autorisation_background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DopBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DopBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ExitIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ExitIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="glav_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\glav_background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="GroupIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GroupIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GroupsBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GroupsBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HelloBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HelloBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="HomeIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HomeIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IntroBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IntroBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MenuActiveIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MenuActiveIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,11 +181,20 @@
   <data name="MenuIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MenuIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ModerationAdvertisementBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModerationAdvertisementBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistrationBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RegistrationBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistrationHistoryBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RegistrationHistoryBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="RegistrationHistoryIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RegistrationHistoryIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="registration_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\registration_background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UsersBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UsersBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UsersIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UsersIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

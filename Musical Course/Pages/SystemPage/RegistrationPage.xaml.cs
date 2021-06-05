@@ -177,10 +177,11 @@ namespace Musical_Course.Pages
                         MailAddress to = new MailAddress(RegBox_Mail.Text);
                         // создаем объект сообщения
                         MailMessage m = new MailMessage(from, to);
+                        m.Attachments.Add(new Attachment("../../Resources/BackgroundMail.jpg"));
                         // тема письма
-                        m.Subject = "Тест";
+                        m.Subject = "Регистрация аккаунта";
                         // текст письма
-                        m.Body = code;
+                        m.Body = "Код для входа: " code;
                         // письмо представляет код html
                         m.IsBodyHtml = true;
                         // адрес smtp-сервера и порт, с которого будем отправлять письмо

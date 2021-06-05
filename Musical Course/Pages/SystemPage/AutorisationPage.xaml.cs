@@ -90,7 +90,8 @@ namespace Musical_Course.Pages
                                     /*MailAddress from = new MailAddress("dlya_d_raboty_raboty@mail.ru", "Sound Production");
                                     MailAddress to = new MailAddress(user.Mail);
                                     MailMessage m = new MailMessage(from, to);
-                                    m.Subject = "Тест";
+                                    m.Attachments.Add(new Attachment("../../Resources/BackgroundMail2.jpg"));
+                                    m.Subject = "Вход в приложение";
                                     m.Body = "С вашего аккаунта " + user.Login + " был совершён вход в систему " + DateTime.Now + " - если это не вы, обратитесь в нашу службу поддержки";
                                     m.IsBodyHtml = true;
                                     // адрес smtp-сервера и порт, с которого будем отправлять письмо
@@ -107,7 +108,8 @@ namespace Musical_Course.Pages
                                     /*MailAddress from = new MailAddress("dlya_d_raboty_raboty@mail.ru", "Sound Production");
                                     MailAddress to = new MailAddress(user.Mail);
                                     MailMessage m = new MailMessage(from, to);
-                                    m.Subject = "Тест";
+                                    m.Attachments.Add(new Attachment("../../Resources/BackgroundMail2.jpg"));
+                                    m.Subject = "Вход в приложение";
                                     m.Body = "С вашего аккаунта " + user.Login + " был совершён вход в систему " + DateTime.Now + " - если это не вы, обратитесь в нашу службу поддержки";
                                     m.IsBodyHtml = true;
                                     // адрес smtp-сервера и порт, с которого будем отправлять письмо

@@ -9,7 +9,7 @@
       Title="ManagerPage">
 
     <Grid >
-        <Image Source="/Musical Course;component/Resources/registration_background.jpg" 
+        <Image Source="/Musical Course;component/Resources/HelloBackground.jpg" 
                Stretch="UniformToFill"></Image>
         <Grid Margin="65,0,0,0" Name="PreviewGrid" Panel.ZIndex="10">
             <TextBlock Name="HelloText" Text="Приветствеующий текст" Foreground ="White" FontSize="84"
@@ -18,7 +18,7 @@
         </Grid>
 
         <Grid Margin="65,0,0,0" Name="AreaGrid" Panel.ZIndex="10">
-            <Image Source="/Musical Course;component/Resources/825cfc_bb4413e301654a2c802f03390aa74ff4.jpg" 
+            <Image Source="/Musical Course;component/Resources/AreasBackground.jpg" 
                Stretch="UniformToFill" Panel.ZIndex="-1000"></Image>
             <TextBlock Text="Ваши площадки" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
@@ -51,7 +51,7 @@
         </Grid>
 
         <Grid Margin="65,0,0,0" Name="AdvertisementGrid" Panel.ZIndex="100">
-            <Image Source="/Musical Course;component/Resources/registration_background.jpg" 
+            <Image Source="/Musical Course;component/Resources/DopBackground.jpg" 
                Stretch="UniformToFill"></Image>
             <TextBlock Text="Управление объвлениями" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
@@ -84,7 +84,7 @@
         </Grid>
 
         <Grid Margin="65,0,0,0" Name="VivsibleAdvertisementGrid" Panel.ZIndex="10">
-            <Image Source="/Musical Course;component/Resources/registration_background.jpg" 
+            <Image Source="/Musical Course;component/Resources/AdvertisimentBackground.jpg" 
                Stretch="UniformToFill"></Image>
             <TextBlock Name="HelloText2" Text="Просмотр объвлений" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
