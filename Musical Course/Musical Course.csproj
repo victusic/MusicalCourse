@@ -141,16 +141,10 @@
     <Compile Include="Pages\UsersPage\PrintProducerPage.xaml.cs">
       <DependentUpon>PrintProducerPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageTest.xaml.cs">
-      <DependentUpon>PageTest.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="test.xaml.cs">
-      <DependentUpon>test.xaml</DependentUpon>
     </Compile>
     <Page Include="Pages\SystemPage\AboutProgramPage.xaml">
       <SubType>Designer</SubType>
@@ -221,14 +215,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\UsersPage\ProducerPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PageTest.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

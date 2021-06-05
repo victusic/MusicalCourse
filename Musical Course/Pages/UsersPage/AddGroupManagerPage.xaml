@@ -14,29 +14,29 @@
         <TextBlock x:Name="HelloText4" Foreground ="White" FontSize="42"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 60, 0, 20"><Run Text="Добавить"/><Run Text=" группу"/></TextBlock>
-        <TextBlock Foreground ="White" Text="Название:" FontSize="18"
-                   FontFamily="Arial" Margin="520,262,674,436" />
+        <TextBlock Foreground ="White" Text="Название:"
+                   FontFamily="Arial" Margin="358,261,0,0" FontSize="36" Height="40"  Width="176" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <TextBox Background="#00DDDDDD" BorderBrush="White" Text="{Binding Name}"
-                 BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
-                 Margin="612,255,516,431" Name="AddBox_Name"/>
+                 BorderThickness="3" Foreground="White" FontFamily="Arial" 
+                 Margin="534,255,0,0" Name="AddBox_Name" FontSize="42" Width="375" Height="54"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
         <TextBox Background="#00DDDDDD" BorderBrush="White" Text="{Binding Description}"
                  BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
-                 Margin="612,294,516,392" Name="AddBox_Prod"/>
+                 Margin="534,314,0,0" Name="AddBox_Prod" Width="375" Height="54"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Сохранить"
-                Foreground="White" FontFamily="Arial" FontSize="26" 
-                Name="BtnAdd" Click="BtnAdd_Click" Width="151" Margin="480,0,0,46" HorizontalAlignment="Left" Height="53" VerticalAlignment="Bottom"/>
+                Foreground="White" FontFamily="Arial" Name="BtnAdd"
+                Click="BtnAdd_Click" FontSize="42" Width="300" Height="60" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10"/>
         <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Назад"
-                Foreground="White" FontFamily="Arial" FontSize="26"
-                Name="BtnGoBack" Click="BtnGoBack_Click"  Height="53" VerticalAlignment="Bottom" Margin="0,0,478,46" HorizontalAlignment="Right" Width="152"/>
+                Foreground="White" FontFamily="Arial" 
+                Name="BtnGoBack" Click="BtnGoBack_Click" FontSize="42" Width="300" Height="60" VerticalAlignment="Bottom" Margin="0,0,23,10" HorizontalAlignment="Right"/>
         <TextBox Background="#00DDDDDD" BorderBrush="White" Text="{Binding DescriptionAreas}"
             BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
-            Margin="612,372,516,314" x:Name="AddBox_Work" />
-        <TextBlock Foreground ="White" Text="Продюсер:" FontSize="18"
-            FontFamily="Arial" Margin="516,299,674,399" />
-        <TextBlock Foreground ="White" Text="Описание:" FontSize="18"
-            FontFamily="Arial" Margin="518,379,670,319" />
+            Margin="534,373,0,0" x:Name="AddBox_Work" HorizontalAlignment="Left" Width="375" Height="54" VerticalAlignment="Top" />
+        <TextBlock Foreground ="White" Text="Продюсер:" FontSize="36"
+            FontFamily="Arial" Margin="347,319,0,0" HorizontalAlignment="Left" Height="40"  Width="182" VerticalAlignment="Top" />
+        <TextBlock Foreground ="White" Text="Описание:" FontSize="36"
+            FontFamily="Arial" Margin="353,379,0,0" HorizontalAlignment="Left" Height="40"  Width="176" VerticalAlignment="Top" />
     </Grid>
 </Page>

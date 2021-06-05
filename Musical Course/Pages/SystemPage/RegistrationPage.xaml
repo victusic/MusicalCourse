@@ -12,16 +12,16 @@
                Stretch="UniformToFill"></Image>
         <TextBlock Foreground ="White" Text="Регистрация" FontSize="64"
                    FontFamily="Arial" Margin="0,40,0,0" Height="74" VerticalAlignment="Top" Width="374" />
-        <TextBlock Foreground ="White" Text="Лого:" FontSize="36"
-                   FontFamily="Arial" Margin="774,500,0,179" HorizontalAlignment="Left" Width="86" />
-        <Button Background="#00DDDDDD" BorderBrush="White"
-                BorderThickness="3" Margin="865,490,0,170" Content="Загрузить"
+        <!-- <TextBlock Foreground ="White" Text="Лого:" FontSize="36"
+                   FontFamily="Arial" Margin="0,500,420,179" HorizontalAlignment="Right" Width="86" />  -->
+        <!-- <Button Background="#00DDDDDD" BorderBrush="White"
+                BorderThickness="3" Margin="0,490,221,170" Content="Загрузить"
                 Foreground="White" FontFamily="Arial" FontSize="36"
-                Name="Reg_BtnLogo" Click="Reg_BtnLogo_Click" HorizontalAlignment="Left" Width="194"/>
+                Name="Reg_BtnLogo" Click="Reg_BtnLogo_Click" HorizontalAlignment="Right" Width="194"/> -->
         <TextBlock Foreground ="White" Text="Логин:" FontSize="36"
-                   FontFamily="Arial" Margin="753,164,0,515" HorizontalAlignment="Left" Width="107"/>
+                   FontFamily="Arial" Margin="753,164,0,0" Height="41" VerticalAlignment="Top" HorizontalAlignment="Left" Width="107"/>
         <TextBlock Foreground ="White" Text="Пароль:" FontSize="36"
-                   FontFamily="Arial" Margin="726,239,0,440" HorizontalAlignment="Left" Width="134" />
+                   FontFamily="Arial" Margin="726,242,0,0" HorizontalAlignment="Left" Width="134" Height="41" VerticalAlignment="Top" />
         <TextBlock Foreground ="White" Text="Почта:" FontSize="36"
                    FontFamily="Arial" VerticalAlignment="Top" Margin="0,424,1088,0" 
                    HorizontalAlignment="Right" ></TextBlock>
@@ -29,10 +29,10 @@
                    FontFamily="Arial" VerticalAlignment="Top" Margin="0,500,1085,0" 
                    HorizontalAlignment="Right" Width="163" ></TextBlock>
         <TextBlock Foreground ="White" Text="Роль:" FontSize="36"
-                   FontFamily="Arial" Margin="769,433,0,0" Height="41" VerticalAlignment="Top" HorizontalAlignment="Left" Width="91" RenderTransformOrigin="0.498,0.523" />
+                   FontFamily="Arial" Margin="769,427,0,0" RenderTransformOrigin="0.498,0.523" HorizontalAlignment="Left" Width="91" Height="41" VerticalAlignment="Top" />
         <TextBox Background="#00DDDDDD" BorderBrush="White"  Text="{Binding Login}" 
                  BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
-                 Margin="865,156,0,0" Name="RegBox_Auth" HorizontalAlignment="Left" Width="375" Height="60" VerticalAlignment="Top"/>
+                 Margin="865,156,0,0" Name="RegBox_Auth" HorizontalAlignment="Left" Width="375" Height="54" VerticalAlignment="Top"/>
         <TextBox Background="#00DDDDDD" BorderBrush="White"  Text="{Binding Password}"
                  BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
                  Margin="865,233,0,0" Name="PasswordBox_Auth" HorizontalAlignment="Left" Width="375" Height="60" VerticalAlignment="Top"/>
@@ -65,9 +65,9 @@
                 Foreground="White" FontFamily="Arial" FontSize="42"
                 Name="Reg_BtnGo" Click="Reg_BtnGo_Click" Height="60" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="300"/>
         <ComboBox Name="List" 
-                BorderBrush="White" Margin="865,0,0,246"
+                BorderBrush="White" Margin="865,424,0,0"
                 BorderThickness="3" Foreground="Black" FontFamily="Arial"
-                FontSize="42" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="375">
+                FontSize="42" HorizontalAlignment="Left" Width="375" Height="50" VerticalAlignment="Top">
             <TextBlock>Менеджер площадки</TextBlock>
             <TextBlock>Продюссер группы</TextBlock>
         </ComboBox>
@@ -76,11 +76,11 @@
                    VerticalAlignment="Bottom" Margin="0, 0, 0, 5"
                    Background="#00DDDDDD" BorderThickness="0" Name="HyperBack" Click="HyperBack_Click" 
                 ></Button>
-        <TextBox Height="60" Background="#00DDDDDD" BorderBrush="White"
+        <TextBox Background="#00DDDDDD" BorderBrush="White"
             BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
-            Margin="0,313,40,0" x:Name="RegBox_code" VerticalAlignment="Top" HorizontalAlignment="Right" Width="375"/>
+            Margin="865,313,0,0" x:Name="RegBox_code" HorizontalAlignment="Left" Width="375" Height="60" VerticalAlignment="Top"/>
         <TextBlock Foreground ="White" Text="Код:" FontSize="36"
-            FontFamily="Arial" Margin="796,326,0,353" HorizontalAlignment="Left" Width="64" />
+            FontFamily="Arial" Margin="789,318,0,0" HorizontalAlignment="Left" Width="71" Height="41" VerticalAlignment="Top" />
         <Button Background="#00DDDDDD" BorderBrush="White"
             BorderThickness="3" Margin="490,0,0,55" Content="Продолжить"
             Foreground="White" FontFamily="Arial" FontSize="42"

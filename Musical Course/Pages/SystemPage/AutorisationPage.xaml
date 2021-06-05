@@ -17,12 +17,12 @@
                    FontFamily="Arial" Height="41" Margin="0,0,870,438" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="107" />
         <TextBlock Foreground ="White" Text="Пароль:" FontSize="36"
                    FontFamily="Arial" Height="41"  Width="136" Margin="0,0,870,339" VerticalAlignment="Bottom" HorizontalAlignment="Right" />
-        <TextBox Width="450" Height="60" Background="#00DDDDDD" BorderBrush="White"
+        <TextBox Background="#00DDDDDD" BorderBrush="White"
                  BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
-                 Margin="0, 0, 0, 200" Name="LoginBox_Auth"></TextBox>
-        <PasswordBox Width="450" Height="60" Background="#00DDDDDD" BorderBrush="White"
+                 Margin="0,0,415,430" Name="LoginBox_Auth" Height="60" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="450"/>
+        <PasswordBox Height="60" Background="#00DDDDDD" BorderBrush="White"
                  BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
-                 Margin="0, 0, 0, 0" Name="PasswordBox_Auth"></PasswordBox>
+                 Margin="0,0,415,327" Name="PasswordBox_Auth" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="450"/>
         <Button Width="300" Height="60" Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Margin="0, 280, 0, 0" Content="Войти"
                 Foreground="White" FontFamily="Arial" FontSize="42"

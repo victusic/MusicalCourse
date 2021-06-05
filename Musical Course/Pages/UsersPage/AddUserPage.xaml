@@ -18,11 +18,11 @@
         <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Сохранить"
                 Foreground="White" FontFamily="Arial" FontSize="26"
-                Name="BtnAdd" Click="BtnAdd_Click" Width="151" Margin="239,0,0,10" Height="43" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+                Name="BtnAdd" Click="BtnAdd_Click" Width="151" Margin="10,0,0,10" Height="43" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
         <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Назад"
                 Foreground="White" FontFamily="Arial" FontSize="26"
-                Name="BtnGoBack" Click="BtnGoBack_Click" Width="151" Height="43" HorizontalAlignment="Right" Margin="0,0,245,10" VerticalAlignment="Bottom"/>
+                Name="BtnGoBack" Click="BtnGoBack_Click" Width="151" Height="43" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom"/>
         <TextBox Name="Active" Width="200" Height="30" Text="{Binding IsActivity}"></TextBox>
     </Grid>
 </Page>
