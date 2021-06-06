@@ -14,8 +14,23 @@
                 BorderThickness="3" Content="Назад"
                 Foreground="White" FontFamily="Arial" FontSize="26"
                 Name="BtnGoBack" Click="BtnGoBack_Click" Width="151" Margin="0,0,21,10" HorizontalAlignment="Right" Height="43" VerticalAlignment="Bottom"/>
-        <TextBlock Foreground ="White" Text="Авторизация" FontSize="36"
+        <TextBlock Foreground ="White" Text="Sound Production" FontSize="36"
+            FontFamily="Arial" VerticalAlignment="Center" TextAlignment="Center"
+            HorizontalAlignment="Center" Margin="0,0,0,400" Width="800" />
+        <TextBlock Foreground ="White" FontSize="16"
             FontFamily="Arial" VerticalAlignment="Center"
-            HorizontalAlignment="Center" Margin="287,135,298,274" />
+            HorizontalAlignment="Center" Margin="0,0,0,0" Width="800">
+            Программа Sound Production предназначена для максимально упрощенного установления договоров
+            <LineBreak />на проведение музыкальных концертов.
+            <LineBreak />
+                    Продюсерам предоставлена возможность регистрации групп и бронирование площадок
+            <LineBreak />на проведение концертов.
+            <LineBreak />
+                    Администрация имеет возможность отслеживать историю авторизации пользователей, регистрировать
+            <LineBreak />их и блокировать при необходимости.
+            <LineBreak />
+                    Пользователям программы предоставлена возможность регистрации и авторизации для дальнейшего 
+            <LineBreak />просмотра уже зарегистрированных концертов.
+        </TextBlock>
     </Grid>
 </Page>
