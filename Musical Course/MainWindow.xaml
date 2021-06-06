@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Musical_Course"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280" MinHeight="720" MinWidth="1280"
-        MaxHeight="1080" MaxWidth="1980">
+        mc:Ignorable="d" 
+        Title="Sound Production" Height="720" Width="1280" MinHeight="720" MinWidth="1280"
+        MaxHeight="1080" MaxWidth="1980" WindowStartupLocation="CenterScreen">
     <Grid>
         <Frame Name="Frame" NavigationUIVisibility="Hidden"></Frame>
     </Grid>

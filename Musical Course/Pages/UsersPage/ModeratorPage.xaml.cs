@@ -144,8 +144,8 @@ namespace Musical_Course
         {
             if(Visibility == Visibility.Visible)
             {
-                //Tts.ItemsSource = MusicalBaseEntities1.GetContext().Advertisement.ToArray();
-                MusicalBaseEntities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                Tts.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToArray();
+                //MusicalBaseEntities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
             }
         }
 
@@ -154,7 +154,7 @@ namespace Musical_Course
             if (Visibility == Visibility.Visible)
             {
                 Tts.ItemsSource = MusicalBaseEntities2.GetContext().Users.ToArray();
-                MusicalBaseEntities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                //MusicalBaseEntities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
             }
         }
     }

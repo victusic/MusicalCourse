@@ -17,26 +17,26 @@
             <FixedDocument>
                 <PageContent>
                     <FixedPage>
-                        <Grid Margin="20" Width="770" Height="1010" Background="Purple">
+                        <Grid Margin="20" Width="770" Height="1010">
                             <Grid Margin="0, 0, 0, 800" Width="770" Height="50" Background="Black">
                                 <TextBlock Margin="5" Text="Площадка" FontSize="26" Foreground="White"/>
                             </Grid>
-                            <Grid Margin="10, 70, 10, 0" Width="795" Height="400" Background="Red">
+                            <Grid Margin="10, 70, 10, 0" Width="795" Height="400">
                                 <TextBlock Text="Название:" Margin="0, 10, 590, 0" Width="200" FontSize="26"></TextBlock>
                                 <TextBlock Text="Город:" Margin="0, 50, 590, 0" Width="200" FontSize="26"></TextBlock>
                                 <TextBlock Text="Описание:" Margin="0, 90, 590, 0" Width="200" FontSize="26"></TextBlock>
                                 <TextBlock Text="Фамилия:" Margin="0, 130, 590, 0" Width="200" FontSize="26"></TextBlock>
                                 <TextBlock Text="Имя:" Margin="0, 170, 590, 0" Width="200" FontSize="26"></TextBlock>
-                                <TextBlock Text="Номер телефона:" Margin="0, 210, 590, 0" Width="200" FontSize="26"></TextBlock>
+                                <TextBlock Text="Номер телефона:" Margin="0, 210, 590, 0" Width="210" FontSize="26"></TextBlock>
                                 <TextBlock Text="Почта:" Margin="0, 250, 590, 0" Width="200" FontSize="26"></TextBlock>
 
-                                <TextBlock Text="{Binding Groups.Name}" Margin="0, 10, 290, 0" Width="200" FontSize="26"></TextBlock>
-                                <TextBlock Text="{Binding Groups.Description}" Margin="0, 50, 290, 0" Width="200" FontSize="26"></TextBlock>
-                                <TextBlock Text="{Binding Groups.DescriptionAreas}" Margin="0, 90, 290, 0" Width="200" FontSize="26"></TextBlock>
-                                <TextBlock Text="{Binding Users.Surname}" Margin="0, 130, 290, 0" Width="200" FontSize="26"></TextBlock>
-                                <TextBlock Text="{Binding Users.Name}" Margin="0, 170, 290, 0" Width="200" FontSize="26"></TextBlock>
-                                <TextBlock Text="{Binding Users.Phone}" Margin="0, 210, 290, 0" Width="200" FontSize="26"></TextBlock>
-                                <TextBlock Text="{Binding Users.Mail}" Margin="0, 250, 290, 0" Width="200" FontSize="26"></TextBlock>
+                                <TextBlock Text="{Binding Groups.Name}" Margin="0, 10, 90, 0" Width="400" FontSize="26"></TextBlock>
+                                <TextBlock Text="{Binding Groups.Description}" Margin="0, 50, 90, 0" Width="400" FontSize="26"></TextBlock>
+                                <TextBlock Text="{Binding Groups.DescriptionAreas}" Margin="0, 90, 90, 0" Width="400" FontSize="26"></TextBlock>
+                                <TextBlock Text="{Binding Users.Surname}" Margin="0, 130, 90, 0" Width="400" FontSize="26"></TextBlock>
+                                <TextBlock Text="{Binding Users.Name}" Margin="0, 170, 90, 0" Width="400" FontSize="26"></TextBlock>
+                                <TextBlock Text="{Binding Users.Phone}" Margin="0, 210, 90, 0" Width="400" FontSize="26"></TextBlock>
+                                <TextBlock Text="{Binding Users.Mail}" Margin="0, 250, 90, 0" Width="400" FontSize="26"></TextBlock>
                             </Grid>
                         </Grid>
                     </FixedPage>

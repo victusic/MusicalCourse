@@ -9,11 +9,13 @@
       Title="ProducerPage">
 
     <Grid>
-        <Image Source="/Musical Course;component/Resources/HelloBackground.jpg"></Image>
-        <Grid Margin="65,0,0,0" Name="PreviewGrid">
+
+        <Grid Margin="65,0,0,0" Name="PreviewGrid" Panel.ZIndex="100">
+            <Image Source="/Musical Course;component/Resources/HelloBackground.jpg" Stretch="UniformToFill"></Image>
             <TextBlock Name="HelloText" Text="Приветствеующий текст" Foreground ="White" FontSize="84"
-                   FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Center"
-                   Margin="0, 0, 0, 120"></TextBlock>
+                   FontFamily="Arial" VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                   Margin="32,0,32,576" Width="1151" TextAlignment="Center"></TextBlock>
+
         </Grid>
         <Grid Margin="65,0,0,0" Name="GroupGrid" Panel.ZIndex="10">
             <Image Source="/Musical Course;component/Resources/GroupsBackground.jpg"
@@ -24,11 +26,11 @@
             <DataGrid Name="Tts" AutoGenerateColumns="False" Margin="50, 100, 50, 80" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True" IsVisibleChanged="Tts_IsVisibleChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Width="30" Binding="{Binding BandId}"/>
-                    <DataGridTextColumn Header="Название"  Width="70" Binding="{Binding Name}" />
-                    <DataGridTextColumn Header="Продюссер" Width="80" Binding="{Binding Producer}"/>
-                    <DataGridTextColumn Header="Описание" Width="100" Binding="{Binding Description}"/>
-                    <DataGridTextColumn Header="Желаемая площадка" Width="100" Binding="{Binding DescriptionAreas}"/>
-                    <DataGridTextColumn Header="1" Width="40" Binding="{Binding Photo1}"/>
+                    <DataGridTextColumn Header="Название"  Width="150" Binding="{Binding Name}" />
+                    <!--<DataGridTextColumn Header="Продюссер" Width="150" Binding="{Binding Producer}"/>-->
+                    <DataGridTextColumn Header="Описание" Width="*" Binding="{Binding Description}"/>
+                    <DataGridTextColumn Header="Желаемая площадка" Width="200" Binding="{Binding DescriptionAreas}"/>
+                    <!--<DataGridTextColumn Header="1" Width="40" Binding="{Binding Photo1}"/>-->
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -56,9 +58,9 @@
             <DataGrid Name="Tts1" AutoGenerateColumns="False" Margin="50, 100, 50, 80" IsReadOnly="True" IsVisibleChanged="Tts1_IsVisibleChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Width="35" Binding="{Binding AdvertisementId}"/>
-                    <DataGridTextColumn Header="Тип"  Width="45*" Binding="{Binding TypeAdvertisement}" />
-                    <DataGridTextColumn Header="Автор" Width="180*" Binding="{Binding Representative}"/>
-                    <DataGridTextColumn Header="Площадка" Width="250" Binding="{Binding Area}"/>
+                    <!--<DataGridTextColumn Header="Тип"  Width="45*" Binding="{Binding TypeAdvertisement}" />-->
+                    <!--<DataGridTextColumn Header="Автор" Width="180*" Binding="{Binding Representative}"/>-->
+                    <!--<DataGridTextColumn Header="Площадка" Width="250" Binding="{Binding Area}"/>-->
                     <DataGridTextColumn Header="Группа" Width="250*" Binding="{Binding Group}" />
                     <DataGridTextColumn Header="Модерация" Width="150*" Binding="{Binding Moderation}"/>
                     <DataGridTemplateColumn>
@@ -90,10 +92,10 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Width="35" Binding="{Binding AdvertisementId}"/>
                     <!--<DataGridTextColumn Header="Тип"  Width="45*" Binding="{Binding TypeAdvertisement}" />-->
-                    <DataGridTextColumn Header="№ Автора" Width="180*" Binding="{Binding Representative}"/>
+                    <!--<DataGridTextColumn Header="№ Автора" Width="180*" Binding="{Binding Representative}"/>-->
                     <DataGridTextColumn Header="Автор" Width="180*" Binding="{Binding Users.Login}"/>
                     <DataGridTextColumn Header="Площадка" Width="250" Binding="{Binding Areas.Name}"/>
-                    <DataGridTextColumn Header="Модерация" Width="150*" Binding="{Binding Moderation}"/>
+                    <!--<DataGridTextColumn Header="Модерация" Width="150*" Binding="{Binding Moderation}"/>-->
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

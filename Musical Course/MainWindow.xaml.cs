@@ -25,7 +25,7 @@ namespace Musical_Course
         public MainWindow()
         {
             InitializeComponent();
-            Frame.Navigate(new ModeratorPage());
+            Frame.Navigate(new IntroPage());
             Manager.Frame = Frame;
         }
     }

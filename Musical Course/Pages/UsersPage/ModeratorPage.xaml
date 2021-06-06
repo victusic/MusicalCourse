@@ -10,16 +10,16 @@
 
     <Grid>
         <!--Главная страница-->
-        
-        <Grid Margin="65,0,0,0" Name="PreviewGrid">
+
+        <Grid Margin="65,0,0,0" Name="PreviewGrid" Panel.ZIndex="100">
             <Image Source="/Musical Course;component/Resources/HelloBackground.jpg"></Image>
             <TextBlock Name="HelloText" Text="Приветствеующий текст" Foreground ="White" FontSize="84"
-                   FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Center"
-                   Margin="0, 0, 0, 120"></TextBlock>
+                   FontFamily="Arial" VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                   Margin="31,0,10,582" Width="1174" TextAlignment="Center"></TextBlock>
         </Grid>
-        
+
         <!--Объявления-->
-        
+
         <Grid Margin="65,0,0,0" Name="AdvertisementGrid" Panel.ZIndex="10">
             <Image Source="/Musical Course;component/Resources/AdvertisimentBackground.jpg"></Image>
             <TextBlock Name="HelloText2" Text="Управление объвлениями" Foreground ="White" FontSize="84"
@@ -28,10 +28,10 @@
             <DataGrid Name="Tts" AutoGenerateColumns="False" Margin="50, 100, 50, 60 " IsReadOnly="True" IsVisibleChanged="Tts_IsVisibleChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Width="35" Binding="{Binding AdvertisementId}"/>
-                    <DataGridTextColumn Header="Тип"  Width="45" Binding="{Binding TypeAdvertisement}" />
-                    <DataGridTextColumn Header="Автор" Width="180" Binding="{Binding Representative}"/>
-                    <DataGridTextColumn Header="Площадка" Width="250" Binding="{Binding Area}"/>
-                    <DataGridTextColumn Header="Группа" Width="250" Binding="{Binding Group}" />
+                    <DataGridTextColumn Header="Тип"  Width="45" Binding="{Binding TypeAdvertisements.Advertisement}" />
+                    <DataGridTextColumn Header="Автор" Width="180" Binding="{Binding Users.Login}"/>
+                    <DataGridTextColumn Header="Площадка" Width="250" Binding="{Binding Areas.Name}"/>
+                    <DataGridTextColumn Header="Группа" Width="250" Binding="{Binding Groups.Name}" />
                     <DataGridTextColumn Header="Модерация" Width="150" Binding="{Binding Moderation}"/>
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
@@ -59,15 +59,15 @@
                     <DataGridTextColumn Header="Фамилия" Width="100" Binding="{Binding Surname}"/>
                     <DataGridTextColumn Header="Имя" Width="100" Binding="{Binding Name}"/>
                     <DataGridTextColumn Header="Отчество" Width="100" Binding="{Binding Patronymic}" />
-                    <DataGridTextColumn Header="Почта" Width="100" Binding="{Binding Mail}"/>
-                    <DataGridTextColumn Header="Телефон" Width="100" Binding="{Binding Phone}"/>
+                    <DataGridTextColumn Header="Почта" Width="150" Binding="{Binding Mail}"/>
+                    <DataGridTextColumn Header="Телефон" Width="145" Binding="{Binding Phone}"/>
                     <DataGridTextColumn Header="Логин" Width="100" Binding="{Binding Login}"/>
-                    <DataGridTextColumn Header="Пароль" Width="100" Binding="{Binding Password}"/>
-                    <DataGridTextColumn Header="Логотип" Width="100" Binding="{Binding Logo}"/>
+                    <DataGridTextColumn Header="Пароль" Width="150" Binding="{Binding Password}"/>
+                    <!--<DataGridTextColumn Header="Логотип" Width="100" Binding="{Binding Logo}"/>-->
                     <DataGridTextColumn Header="Статус" Width="100" Binding="{Binding IsActivity}"/>
                     <DataGridTextColumn Header="Объявления" Width="150" Binding="{Binding CountAdvertisement}"/>
                     <DataGridTextColumn Header="Дата регистрации" Width="150" Binding="{Binding RegistrationDate}"/>
-                    <DataGridTemplateColumn Header="Статус" Width="*">
+                    <DataGridTemplateColumn Header="Статус" Width="100">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Button Content="Изменить" Click="Button_Click"></Button>
@@ -77,7 +77,7 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
-       
+
         <!--Главный фрэйм-->
 
         <Grid x:Name="BG" PreviewMouseLeftButtonDown="BG_PreviewMouseLeftButtonDown1">

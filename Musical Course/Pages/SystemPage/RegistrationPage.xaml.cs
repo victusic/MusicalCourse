@@ -168,20 +168,20 @@ namespace Musical_Course.Pages
                     {
                         MessageBox.Show("Для подтверждения ваших введённых данных мы используем двухфакторную аутентификацию. " +
                             "Мы отправим вам сообщение на почту с кодом, который нужно ввести в поле, затем отправим вам сообщение на номер телефона", "Регистрация", MessageBoxButton.OK, MessageBoxImage.Information);
-                        MessageBox.Show("Сообщение отправленно на почту: " + RegBox_Mail.Text + code, "Регистрация", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show("Сообщение отправленно на почту: " + RegBox_Mail.Text, "Регистрация", MessageBoxButton.OK, MessageBoxImage.Information);
 
 
                         // отправитель - устанавливаем адрес и отображаемое в письме имя
-                        /*MailAddress from = new MailAddress("dlya_d_raboty_raboty@mail.ru", "Sound Production");
+                        MailAddress from = new MailAddress("dlya_d_raboty_raboty@mail.ru", "Sound Production");
                         // кому отправляем
                         MailAddress to = new MailAddress(RegBox_Mail.Text);
                         // создаем объект сообщения
                         MailMessage m = new MailMessage(from, to);
-                        m.Attachments.Add(new Attachment("../../Resources/BackgroundMail.jpg"));
+                        //m.Attachments.Add(new Attachment("../../Resources/BackgroundMail.jpg"));
                         // тема письма
                         m.Subject = "Регистрация аккаунта";
                         // текст письма
-                        m.Body = "Код для входа: " code;
+                        m.Body = "Код для входа: " + code;
                         // письмо представляет код html
                         m.IsBodyHtml = true;
                         // адрес smtp-сервера и порт, с которого будем отправлять письмо
@@ -189,7 +189,7 @@ namespace Musical_Course.Pages
                         // логин и пароль
                         smtp.Credentials = new NetworkCredential("dlya_d_raboty_raboty@mail.ru", "DHDKI55544DIEJDO5854565");
                         smtp.EnableSsl = true;
-                        smtp.Send(m);*/
+                        smtp.Send(m);
 
                         RegPhone_BtnGo.Visibility = Visibility.Visible;
                         RegMail_BtnGo.Visibility = Visibility.Hidden;
@@ -207,16 +207,16 @@ namespace Musical_Course.Pages
             {
                 MessageBox.Show("Почта подтверждена, теперь мы вам отправим новый код на ваш указанный номер телефона, продолжить?",
                     "Регистрация", MessageBoxButton.OK, MessageBoxImage.Information);
-                MessageBox.Show("Сообщение отправленно на номер телефона: " + RegBox_Phone.Text + code2, "Регистрация", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Сообщение отправленно на номер телефона: " + RegBox_Phone.Text, "Регистрация", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 //Отправка сообщения на смартфон
 
-                /*string myApiKey = "C5562597-9547-B1FE-7688-82E8462AA560"; //API ключ
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://sms.ru/sms/send?api_id=" + myApiKey + "&to=79654577741&msg=hello+world&json=1");
+                string myApiKey = "C5562597-9547-B1FE-7688-82E8462AA560"; //API ключ
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://sms.ru/sms/send?api_id=" + myApiKey + "&to=" + _currentUser.Phone + "&msg=" + code2 + "&json=1");
 
                 httpWebRequest.ContentType = "text/json";
                 httpWebRequest.Method = "POST";//GET
-                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();*/
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
 
 
                 RegPhone_BtnGo.Visibility = Visibility.Hidden;

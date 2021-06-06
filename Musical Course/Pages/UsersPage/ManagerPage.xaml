@@ -9,15 +9,16 @@
       Title="ManagerPage">
 
     <Grid >
-        <Image Source="/Musical Course;component/Resources/HelloBackground.jpg" 
-               Stretch="UniformToFill"></Image>
+
         <Grid Margin="65,0,0,0" Name="PreviewGrid" Panel.ZIndex="10">
+            <Image Source="/Musical Course;component/Resources/HelloBackground.jpg" 
+               Stretch="UniformToFill"></Image>
             <TextBlock Name="HelloText" Text="Приветствеующий текст" Foreground ="White" FontSize="84"
-                   FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Center"
-                   Margin="0, 0, 0, 120"></TextBlock>
+                   FontFamily="Arial" VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                   Margin="10,0,10,594" Width="1195" TextAlignment="Center"></TextBlock>
         </Grid>
 
-        <Grid Margin="65,0,0,0" Name="AreaGrid" Panel.ZIndex="10">
+        <Grid Margin="65,0,0,0" Name="AreaGrid" Panel.ZIndex="100">
             <Image Source="/Musical Course;component/Resources/AreasBackground.jpg" 
                Stretch="UniformToFill" Panel.ZIndex="-1000"></Image>
             <TextBlock Text="Ваши площадки" Foreground ="White" FontSize="84"
@@ -27,10 +28,10 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Width="35" Binding="{Binding AreaId}"/>
                     <DataGridTextColumn Header="Название"  Width="200" Binding="{Binding Name}" />
-                    <DataGridTextColumn Header="Владелец" Width="200" Binding="{Binding Representative}"/>
+                    <!--<DataGridTextColumn Header="Владелец" Width="200" Binding="{Binding Representative}"/>-->
                     <DataGridTextColumn Header="Город" Width="200" Binding="{Binding Town}"/>
-                    <DataGridTextColumn Header="Описание" Width="200" Binding="{Binding Description}" />
-                    <DataGridTextColumn Header="Фотография" Width="80" Binding="{Binding Photo1}"/>
+                    <DataGridTextColumn Header="Описание" Width="*" Binding="{Binding Description}" />
+                    <!--<DataGridTextColumn Header="Фотография" Width="80" Binding="{Binding Photo1}"/>-->
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -42,15 +43,15 @@
             </DataGrid>
             <Button Background="#00DDDDDD" BorderBrush="White"
                 BorderThickness="3" Content="Удалить"
-                Foreground="White" FontFamily="Arial" FontSize="26"
-                Name="BtnDelete" Margin="0,0,50,20" Click="BtnDelete_Click" HorizontalAlignment="Right" Width="151" Height="46" VerticalAlignment="Bottom"/>
+                Foreground="White" FontFamily="Arial" FontSize="42"
+                Name="BtnDelete" Margin="0,0,50,20" Click="BtnDelete_Click" HorizontalAlignment="Right" Width="283" Height="60" VerticalAlignment="Bottom"/>
             <Button Background="#00DDDDDD" BorderBrush="White"
-                BorderThickness="3" Content="Добавить"
+                BorderThickness="3" Content="Добавить" 
                 Foreground="White" FontFamily="Arial"
                 Name="BtnAdd" Margin="50,0,0,20" Click="BtnAdd_Click" FontSize="42" Width="300" Height="60" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
         </Grid>
 
-        <Grid Margin="65,0,0,0" Name="AdvertisementGrid" Panel.ZIndex="100">
+        <Grid Margin="65,0,0,0" Name="AdvertisementGrid" Panel.ZIndex="10">
             <Image Source="/Musical Course;component/Resources/DopBackground.jpg" 
                Stretch="UniformToFill"></Image>
             <TextBlock Text="Управление объвлениями" Foreground ="White" FontSize="84"
@@ -59,10 +60,10 @@
             <DataGrid Name="Tts1" AutoGenerateColumns="False" Margin="50, 100, 50, 80" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True" IsVisibleChanged="Tts1_IsVisibleChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Width="35" Binding="{Binding AdvertisementId}"/>
-                    <DataGridTextColumn Header="Тип"  Width="45*" Binding="{Binding TypeAdvertisement}" />
-                    <DataGridTextColumn Header="Автор" Width="180*" Binding="{Binding Representative}"/>
+                    <!--<DataGridTextColumn Header="Тип"  Width="45*" Binding="{Binding TypeAdvertisement}" />-->
+                    <!--<DataGridTextColumn Header="Автор" Width="180*" Binding="{Binding Representative}"/>-->
                     <DataGridTextColumn Header="Площадка" Width="250" Binding="{Binding Area}"/>
-                    <DataGridTextColumn Header="Группа" Width="250*" Binding="{Binding Group}" />
+                    <!--<DataGridTextColumn Header="Группа" Width="250*" Binding="{Binding Group}" />-->
                     <DataGridTextColumn Header="Модерация" Width="150*" Binding="{Binding Moderation}"/>
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
@@ -93,10 +94,10 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Width="35" Binding="{Binding AdvertisementId}"/>
                     <!--<DataGridTextColumn Header="Тип"  Width="45*" Binding="{Binding TypeAdvertisement}" />-->
-                    <DataGridTextColumn Header="№ Автора" Width="180*" Binding="{Binding Representative}"/>
+                    <!--<DataGridTextColumn Header="№ Автора" Width="180*" Binding="{Binding Representative}"/>-->
                     <DataGridTextColumn Header="Автор" Width="180*" Binding="{Binding Users.Login}"/>
                     <DataGridTextColumn Header="Группа" Width="250*" Binding="{Binding Groups.Name}" />
-                    <DataGridTextColumn Header="Модерация" Width="150*" Binding="{Binding Moderation}"/>
+                    <!--<DataGridTextColumn Header="Модерация" Width="150*" Binding="{Binding Moderation}"/>-->
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

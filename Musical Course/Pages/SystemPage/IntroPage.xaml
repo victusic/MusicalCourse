@@ -6,10 +6,10 @@
       xmlns:local="clr-namespace:Musical_Course.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
-      Title="IntroPage">
+      Title="IntroPage" WindowTitle="">
 
     <Grid>
-        <Image Source="/Musical Course;component/Resources/IntroBackground.jpg"/>
+        <Image Source="/Musical Course;component/Resources/IntroBackground.jpg" Stretch="UniformToFill"/>
         <TextBlock Foreground ="White" Text="Sound Production" FontSize="84"
                    FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 280"></TextBlock>

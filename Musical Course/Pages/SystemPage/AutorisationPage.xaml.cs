@@ -87,7 +87,7 @@ namespace Musical_Course.Pages
                                     Manager.Frame.Navigate(new ProducerPage());
                                     MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
                                     Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
-                                    /*MailAddress from = new MailAddress("dlya_d_raboty_raboty@mail.ru", "Sound Production");
+                                    MailAddress from = new MailAddress("dlya_d_raboty_raboty@mail.ru", "Sound Production");
                                     MailAddress to = new MailAddress(user.Mail);
                                     MailMessage m = new MailMessage(from, to);
                                     m.Attachments.Add(new Attachment("../../Resources/BackgroundMail2.jpg"));
@@ -98,14 +98,14 @@ namespace Musical_Course.Pages
                                     SmtpClient smtp = new SmtpClient("smtp.mail.ru", 2525);
                                     smtp.Credentials = new NetworkCredential("dlya_d_raboty_raboty@mail.ru", "DHDKI55544DIEJDO5854565");
                                     smtp.EnableSsl = true;
-                                    smtp.Send(m);*/
+                                    smtp.Send(m);
                                 }
                                 else if (user.Roll == 4)
                                 {
                                     Manager.Frame.Navigate(new ManagerPage());
                                     MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
                                     Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
-                                    /*MailAddress from = new MailAddress("dlya_d_raboty_raboty@mail.ru", "Sound Production");
+                                    MailAddress from = new MailAddress("dlya_d_raboty_raboty@mail.ru", "Sound Production");
                                     MailAddress to = new MailAddress(user.Mail);
                                     MailMessage m = new MailMessage(from, to);
                                     m.Attachments.Add(new Attachment("../../Resources/BackgroundMail2.jpg"));
@@ -116,7 +116,7 @@ namespace Musical_Course.Pages
                                     SmtpClient smtp = new SmtpClient("smtp.mail.ru", 2525);
                                     smtp.Credentials = new NetworkCredential("dlya_d_raboty_raboty@mail.ru", "DHDKI55544DIEJDO5854565");
                                     smtp.EnableSsl = true;
-                                    smtp.Send(m);*/
+                                    smtp.Send(m);
                                 }
                                 errors = 0;
                                 break;

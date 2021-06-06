@@ -129,7 +129,7 @@
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <!--цвет строки при наведении на неё -->
-                                <Setter Property="Background" Value="White" />
+                                <Setter Property="Background" Value="Gray" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
