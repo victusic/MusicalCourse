@@ -253,6 +253,26 @@ namespace Musical_Course.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logotype {
+            get {
+                object obj = ResourceManager.GetObject("logotype", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+        /// </summary>
+        internal static System.Drawing.Icon logotype1 {
+            get {
+                object obj = ResourceManager.GetObject("logotype1", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MenuActiveIcon {
             get {
                 object obj = ResourceManager.GetObject("MenuActiveIcon", resourceCulture);
