@@ -34,7 +34,6 @@ namespace Musical_Course
             TimeSpan time12 = new TimeSpan(12, 0, 0);
             TimeSpan time18 = new TimeSpan(18, 0, 0);
             TimeSpan time24 = new TimeSpan(23, 59, 59);
-            InitializeComponent();
             if (time >= time0 && time < time6)
             {
                 HelloText.Text = "Доброй ночи, " + GlobalLeVar.LoginStat;

@@ -121,6 +121,9 @@ namespace Musical_Course.Pages
             {
                 errors.AppendLine("Введите ваше отчество");
             }
+            //тесты
+            
+            //комбобокс
             if (List.Text == "Продюссер группы")
             {
                 _currentUser.Roll = 3;
@@ -140,65 +143,81 @@ namespace Musical_Course.Pages
             }
             else
             {
-                try
+                if (_currentUser.Password.Length < 8)
                 {
-                    string MailChek = "SELECT * FROM Users WHERE Mail ='" + _currentUser.Mail + "'";
-                    var sql1 = MusicalBaseEntities2.GetContext().Users.SqlQuery(MailChek).ToArray();
-                    string LoginChek = "SELECT * FROM Users WHERE Login ='" + _currentUser.Login + "'";
-                    var sql2 = MusicalBaseEntities2.GetContext().Users.SqlQuery(LoginChek).ToArray();
-                    string PhoneCheck = "SELECT * FROM Users WHERE Phone ='" + _currentUser.Phone + "'";
-                    var sql3 = MusicalBaseEntities2.GetContext().Users.SqlQuery(PhoneCheck).ToArray();
-                    if (sql1.Length != 0 || sql2.Length != 0 || sql3.Length != 0)
+                    MessageBox.Show("Пароль короткий");
+                }
+                else if (!_currentUser.Password.Any(Char.IsDigit))
+                {
+                    MessageBox.Show("Добавьте в пароль цифры");
+                }
+                else if (_currentUser.Password.Intersect("#$%^&_").Count() == 0)
+                {
+                    MessageBox.Show("Добавьте в пароль специальные символы");
+                }
+                else
+                {
+                    try
                     {
-                        if (sql1.Length != 0)
+                        string MailChek = "SELECT * FROM Users WHERE Mail ='" + _currentUser.Mail + "'";
+                        var sql1 = MusicalBaseEntities2.GetContext().Users.SqlQuery(MailChek).ToArray();
+                        string LoginChek = "SELECT * FROM Users WHERE Login ='" + _currentUser.Login + "'";
+                        var sql2 = MusicalBaseEntities2.GetContext().Users.SqlQuery(LoginChek).ToArray();
+                        string PhoneCheck = "SELECT * FROM Users WHERE Phone ='" + _currentUser.Phone + "'";
+                        var sql3 = MusicalBaseEntities2.GetContext().Users.SqlQuery(PhoneCheck).ToArray();
+                        if (sql1.Length != 0 || sql2.Length != 0 || sql3.Length != 0)
                         {
-                            MessageBox.Show("Введённый вами почта уже присутсвует", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
+                            if (sql1.Length != 0)
+                            {
+                                MessageBox.Show("Введённый вами почта уже присутсвует", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
+                            }
+                            if (sql2.Length != 0)
+                            {
+                                MessageBox.Show("Введённый вами логин уже занят", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
+                            }
+                            if (sql3.Length != 0)
+                            {
+                                MessageBox.Show("Введённый вами номер телефона уже используется", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
+                            }
+                            //MessageBox.Show("Введённый вами данные, а имеено некоторые из них: почта логин или номер телефона уже используются", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
-                        if (sql2.Length != 0)
+                        else
                         {
-                            MessageBox.Show("Введённый вами логин уже занят", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
+                            MessageBox.Show("Для подтверждения ваших введённых данных мы используем двухфакторную аутентификацию. " +
+                                "Мы отправим вам сообщение на почту с кодом, который нужно ввести в поле, затем отправим вам сообщение на номер телефона", "Регистрация", MessageBoxButton.OK, MessageBoxImage.Information);
+                            MessageBox.Show("Сообщение отправленно на почту: " + RegBox_Mail.Text, "Регистрация", MessageBoxButton.OK, MessageBoxImage.Information);
+
+
+                            // отправитель - устанавливаем адрес и отображаемое в письме имя
+                            MailAddress from = new MailAddress("dlya_d_raboty_raboty@mail.ru", "Sound Production");
+                            // кому отправляем
+                            MailAddress to = new MailAddress(RegBox_Mail.Text);
+                            // создаем объект сообщения
+                            MailMessage m = new MailMessage(from, to);
+                            //m.Attachments.Add(new Attachment("../../Resources/BackgroundMail.jpg"));
+                            // тема письма
+                            m.Subject = "Регистрация аккаунта";
+                            // текст письма
+                            m.Body = "Код для входа: " + code;
+                            // письмо представляет код html
+                            m.IsBodyHtml = true;
+                            // адрес smtp-сервера и порт, с которого будем отправлять письмо
+                            SmtpClient smtp = new SmtpClient("smtp.mail.ru", 2525);
+                            // логин и пароль
+                            smtp.Credentials = new NetworkCredential("dlya_d_raboty_raboty@mail.ru", "DHDKI55544DIEJDO5854565");
+                            smtp.EnableSsl = true;
+                            smtp.Send(m);
+
+                            RegPhone_BtnGo.Visibility = Visibility.Visible;
+                            RegMail_BtnGo.Visibility = Visibility.Hidden;
                         }
-                        if (sql3.Length != 0)
-                        {
-                            MessageBox.Show("Введённый вами номер телефона уже используется", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
-                        }
-                        //MessageBox.Show("Введённый вами данные, а имеено некоторые из них: почта логин или номер телефона уже используются", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
-                    else
+                    catch (Exception en)
                     {
-                        MessageBox.Show("Для подтверждения ваших введённых данных мы используем двухфакторную аутентификацию. " +
-                            "Мы отправим вам сообщение на почту с кодом, который нужно ввести в поле, затем отправим вам сообщение на номер телефона", "Регистрация", MessageBoxButton.OK, MessageBoxImage.Information);
-                        MessageBox.Show("Сообщение отправленно на почту: " + RegBox_Mail.Text, "Регистрация", MessageBoxButton.OK, MessageBoxImage.Information);
-
-
-                        // отправитель - устанавливаем адрес и отображаемое в письме имя
-                        MailAddress from = new MailAddress("dlya_d_raboty_raboty@mail.ru", "Sound Production");
-                        // кому отправляем
-                        MailAddress to = new MailAddress(RegBox_Mail.Text);
-                        // создаем объект сообщения
-                        MailMessage m = new MailMessage(from, to);
-                        //m.Attachments.Add(new Attachment("../../Resources/BackgroundMail.jpg"));
-                        // тема письма
-                        m.Subject = "Регистрация аккаунта";
-                        // текст письма
-                        m.Body = "Код для входа: " + code;
-                        // письмо представляет код html
-                        m.IsBodyHtml = true;
-                        // адрес smtp-сервера и порт, с которого будем отправлять письмо
-                        SmtpClient smtp = new SmtpClient("smtp.mail.ru", 2525);
-                        // логин и пароль
-                        smtp.Credentials = new NetworkCredential("dlya_d_raboty_raboty@mail.ru", "DHDKI55544DIEJDO5854565");
-                        smtp.EnableSsl = true;
-                        smtp.Send(m);
-
-                        RegPhone_BtnGo.Visibility = Visibility.Visible;
-                        RegMail_BtnGo.Visibility = Visibility.Hidden;
+                        MessageBox.Show(en.Message.ToString());
                     }
                 }
-                catch (Exception en)
-                {
-                    MessageBox.Show(en.Message.ToString());
-                }
+                
             }
         }
         private void RegPhone_BtnGo_Click(object sender, RoutedEventArgs e)
@@ -228,5 +247,9 @@ namespace Musical_Course.Pages
             }
         }
 
+        private void BtnGoBack_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.Frame.Navigate(new IntroPage());
+        }
     }
 }

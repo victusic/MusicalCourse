@@ -179,5 +179,10 @@ namespace Musical_Course.Pages
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
+        private void BtnGoBack_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.Frame.Navigate(new IntroPage());
+        }
     }
 }
