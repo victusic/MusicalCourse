@@ -62,6 +62,8 @@ namespace Musical_Course
             Tts.ItemsSource = MusicalBaseEntities2.GetContext().Areas.Where(p => p.Representative.ToString().ToLower().Contains(mmm.ToLower())).ToList();
             Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.Where(p => p.Representative.ToString().ToLower().Contains(mmm.ToLower())).ToList();
             Tts2.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.Where(p => p.TypeAdvertisement.ToString().ToLower().Contains("2".ToLower())).ToList();
+            //Скрытие текста при поиске "данные не обнаружены"
+            Text55.Visibility = Visibility.Hidden;
         }
         private void Tg_Btn_Checked(object sender, RoutedEventArgs e)
         {
@@ -223,6 +225,16 @@ namespace Musical_Course
                     p.Users.Login.ToString().ToLower().Contains(SearchBox.Text.ToLower()) ||
                     p.Areas.Name.ToString().ToLower().Contains(SearchBox.Text.ToLower()) ||
                     p.Groups.Name.ToString().ToLower().Contains(SearchBox.Text.ToLower())).ToList();
+                    var rows = Tts2.ItemsSource.Cast<Advertisement>().ToList();
+                    if (rows.Count == 0)
+                    {
+                        Text55.Visibility = Visibility.Visible;
+                    }
+                    else if (rows.Count != 0)
+                    {
+                        Text55.Visibility = Visibility.Hidden;
+
+                    }
                 }
                 catch
                 {

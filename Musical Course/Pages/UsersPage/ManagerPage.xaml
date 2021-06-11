@@ -84,12 +84,15 @@
                 Name="BtnAddAds1" Width="151" Margin="50,0,0,20" Click="BtnAddAds1_Click" Height="46" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
         </Grid>
 
-        <Grid Margin="65,0,0,0" Name="VivsibleAdvertisementGrid" Panel.ZIndex="10">
+        <Grid Margin="65,0,0,0" Name="VivsibleAdvertisementGrid" Panel.ZIndex="100">
             <Image Source="/Musical Course;component/Resources/AdvertisimentBackground.jpg" 
                Stretch="UniformToFill"></Image>
             <TextBlock Name="HelloText2" Text="Просмотр объвлений" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 20"></TextBlock>
+            <TextBlock Name="Text55" Text="Данные не обнаружены" Foreground ="White" FontSize="44"
+                   FontFamily="Arial" HorizontalAlignment="Center"
+                   Margin="318,376,284,20" Width="613" TextAlignment="Center"></TextBlock>
             <DataGrid Name="Tts2" AutoGenerateColumns="False" Margin="50,170,70,60" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Width="35" Binding="{Binding AdvertisementId}"/>

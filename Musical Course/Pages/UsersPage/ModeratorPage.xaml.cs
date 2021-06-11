@@ -153,7 +153,7 @@ namespace Musical_Course
         {
             if (Visibility == Visibility.Visible)
             {
-                Tts.ItemsSource = MusicalBaseEntities2.GetContext().Users.ToArray();
+                Tts1.ItemsSource = MusicalBaseEntities2.GetContext().Users.ToArray();
                 //MusicalBaseEntities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
             }
         }
