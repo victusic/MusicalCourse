@@ -123,7 +123,7 @@ namespace Musical_Course.Pages
                             }
                             else
                             {
-                                errors += 4;
+                                errors = 4;
                                 userId = user.UserId;
                                 break;
                             }
@@ -131,12 +131,14 @@ namespace Musical_Course.Pages
                         }
                         else if (LoginBox_Auth.Text == user.Login)
                         {
-                            errors += 2;
+                            errors = 2;
                             userId = user.UserId;
+                            break;
                         }
                         else
                         {
-                            errors++;
+                            //errors++;
+                            break;
                         }
                     }
                     if (errors == 0)
@@ -148,7 +150,7 @@ namespace Musical_Course.Pages
                         if (errors == 2)
                         {
                             HistoriAdd(false, userId);
-                            MessageBox.Show("Пароль неверный", "Ошибка входа", MessageBoxButton.OK, MessageBoxImage.Error);
+                            MessageBox.Show("Данные аккаунта указанны неправильно", "Ошибка входа", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
                         if (errors == 4)
                         {
@@ -163,12 +165,12 @@ namespace Musical_Course.Pages
                 }
             }
         }
-        public static void HistoriAdd(bool state, int user_id)
+        public static void HistoriAdd(bool state, int userId)
         {
             try
             {
                 AutorisationHistory HistoryLogin = new AutorisationHistory();
-                HistoryLogin.UserId = user_id;
+                HistoryLogin.UserId = userId;
                 HistoryLogin.Date = DateTime.Now;
                 HistoryLogin.State = state;
                 MusicalBaseEntities2.GetContext().AutorisationHistory.Add(HistoryLogin);
