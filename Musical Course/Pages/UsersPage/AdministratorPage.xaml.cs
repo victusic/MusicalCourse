@@ -11,6 +11,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -24,6 +25,7 @@ namespace Musical_Course
     /// </summary>
     public partial class AdministratorPage : Page
     {
+        public MusicalBaseEntities2 _contextS = new MusicalBaseEntities2();
         public AdministratorPage()
         {
             TimeSpan time = DateTime.Now.TimeOfDay;
@@ -67,6 +69,17 @@ namespace Musical_Course
             Tts3.ItemsSource = MusicalBaseEntities2.GetContext().Areas.ToList();
             Tts4.ItemsSource = MusicalBaseEntities2.GetContext().AutorisationHistory.ToList();
             Tts5.ItemsSource = MusicalBaseEntities2.GetContext().Users.ToList();
+            /*Charts.ChartAreas.Add(new System.Windows.Forms.DataVisualization.Charting.ChartArea("Main"));
+
+            var CurrentSeries = new Series("Date")
+            {
+                IsValueShownAsLabel = true
+            };
+            Charts.Series.Add(CurrentSeries);
+            Cb1.ItemsSource = _contextS.AutorisationHistory.ToList();
+            Cb2.ItemsSource = Enum.GetValues(typeof(SeriesChartType));*/
+
+
         }
         private void BG_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -261,6 +274,15 @@ namespace Musical_Course
                 MusicalBaseEntities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
             }
         }
+
+        /*private void Cb1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Cb1.SelectedItem is Login CurrentSeries && Cb2.SelectedItem is Login CurrentSeries)
+            {
+                Series CurrentSeries Charts.Series.FirstOrDefault();
+
+            }
+        }*/
     }
         
 }

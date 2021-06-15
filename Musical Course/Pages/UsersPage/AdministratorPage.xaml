@@ -4,18 +4,35 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Musical_Course"
+      xmlns:charts="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="AdministratorPage"
       >
 
     <Grid>
-        <Grid Margin="65,0,0,0" Name="PreviewGrid" Panel.ZIndex="10">
+        <Grid Margin="65,0,0,0" Name="PreviewGrid" Panel.ZIndex="100">
             <Image Source="/Musical Course;component/Resources/HelloBackground.jpg" 
                Stretch="UniformToFill"></Image>
             <TextBlock Name="HelloText" Text="Добро пожаловать!" Foreground ="White" FontSize="84"
                    FontFamily="Arial" VerticalAlignment="Top"
                    Margin="30,30,30,0" TextAlignment="Center"/>
+            <!--<StackPanel Margin="0,338,0,300" Background="Red">
+                <ComboBox Height="40" Margin="110,0,724,0" SelectedIndex="0"
+                          Name="Cb1" SelectionChanged="Cb1_SelectionChanged">
+                </ComboBox>
+                <ComboBox Height="40" Margin="722,0,110,0" SelectedIndex="0"
+                          Name="Cb2">
+                </ComboBox>
+            </StackPanel>
+            <WindowsFormsHost HorizontalAlignment="Left" Height="285" Margin="0,425,0,0" VerticalAlignment="Top" Width="1205">
+                <charts:Chart Name="Charts">
+                    <charts:Chart.Legends>
+                        
+                    </charts:Chart.Legends>
+                </charts:Chart>
+            </WindowsFormsHost>-->
+
         </Grid>
 
         <Grid Margin="65,0,0,0" Name="AdvertisementGrid" Panel.ZIndex="10">

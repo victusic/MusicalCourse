@@ -25,6 +25,8 @@ namespace Musical_Course.Pages
     /// </summary>
     public partial class AutorisationPage : Page
     {
+        public static Users table;
+        public static Users tableLogin;
         public AutorisationPage()
         {
             InitializeComponent();
@@ -41,6 +43,7 @@ namespace Musical_Course.Pages
 
         private void Log_BtnGo_Click(object sender, RoutedEventArgs e)
         {
+            int userId = 0;
             if (LoginBox_Auth.Text.Length == 0 || PasswordBox_Auth.Password.Length == 0)
             {
                 if (LoginBox_Auth.Text.Length == 0 && PasswordBox_Auth.Password.Length == 0)
@@ -58,114 +61,90 @@ namespace Musical_Course.Pages
             }
             else
             {
-                int userId = 0;
-                int errors = 0;
-                try
+                using (MusicalBaseEntities2 databd = new MusicalBaseEntities2())
                 {
-                    foreach (var user in MusicalBaseEntities2.GetContext().Users)
-                    {
-                        if (LoginBox_Auth.Text == user.Login && PasswordBox_Auth.Password == user.Password)
-                        {
-                            if(user.IsActivity == 0){
-                                userId = user.UserId;
-                                GlobalLeVar.LoginStat = user.Name;
-                                GlobalLeVar.UserIdStat = user.UserId;
-                                if (user.Roll == 1)
-                                {
-                                    Manager.Frame.Navigate(new AdministratorPage());
-                                    MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
-                                    Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
-                                }
-                                else if (user.Roll == 2)
-                                {
-                                    Manager.Frame.Navigate(new ModeratorPage());
-                                    MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
-                                    Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
-                                }
-                                else if (user.Roll == 3)
-                                {
-                                    Manager.Frame.Navigate(new ProducerPage());
-                                    MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
-                                    Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
-                                    MailAddress from = new MailAddress("dlya_d_raboty_raboty@mail.ru", "Sound Production");
-                                    MailAddress to = new MailAddress(user.Mail);
-                                    MailMessage m = new MailMessage(from, to);
-                                    m.Attachments.Add(new Attachment("../../Resources/BackgroundMail2.jpg"));
-                                    m.Subject = "Вход в приложение";
-                                    m.Body = "С вашего аккаунта " + user.Login + " был совершён вход в систему " + DateTime.Now + " - если это не вы, обратитесь в нашу службу поддержки";
-                                    m.IsBodyHtml = true;
-                                    // адрес smtp-сервера и порт, с которого будем отправлять письмо
-                                    SmtpClient smtp = new SmtpClient("smtp.mail.ru", 2525);
-                                    smtp.Credentials = new NetworkCredential("dlya_d_raboty_raboty@mail.ru", "DHDKI55544DIEJDO5854565");
-                                    smtp.EnableSsl = true;
-                                    smtp.Send(m);
-                                }
-                                else if (user.Roll == 4)
-                                {
-                                    Manager.Frame.Navigate(new ManagerPage());
-                                    MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
-                                    Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
-                                    MailAddress from = new MailAddress("dlya_d_raboty_raboty@mail.ru", "Sound Production");
-                                    MailAddress to = new MailAddress(user.Mail);
-                                    MailMessage m = new MailMessage(from, to);
-                                    m.Attachments.Add(new Attachment("../../Resources/BackgroundMail2.jpg"));
-                                    m.Subject = "Вход в приложение";
-                                    m.Body = "С вашего аккаунта " + user.Login + " был совершён вход в систему " + DateTime.Now + " - если это не вы, обратитесь в нашу службу поддержки";
-                                    m.IsBodyHtml = true;
-                                    // адрес smtp-сервера и порт, с которого будем отправлять письмо
-                                    SmtpClient smtp = new SmtpClient("smtp.mail.ru", 2525);
-                                    smtp.Credentials = new NetworkCredential("dlya_d_raboty_raboty@mail.ru", "DHDKI55544DIEJDO5854565");
-                                    smtp.EnableSsl = true;
-                                    smtp.Send(m);
-                                }
-                                errors = 0;
-                                break;
-                            }
-                            else
-                            {
-                                errors = 4;
-                                userId = user.UserId;
-                                break;
-                            }
+                    table = databd.Users.Where(l => l.Login == LoginBox_Auth.Text && l.Password == PasswordBox_Auth.Password).FirstOrDefault();
+                    tableLogin = databd.Users.Where(l => l.Login == LoginBox_Auth.Text && l.Password != PasswordBox_Auth.Password).FirstOrDefault();
 
-                        }
-                        else if (LoginBox_Auth.Text == user.Login)
+                    if (tableLogin != null)
+                    {
+                        userId = tableLogin.UserId;
+                        if (userId != 0)
                         {
-                            errors = 2;
-                            userId = user.UserId;
-                            break;
+                            HistoriAdd(userId, false);
+                        }
+                    }
+                    if (table != null)
+                    {
+                        var rol = table.Roll;
+                        if (table.IsActivity == 0)
+                        {
+                            GlobalLeVar.LoginStat = table.Name;
+                            GlobalLeVar.UserIdStat = table.UserId;
+                            if (rol == 1)
+                            {
+                                Manager.Frame.Navigate(new AdministratorPage());
+                                MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                                Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
+                            }
+                            else if (rol == 2)
+                            {
+                                Manager.Frame.Navigate(new ModeratorPage());
+                                MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                                Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
+                            }
+                            else if (rol == 3)
+                            {
+                                Manager.Frame.Navigate(new ProducerPage());
+                                MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                                Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
+                                MailAddress from = new MailAddress("dlya_d_raboty_raboty@mail.ru", "Sound Production");
+                                MailAddress to = new MailAddress(table.Mail);
+                                MailMessage m = new MailMessage(from, to);
+                                m.Attachments.Add(new Attachment("../../Resources/BackgroundMail2.jpg"));
+                                m.Subject = "Вход в приложение";
+                                m.Body = "С вашего аккаунта " + table.Login + " был совершён вход в систему " + DateTime.Now + " - если это не вы, обратитесь в нашу службу поддержки";
+                                m.IsBodyHtml = true;
+                                // адрес smtp-сервера и порт, с которого будем отправлять письмо
+                                SmtpClient smtp = new SmtpClient("smtp.mail.ru", 2525);
+                                smtp.Credentials = new NetworkCredential("dlya_d_raboty_raboty@mail.ru", "DHDKI55544DIEJDO5854565");
+                                smtp.EnableSsl = true;
+                                smtp.Send(m);
+                            }
+                            else if (rol == 4)
+                            {
+                                Manager.Frame.Navigate(new ManagerPage());
+                                MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                                Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
+                                MailAddress from = new MailAddress("dlya_d_raboty_raboty@mail.ru", "Sound Production");
+                                MailAddress to = new MailAddress(table.Mail);
+                                MailMessage m = new MailMessage(from, to);
+                                m.Attachments.Add(new Attachment("../../Resources/BackgroundMail2.jpg"));
+                                m.Subject = "Вход в приложение";
+                                m.Body = "С вашего аккаунта " + table.Login + " был совершён вход в систему " + DateTime.Now + " - если это не вы, обратитесь в нашу службу поддержки";
+                                m.IsBodyHtml = true;
+                                // адрес smtp-сервера и порт, с которого будем отправлять письмо
+                                SmtpClient smtp = new SmtpClient("smtp.mail.ru", 2525);
+                                smtp.Credentials = new NetworkCredential("dlya_d_raboty_raboty@mail.ru", "DHDKI55544DIEJDO5854565");
+                                smtp.EnableSsl = true;
+                                smtp.Send(m);
+                            }
                         }
                         else
                         {
-                            //errors++;
-                            break;
-                        }
-                    }
-                    if (errors == 0)
-                    {
-                        HistoriAdd(true, userId);
-                    }
-                    else
-                    {
-                        if (errors == 2)
-                        {
-                            HistoriAdd(false, userId);
-                            MessageBox.Show("Данные аккаунта указанны неправильно", "Ошибка входа", MessageBoxButton.OK, MessageBoxImage.Error);
-                        }
-                        if (errors == 4)
-                        {
-                            HistoriAdd(false, userId);
+                            HistoriAdd(userId, false);
                             MessageBox.Show("Ваш аккаунт был заблокирован, за подробностями обратититесь на нашу почту", "Ошибка входа", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
+                        if (table == null && (LoginBox_Auth.Text.Length != 0 && PasswordBox_Auth.Password.Length != 0))
+                        {
+                            MessageBox.Show("Вы не правильно ввели логин или пароль", "Ошибка входа", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message.ToString());
                 }
             }
         }
-        public static void HistoriAdd(bool state, int userId)
+
+        public static void HistoriAdd(int userId, bool state)
         {
             try
             {

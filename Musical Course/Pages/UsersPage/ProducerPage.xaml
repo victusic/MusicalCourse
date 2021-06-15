@@ -82,7 +82,7 @@
                 Name="BtnAddAds1" Width="151" Margin="50,0,0,20" Click="BtnAddAds1_Click" Height="46" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
         </Grid>
 
-        <Grid Margin="65,0,0,0" Name="VivsibleAdvertisementGrid" Panel.ZIndex="10">
+        <Grid Margin="65,0,0,0" Name="VivsibleAdvertisementGrid" Panel.ZIndex="100">
             <Image Source="/Musical Course;component/Resources/AdvertisimentBackground.jpg" 
                Stretch="UniformToFill"></Image>
             <TextBlock Name="HelloText2" Text="Просмотр объвлений" Foreground ="White" FontSize="84"
