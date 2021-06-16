@@ -1,4 +1,5 @@
-﻿using Musical_Course.Pages;
+﻿using AmRoMessageDialog;
+using Musical_Course.Pages;
 using Musical_Course.Pages.UsersPage;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace Musical_Course
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();

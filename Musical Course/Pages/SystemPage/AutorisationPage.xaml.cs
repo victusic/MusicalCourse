@@ -1,4 +1,5 @@
-﻿using Musical_Course.Classes;
+﻿using AmRoMessageDialog;
+using Musical_Course.Classes;
 using Musical_Course.Database;
 using System;
 using System.Collections.Generic;
@@ -43,20 +44,31 @@ namespace Musical_Course.Pages
 
         private void Log_BtnGo_Click(object sender, RoutedEventArgs e)
         {
+            var messageBox = new AmRoMessageBox
+            {
+                Background = "#222222",
+                TextColor = "#ffffff",
+                IconColor = "#3399ff",
+                RippleEffectColor = "#000000",
+                ClickEffectColor = "#1F2023",
+                ShowMessageWithEffect = true,
+                EffectArea = this
+            };
+
             int userId = 0;
             if (LoginBox_Auth.Text.Length == 0 || PasswordBox_Auth.Password.Length == 0)
             {
                 if (LoginBox_Auth.Text.Length == 0 && PasswordBox_Auth.Password.Length == 0)
                 {
-                    MessageBox.Show("Введите пароль и логин", "Предупреждение входа", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    messageBox.Show("Введите пароль и логин", "Предупреждение входа");
                 }
                 else if (PasswordBox_Auth.Password.Length == 0)
                 {
-                    MessageBox.Show("Введите пароль", "Предупреждение входа", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    messageBox.Show("Введите пароль", "Предупреждение входа");
                 }
                 else if (LoginBox_Auth.Text.Length == 0)
                 {
-                    MessageBox.Show("Введите логин", "Предупреждение входа", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    messageBox.Show("Введите логин", "Предупреждение входа");
                 }
             }
             else
@@ -71,32 +83,33 @@ namespace Musical_Course.Pages
                         userId = tableLogin.UserId;
                         if (userId != 0)
                         {
+                            messageBox.Show("Вы не правильно ввели логин или пароль", "Ошибка входа");
                             HistoriAdd(userId, false);
                         }
                     }
                     if (table != null)
                     {
-                        var rol = table.Roll;
                         if (table.IsActivity == 0)
                         {
+                            var rol = table.Roll;
                             GlobalLeVar.LoginStat = table.Name;
                             GlobalLeVar.UserIdStat = table.UserId;
                             if (rol == 1)
                             {
                                 Manager.Frame.Navigate(new AdministratorPage());
-                                MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                                messageBox.Show("Вы успешно вошли", "Вход выполнен успешно");
                                 Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
                             }
                             else if (rol == 2)
                             {
                                 Manager.Frame.Navigate(new ModeratorPage());
-                                MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                                messageBox.Show("Вы успешно вошли", "Вход выполнен успешно");
                                 Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
                             }
                             else if (rol == 3)
                             {
                                 Manager.Frame.Navigate(new ProducerPage());
-                                MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                                messageBox.Show("Вы успешно вошли", "Вход выполнен успешно");
                                 Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
                                 MailAddress from = new MailAddress("dlya_d_raboty_raboty@mail.ru", "Sound Production");
                                 MailAddress to = new MailAddress(table.Mail);
@@ -114,7 +127,7 @@ namespace Musical_Course.Pages
                             else if (rol == 4)
                             {
                                 Manager.Frame.Navigate(new ManagerPage());
-                                MessageBox.Show("Вы успешно вошли", "Вход выполнен успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                                messageBox.Show("Вы успешно вошли", "Вход выполнен успешно");
                                 Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
                                 MailAddress from = new MailAddress("dlya_d_raboty_raboty@mail.ru", "Sound Production");
                                 MailAddress to = new MailAddress(table.Mail);
@@ -133,11 +146,11 @@ namespace Musical_Course.Pages
                         else
                         {
                             HistoriAdd(userId, false);
-                            MessageBox.Show("Ваш аккаунт был заблокирован, за подробностями обратититесь на нашу почту", "Ошибка входа", MessageBoxButton.OK, MessageBoxImage.Error);
+                            messageBox.Show("Ваш аккаунт был заблокирован, за подробностями обратититесь на нашу почту", "Ошибка входа");
                         }
                         if (table == null && (LoginBox_Auth.Text.Length != 0 && PasswordBox_Auth.Password.Length != 0))
                         {
-                            MessageBox.Show("Вы не правильно ввели логин или пароль", "Ошибка входа", MessageBoxButton.OK, MessageBoxImage.Error);
+                            messageBox.Show("Вы не правильно ввели логин или пароль", "Ошибка входа");
                         }
                     }
                 }
@@ -157,7 +170,16 @@ namespace Musical_Course.Pages
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                var messageBox = new AmRoMessageBox
+                {
+                    Background = "#222222",
+                    TextColor = "#ffffff",
+                    IconColor = "#3399ff",
+                    RippleEffectColor = "#000000",
+                    ClickEffectColor = "#1F2023",
+                    ShowMessageWithEffect = true
+                };
+                messageBox.Show(ex.Message.ToString());
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using Musical_Course.Classes;
+﻿using AmRoMessageDialog;
+using Musical_Course.Classes;
 using Musical_Course.Database;
 using System;
 using System.Collections.Generic;
@@ -40,6 +41,15 @@ namespace Musical_Course.Pages.UsersPage
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
+            var messageBox = new AmRoMessageBox
+            {
+                Background = "#222222",
+                TextColor = "#ffffff",
+                IconColor = "#3399ff",
+                RippleEffectColor = "#000000",
+                ClickEffectColor = "#1F2023",
+                ShowMessageWithEffect = true
+            };
             StringBuilder errors = new StringBuilder();
 
             if (string.IsNullOrWhiteSpace(Convert.ToString(_currentAreas.Name)))
@@ -56,7 +66,7 @@ namespace Musical_Course.Pages.UsersPage
             }
             if (errors.Length > 0)
             {
-                MessageBox.Show(errors.ToString());
+                messageBox.Show(errors.ToString());
                 return;
             }
             _currentAreas.Representative = GlobalLeVar.UserIdStat;
@@ -66,11 +76,11 @@ namespace Musical_Course.Pages.UsersPage
                 {
                     MusicalBaseEntities2.GetContext().Areas.Add(_currentAreas);
                     MusicalBaseEntities2.GetContext().SaveChanges();
-                    MessageBox.Show("Информация сохранена");
+                    messageBox.Show("Информация сохранена");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message.ToString());
+                    messageBox.Show(ex.Message.ToString());
                 }
             }
             else if (_currentAreas.AreaId == _currentAreas.AreaId)
@@ -78,11 +88,11 @@ namespace Musical_Course.Pages.UsersPage
                 try
                 {
                     MusicalBaseEntities2.GetContext().SaveChanges();
-                    MessageBox.Show("Информация сохранена");
+                    messageBox.Show("Информация сохранена");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message.ToString());
+                    messageBox.Show(ex.Message.ToString());
                 }
             }
             Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;

@@ -1,4 +1,5 @@
-﻿using Musical_Course.Database;
+﻿using AmRoMessageDialog;
+using Musical_Course.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,13 +57,22 @@ namespace Musical_Course.Pages
 
         private void Reg_BtnGo_Click(object sender, RoutedEventArgs e)
         {
+            var messageBox = new AmRoMessageBox
+            {
+                Background = "#222222",
+                TextColor = "#ffffff",
+                IconColor = "#3399ff",
+                RippleEffectColor = "#000000",
+                ClickEffectColor = "#1F2023",
+                ShowMessageWithEffect = true
+            };
             StringBuilder errors = new StringBuilder();
 
             if (code2 == RegBox_code.Text)
             {
                 if (errors.Length > 0)
                 {
-                    MessageBox.Show(errors.ToString(), "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+                    messageBox.Show(errors.ToString(), "Информация");
                     return;
                 }
                 if (_currentUser.UserId == 0)
@@ -74,7 +84,7 @@ namespace Musical_Course.Pages
                         _currentUser.RegistrationDate = DateTime.Now;
                         MusicalBaseEntities2.GetContext().Users.Add(_currentUser);
                         MusicalBaseEntities2.GetContext().SaveChanges();
-                        MessageBox.Show("Регистрация прошла успешно", "Регистрация выполнена", MessageBoxButton.OK, MessageBoxImage.Information);
+                        messageBox.Show("Регистрация прошла успешно", "Регистрация выполнена");
                         Manager.Frame.Navigate(new AutorisationPage());
                     }
                     catch (Exception ex)
@@ -85,12 +95,21 @@ namespace Musical_Course.Pages
             }
             else
             {
-                MessageBox.Show("Код указан неверный", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
+                messageBox.Show("Код указан неверный", "Ошибка регистрации");
             }
         }
 
         private void RegMail_BtnGo_Click(object sender, RoutedEventArgs e)
         {
+            var messageBox = new AmRoMessageBox
+            {
+                Background = "#222222",
+                TextColor = "#ffffff",
+                IconColor = "#3399ff",
+                RippleEffectColor = "#000000",
+                ClickEffectColor = "#1F2023",
+                ShowMessageWithEffect = true
+            };
             StringBuilder errors = new StringBuilder();
           
             if (string.IsNullOrWhiteSpace(_currentUser.Login))
@@ -134,26 +153,27 @@ namespace Musical_Course.Pages
             }
             if (_currentUser.Roll == 0)
             {
-                errors.AppendLine("Укажите роль");
+                messageBox.Show("Укажите роль", "Ошибка регистрации");
             }
+
             if (errors.Length > 0)
             {
-                MessageBox.Show(errors.ToString(), "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+                messageBox.Show(errors.ToString());
                 return;
             }
             else
             {
                 if (_currentUser.Password.Length < 8)
                 {
-                    MessageBox.Show("Пароль короткий");
+                    messageBox.Show("Пароль короткий");
                 }
                 else if (!_currentUser.Password.Any(Char.IsDigit))
                 {
-                    MessageBox.Show("Добавьте в пароль цифры");
+                    messageBox.Show("Добавьте в пароль цифры");
                 }
                 else if (_currentUser.Password.Intersect("#$%^&_").Count() == 0)
                 {
-                    MessageBox.Show("Добавьте в пароль специальные символы");
+                    messageBox.Show("Добавьте в пароль специальные символы");
                 }
                 else
                 {
@@ -169,23 +189,23 @@ namespace Musical_Course.Pages
                         {
                             if (sql1.Length != 0)
                             {
-                                MessageBox.Show("Введённый вами почта уже присутсвует", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
+                                messageBox.Show("Введённая вами почта уже присутсвует", "Ошибка регистрации");
                             }
                             if (sql2.Length != 0)
                             {
-                                MessageBox.Show("Введённый вами логин уже занят", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
+                                messageBox.Show("Введённый вами логин уже занят", "Ошибка регистрации");
                             }
                             if (sql3.Length != 0)
                             {
-                                MessageBox.Show("Введённый вами номер телефона уже используется", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
+                                messageBox.Show("Введённый вами номер телефона уже используется", "Ошибка регистрации");
                             }
                             //MessageBox.Show("Введённый вами данные, а имеено некоторые из них: почта логин или номер телефона уже используются", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
                         else
                         {
-                            MessageBox.Show("Для подтверждения ваших введённых данных мы используем двухфакторную аутентификацию. " +
-                                "Мы отправим вам сообщение на почту с кодом, который нужно ввести в поле, затем отправим вам сообщение на номер телефона", "Регистрация", MessageBoxButton.OK, MessageBoxImage.Information);
-                            MessageBox.Show("Сообщение отправленно на почту: " + RegBox_Mail.Text, "Регистрация", MessageBoxButton.OK, MessageBoxImage.Information);
+                            messageBox.Show("Для подтверждения ваших введённых данных мы используем двухфакторную аутентификацию. " +
+                                "Мы отправим вам сообщение на почту с кодом, который нужно ввести в поле, затем отправим вам сообщение на номер телефона", "Регистрация");
+                            messageBox.Show("Сообщение отправленно на почту: " + RegBox_Mail.Text, "Регистрация");
 
 
                             // отправитель - устанавливаем адрес и отображаемое в письме имя
@@ -214,7 +234,7 @@ namespace Musical_Course.Pages
                     }
                     catch (Exception en)
                     {
-                        MessageBox.Show(en.Message.ToString());
+                        messageBox.Show(en.Message.ToString());
                     }
                 }
                 
@@ -222,11 +242,20 @@ namespace Musical_Course.Pages
         }
         private void RegPhone_BtnGo_Click(object sender, RoutedEventArgs e)
         {
+            var messageBox = new AmRoMessageBox
+            {
+                Background = "#222222",
+                TextColor = "#ffffff",
+                IconColor = "#3399ff",
+                RippleEffectColor = "#000000",
+                ClickEffectColor = "#1F2023",
+                ShowMessageWithEffect = true
+            };
             if (code == RegBox_code.Text)
             {
-                MessageBox.Show("Почта подтверждена, теперь мы вам отправим новый код на ваш указанный номер телефона, продолжить?",
-                    "Регистрация", MessageBoxButton.OK, MessageBoxImage.Information);
-                MessageBox.Show("Сообщение отправленно на номер телефона: " + RegBox_Phone.Text, "Регистрация", MessageBoxButton.OK, MessageBoxImage.Information);
+                messageBox.Show("Почта подтверждена, теперь мы вам отправим новый код на ваш указанный номер телефона, продолжить?",
+                    "Регистрация");
+                messageBox.Show("Сообщение отправленно на номер телефона: " + RegBox_Phone.Text, "Регистрация");
 
                 //Отправка сообщения на смартфон
 
@@ -243,7 +272,7 @@ namespace Musical_Course.Pages
             }
             else
             {
-                MessageBox.Show("Код указан неверный", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
+                messageBox.Show("Код указан неверный", "Ошибка регистрации");
             }
         }
 

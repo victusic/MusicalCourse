@@ -1,4 +1,5 @@
-﻿using Musical_Course.Classes;
+﻿using AmRoMessageDialog;
+using Musical_Course.Classes;
 using Musical_Course.Database;
 using Musical_Course.Pages;
 using Musical_Course.Pages.UsersPage;
@@ -162,7 +163,16 @@ namespace Musical_Course
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                var messageBox = new AmRoMessageBox
+                {
+                    Background = "#222222",
+                    TextColor = "#ffffff",
+                    IconColor = "#3399ff",
+                    RippleEffectColor = "#000000",
+                    ClickEffectColor = "#1F2023",
+                    ShowMessageWithEffect = true
+                };
+                messageBox.Show(ex.Message.ToString());
             }
         }
 
@@ -186,6 +196,15 @@ namespace Musical_Course
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
+            var messageBox = new AmRoMessageBox
+            {
+                Background = "#222222",
+                TextColor = "#ffffff",
+                IconColor = "#3399ff",
+                RippleEffectColor = "#000000",
+                ClickEffectColor = "#1F2023",
+                ShowMessageWithEffect = true
+            };
             //группы удалить
             var GroupsForRemoving = Tts.SelectedItems.Cast<Groups>().ToList();
 
@@ -197,7 +216,7 @@ namespace Musical_Course
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                messageBox.Show(ex.Message.ToString());
             }
         }
 
@@ -225,6 +244,15 @@ namespace Musical_Course
 
         private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            var messageBox = new AmRoMessageBox
+            {
+                Background = "#222222",
+                TextColor = "#ffffff",
+                IconColor = "#3399ff",
+                RippleEffectColor = "#000000",
+                ClickEffectColor = "#1F2023",
+                ShowMessageWithEffect = true
+            };
             if (!string.IsNullOrEmpty(SearchBox.Text))
             {
                 try
@@ -246,7 +274,8 @@ namespace Musical_Course
                 }
                 catch
                 {
-                    MessageBox.Show("Ошибка в получении данных", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    
+                    messageBox.Show("Ошибка в получении данных", "Ошибка");
                 }
             }
             else
@@ -257,7 +286,7 @@ namespace Musical_Course
                 }
                 catch
                 {
-                    MessageBox.Show("Ошибка в получении данных", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    messageBox.Show("Ошибка в получении данных", "Ошибка");
                 }
             }
         }

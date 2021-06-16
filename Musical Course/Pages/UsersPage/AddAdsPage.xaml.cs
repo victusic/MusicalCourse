@@ -1,4 +1,5 @@
-﻿using Musical_Course.Classes;
+﻿using AmRoMessageDialog;
+using Musical_Course.Classes;
 using Musical_Course.Database;
 using System;
 using System.Collections.Generic;
@@ -47,6 +48,15 @@ namespace Musical_Course.Pages.UsersPage
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
+            var messageBox = new AmRoMessageBox
+            {
+                Background = "#222222",
+                TextColor = "#ffffff",
+                IconColor = "#3399ff",
+                RippleEffectColor = "#000000",
+                ClickEffectColor = "#1F2023",
+                ShowMessageWithEffect = true
+            };
             StringBuilder errors = new StringBuilder();
 
             if (string.IsNullOrWhiteSpace(Convert.ToString(_currentAdvertisement.Area)) && string.IsNullOrWhiteSpace(Convert.ToString(_currentAdvertisement.Group)))
@@ -57,7 +67,7 @@ namespace Musical_Course.Pages.UsersPage
             {
                 if (_currentAdvertisement.Area != null && _currentAdvertisement.Group != null)
                 {
-                    MessageBox.Show("Укажите номер только одного объявления нужного вам типа");
+                    messageBox.Show("Укажите номер только одного объявления нужного вам типа");
                 }
                 else
                 {
@@ -77,11 +87,11 @@ namespace Musical_Course.Pages.UsersPage
                         {
                             MusicalBaseEntities2.GetContext().Advertisement.Add(_currentAdvertisement);
                             MusicalBaseEntities2.GetContext().SaveChanges();
-                            MessageBox.Show("Информация сохранена, далее она будет пройти проверку, после чего будет опубликованна в общий доступ");
+                            messageBox.Show("Информация сохранена, далее она будет пройти проверку, после чего будет опубликованна в общий доступ", "Работа с данными");
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show(ex.Message.ToString());
+                            messageBox.Show(ex.Message.ToString());
                         }
                     }
                     else if (_currentAdvertisement.AdvertisementId == _currentAdvertisement.AdvertisementId)
@@ -89,11 +99,11 @@ namespace Musical_Course.Pages.UsersPage
                         try
                         {
                             MusicalBaseEntities2.GetContext().SaveChanges();
-                            MessageBox.Show("Информация сохранена");
+                            messageBox.Show("Информация сохранена");
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show(ex.Message.ToString());
+                            messageBox.Show(ex.Message.ToString());
                         }
                     }
                     Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;

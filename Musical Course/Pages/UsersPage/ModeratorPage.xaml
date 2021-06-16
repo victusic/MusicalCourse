@@ -12,7 +12,7 @@
         <!--Главная страница-->
 
         <Grid Margin="65,0,0,0" Name="PreviewGrid" Panel.ZIndex="100">
-            <Image Source="/Musical Course;component/Resources/HelloBackground.jpg"></Image>
+            <Image Source="/Musical Course;component/Resources/HelloBackground.jpg" Stretch="UniformToFill"></Image>
             <TextBlock Name="HelloText" Text="Приветствеующий текст" Foreground ="White" FontSize="84"
                    FontFamily="Arial" VerticalAlignment="Bottom" HorizontalAlignment="Center"
                    Margin="31,0,10,582" Width="1174" TextAlignment="Center"></TextBlock>

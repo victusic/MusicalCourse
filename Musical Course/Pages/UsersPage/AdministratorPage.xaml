@@ -17,28 +17,27 @@
             <TextBlock Name="HelloText" Text="Добро пожаловать!" Foreground ="White" FontSize="84"
                    FontFamily="Arial" VerticalAlignment="Top"
                    Margin="30,30,30,0" TextAlignment="Center"/>
-            <!--<StackPanel Margin="0,338,0,300" Background="Red">
-                <ComboBox Height="40" Margin="110,0,724,0" SelectedIndex="0"
-                          Name="Cb1" SelectionChanged="Cb1_SelectionChanged">
-                </ComboBox>
-                <ComboBox Height="40" Margin="722,0,110,0" SelectedIndex="0"
-                          Name="Cb2">
-                </ComboBox>
-            </StackPanel>
-            <WindowsFormsHost HorizontalAlignment="Left" Height="285" Margin="0,425,0,0" VerticalAlignment="Top" Width="1205">
-                <charts:Chart Name="Charts">
+
+            <ComboBox Margin="25,0,0,280" SelectedIndex="0"
+                          x:Name="ComboUsers" SelectionChanged="UpdateChart" HorizontalAlignment="Left" Width="400" Height="25" FontSize="16" Foreground="Black" VerticalAlignment="Bottom"/>
+            <ComboBox Margin="0,0,25,280" SelectedIndex="0"
+                          x:Name="ComboChartTypes" SelectionChanged="UpdateChart" HorizontalAlignment="Right" Width="400" FontSize="16" Foreground="Black" Height="25" VerticalAlignment="Bottom"/>
+            <WindowsFormsHost Margin="25,0,25,25" Height="250" VerticalAlignment="Bottom" >
+                <charts:Chart x:Name="ChartPayments">
                     <charts:Chart.Legends>
-                        
+                        <charts:Legend>
+
+                        </charts:Legend>
                     </charts:Chart.Legends>
                 </charts:Chart>
-            </WindowsFormsHost>-->
+            </WindowsFormsHost>
 
         </Grid>
 
         <Grid Margin="65,0,0,0" Name="AdvertisementGrid" Panel.ZIndex="10">
             <Image Source="/Musical Course;component/Resources/AdvertisimentBackground.jpg" 
                Stretch="UniformToFill"></Image>
-            <TextBlock Name="HelloText2" Text="Управление объвлениями" Foreground ="White" FontSize="84"
+            <TextBlock Name="HelloText2" Text="Управление объявлениями" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 20"></TextBlock>
             <DataGrid Name="Tts" AutoGenerateColumns="False" Margin="50, 100, 50, 60" SelectionChanged="Tts_SelectionChanged" IsReadOnly="True" IsVisibleChanged="Tts_IsVisibleChanged">

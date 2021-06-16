@@ -1,4 +1,5 @@
-﻿using Musical_Course.Database;
+﻿using AmRoMessageDialog;
+using Musical_Course.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +41,15 @@ namespace Musical_Course.Pages.UsersPage
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
+            var messageBox = new AmRoMessageBox
+            {
+                Background = "#222222",
+                TextColor = "#ffffff",
+                IconColor = "#3399ff",
+                RippleEffectColor = "#000000",
+                ClickEffectColor = "#1F2023",
+                ShowMessageWithEffect = true
+            };
             StringBuilder errors = new StringBuilder();
 
             if (errors.Length > 0)
@@ -66,11 +76,11 @@ namespace Musical_Course.Pages.UsersPage
                 try
                 {
                     MusicalBaseEntities2.GetContext().SaveChanges();
-                    MessageBox.Show("Информация сохранена");
+                    messageBox.Show("Информация сохранена");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message.ToString());
+                    messageBox.Show(ex.Message.ToString());
                 }
             }
             Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;

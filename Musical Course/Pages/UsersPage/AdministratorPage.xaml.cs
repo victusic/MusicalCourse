@@ -25,7 +25,7 @@ namespace Musical_Course
     /// </summary>
     public partial class AdministratorPage : Page
     {
-        public MusicalBaseEntities2 _contextS = new MusicalBaseEntities2();
+        private MusicalBaseEntities2 _contextS = new MusicalBaseEntities2();
         public AdministratorPage()
         {
             TimeSpan time = DateTime.Now.TimeOfDay;
@@ -69,15 +69,17 @@ namespace Musical_Course
             Tts3.ItemsSource = MusicalBaseEntities2.GetContext().Areas.ToList();
             Tts4.ItemsSource = MusicalBaseEntities2.GetContext().AutorisationHistory.ToList();
             Tts5.ItemsSource = MusicalBaseEntities2.GetContext().Users.ToList();
-            /*Charts.ChartAreas.Add(new System.Windows.Forms.DataVisualization.Charting.ChartArea("Main"));
+            //Диаграмма
 
-            var CurrentSeries = new Series("Date")
+            ChartPayments.ChartAreas.Add(new ChartArea("Main"));
+
+            var currentSeries = new Series("Payments")
             {
                 IsValueShownAsLabel = true
             };
-            Charts.Series.Add(CurrentSeries);
-            Cb1.ItemsSource = _contextS.AutorisationHistory.ToList();
-            Cb2.ItemsSource = Enum.GetValues(typeof(SeriesChartType));*/
+            ChartPayments.Series.Add(currentSeries);
+            ComboUsers.ItemsSource = _contextS.Users.ToList();
+            ComboChartTypes.ItemsSource = Enum.GetValues(typeof(SeriesChartType));
 
 
         }
@@ -214,8 +216,8 @@ namespace Musical_Course
         }
         private void Tts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Tts.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToArray();
-            MusicalBaseEntities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+            /*Tts.ItemsSource = MusicalBaseEntities2.GetContext().Advertisement.ToArray();
+            MusicalBaseEntities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());*/
         }
 
         private void BtnAddGroup_Click(object sender, RoutedEventArgs e)
@@ -275,14 +277,21 @@ namespace Musical_Course
             }
         }
 
-        /*private void Cb1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void UpdateChart(object sender, SelectionChangedEventArgs e)
         {
-            if (Cb1.SelectedItem is Login CurrentSeries && Cb2.SelectedItem is Login CurrentSeries)
+            if (ComboUsers.SelectedItem is Users currentUser && ComboChartTypes.SelectedItem is SeriesChartType currentType)
             {
-                Series CurrentSeries Charts.Series.FirstOrDefault();
+                Series CurrentSeries = ChartPayments.Series.FirstOrDefault();
+                CurrentSeries.ChartType = currentType;
+                CurrentSeries.Points.Clear();
 
+                var categoriesList = _contextS.Users.ToList();
+                /*foreach(var category in categoriesList)
+                {
+                    CurrentSeries.Points.AddXY(category.Login, _contextS.Users.ToList().Where(p=>p.UserId == 2 && p.Login == "Victusic"));
+                }*/
             }
-        }*/
+        }
     }
         
 }
