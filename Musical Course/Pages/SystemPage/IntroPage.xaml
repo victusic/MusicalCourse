@@ -13,13 +13,13 @@
         <TextBlock Foreground ="White" Text="Sound Production" FontSize="84"
                    FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 280"></TextBlock>
-        <Button Width="300" Height="60" Background="#00DDDDDD" BorderBrush="White"
+        <Button Width="300" Height="60" BorderBrush="White" 
                 BorderThickness="3" Margin="0, 120, 310, 0" Content="Войти"
-                Foreground="White" FontFamily="Arial" FontSize="42"
+                FontFamily="Arial" FontSize="42"
                 Name="BtnGo" Click="BtnGo_Click"></Button>
-        <Button Width="300" Height="60" Background="#00DDDDDD" BorderBrush="White"
+        <Button Width="300" Height="60" BorderBrush="White"
                 BorderThickness="3" Margin="310, 120, 0, 0" Content="О программе"
-                Foreground="White" FontFamily="Arial" FontSize="42"
+                FontFamily="Arial" FontSize="42"
                 Name="BtnAboutGo" Click="BtnAboutGo_Click"></Button>
     </Grid>
 </Page>

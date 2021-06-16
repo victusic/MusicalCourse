@@ -10,9 +10,9 @@
 
     <Grid>
         <Image Source="/Musical Course;component/Resources/AboutBackground.png" Stretch="UniformToFill"/>
-        <Button Background="#00DDDDDD" BorderBrush="White"
+        <Button BorderBrush="White"
                 BorderThickness="3" Content="Назад"
-                Foreground="White" FontFamily="Arial" FontSize="26"
+                FontFamily="Arial" FontSize="26"
                 Name="BtnGoBack" Click="BtnGoBack_Click" Width="151" Margin="0,0,575,10" HorizontalAlignment="Right" Height="44" VerticalAlignment="Bottom" />
         <TextBlock Foreground ="White" Text="Sound Production" FontSize="66"
             FontFamily="Arial" VerticalAlignment="Top" TextAlignment="Center"

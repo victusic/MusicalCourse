@@ -27,13 +27,13 @@
         <TextBox Background="#00DDDDDD" BorderBrush="White" Text="{Binding Description}"
             BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42" Width="375" Height="54" 
             Margin="566,302,0,0" x:Name="AddBox_Work" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Button Background="#00DDDDDD" BorderBrush="White"
+        <Button BorderBrush="White"
                 BorderThickness="3" Content="Сохранить"
-                Foreground="White" FontFamily="Arial"
+                 FontFamily="Arial"
                 Name="BtnAdd" Click="BtnAdd_Click" Margin="24,0,0,20" FontSize="42" Width="300" Height="60" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
-        <Button Background="#00DDDDDD" BorderBrush="White"
+        <Button BorderBrush="White"
                 BorderThickness="3" Content="Назад"
-                Foreground="White" FontFamily="Arial" 
+                FontFamily="Arial" 
                 Name="BtnGoBack" Click="BtnGoBack_Click" FontSize="42" Width="300" Height="60" Margin="0,0,24,20" VerticalAlignment="Bottom"  HorizontalAlignment="Right"/>
     </Grid>
 </Page>

@@ -81,17 +81,17 @@
             Margin="865,313,0,0" x:Name="RegBox_code" HorizontalAlignment="Left" Width="375" Height="60" VerticalAlignment="Top"/>
         <TextBlock Foreground ="White" Text="Код:" FontSize="36"
             FontFamily="Arial" Margin="789,318,0,0" HorizontalAlignment="Left" Width="71" Height="41" VerticalAlignment="Top" />
-        <Button Background="#00DDDDDD" BorderBrush="White"
+        <Button BorderBrush="White"
             BorderThickness="3" Margin="490,0,0,55" Content="Продолжить"
-            Foreground="White" FontFamily="Arial" FontSize="42"
+            FontFamily="Arial" FontSize="42"
             x:Name="RegMail_BtnGo" Click="RegMail_BtnGo_Click" Height="60" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="300"/>
-        <Button Background="#00DDDDDD" BorderBrush="White"
+        <Button BorderBrush="White"
             BorderThickness="3" Margin="490,0,0,55" Content="Продолжить"
-            Foreground="White" FontFamily="Arial" FontSize="42"
+            FontFamily="Arial" FontSize="42"
             x:Name="RegPhone_BtnGo" Height="60" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="300" Click="RegPhone_BtnGo_Click"/>
-        <Button Background="#00DDDDDD" BorderBrush="White"
+        <Button BorderBrush="White"
                 BorderThickness="3" Content="Назад"
-                Foreground="White" FontFamily="Arial" FontSize="26"
+                FontFamily="Arial" FontSize="26"
                 Name="BtnGoBack" Click="BtnGoBack_Click" Width="151" Margin="0,0,21,10" HorizontalAlignment="Right" Height="43" VerticalAlignment="Bottom"/>
     </Grid>
 </Page>

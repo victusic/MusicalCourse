@@ -15,13 +15,13 @@
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 20"><Run Text="Изменить статус"/><Run Text=" пользователя"/></TextBlock>
 
-        <Button Background="#00DDDDDD" BorderBrush="White"
+        <Button BorderBrush="White"
                 BorderThickness="3" Content="Сохранить"
-                Foreground="White" FontFamily="Arial" FontSize="26"
+                FontFamily="Arial" FontSize="26"
                 Name="BtnAdd" Click="BtnAdd_Click" Width="151" Margin="10,0,0,10" Height="43" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
-        <Button Background="#00DDDDDD" BorderBrush="White"
+        <Button  BorderBrush="White"
                 BorderThickness="3" Content="Назад"
-                Foreground="White" FontFamily="Arial" FontSize="26"
+                FontFamily="Arial" FontSize="26"
                 Name="BtnGoBack" Click="BtnGoBack_Click" Width="151" Height="43" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom"/>
         <TextBox Name="Active" Text="{Binding IsActivity}" Margin="212,182,213,214"  Background="#00DDDDDD" BorderBrush="White" BorderThickness="3" 
                  Width="375" Height="54" Foreground="White" />

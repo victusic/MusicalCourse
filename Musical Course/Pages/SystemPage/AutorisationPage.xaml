@@ -23,20 +23,20 @@
         <PasswordBox Height="60" Background="#00DDDDDD" BorderBrush="White"
                  BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
                  Margin="0,0,415,327" Name="PasswordBox_Auth" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="450"/>
-        <Button Width="300" Height="60" Background="#00DDDDDD" BorderBrush="White"
+        <Button Width="300" Height="60" BorderBrush="White"
                 BorderThickness="3" Margin="0, 280, 0, 0" Content="Войти"
-                Foreground="White" FontFamily="Arial" FontSize="42"
+               FontFamily="Arial" FontSize="42"
                 Name="Log_BtnGo" Click="Log_BtnGo_Click"></Button>
         <!--<Rectangle Panel.ZIndex="-100" Fill="#99666666" Width="600" Height="600" 
         RadiusX="50" RadiusY="50" Margin="340,48,340,72" />-->
-        <Button Content="Нет аккаунта? Зарегистрироваться" Foreground="White"
+        <Button Content="Нет аккаунта? Зарегистрироваться"
                    FontFamily="Arial" FontSize="16" HorizontalAlignment="Center"
                    VerticalAlignment="Bottom" Margin="0, 0, 0, 5"
-                   Background="#00DDDDDD" BorderThickness="0" Name="HyperGo" 
+                  BorderThickness="0" Name="HyperGo" 
                 Click="HyperGo_Click"></Button>
-        <Button Background="#00DDDDDD" BorderBrush="White"
+        <Button BorderBrush="White"
                 BorderThickness="3" Content="Назад"
-                Foreground="White" FontFamily="Arial" FontSize="26"
+                FontFamily="Arial" FontSize="26"
                 Name="BtnGoBack" Click="BtnGoBack_Click" Width="151" Margin="0,0,21,10" HorizontalAlignment="Right" Height="43" VerticalAlignment="Bottom"/>
     </Grid>
 </Page>
