@@ -28,6 +28,20 @@ namespace Musical_Course
         private MusicalBaseEntities2 _contextS = new MusicalBaseEntities2();
         public AdministratorPage()
         {
+            int ccount;
+            foreach (var user in MusicalBaseEntities2.GetContext().Users)
+            {
+                ccount = 0;
+                foreach (var adv in MusicalBaseEntities2.GetContext().Advertisement)
+                {
+                    if (user.UserId == adv.Representative)
+                    {
+                        ccount++;
+                    }
+                }
+                user.CountAdvertisement = ccount;
+            }
+            MusicalBaseEntities2.GetContext().SaveChanges();
             TimeSpan time = DateTime.Now.TimeOfDay;
             TimeSpan time0 = new TimeSpan(0, 0, 0);
             TimeSpan time6 = new TimeSpan(6, 0, 0);

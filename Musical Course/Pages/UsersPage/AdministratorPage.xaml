@@ -50,7 +50,7 @@
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Name="BtnEditAds" Content="Изменить статус" Click="BtnEditAds_Click"></Button>
+                                <Button Name="BtnEditAds" Content="Изменить статус" Click="BtnEditAds_Click" Foreground="Black"></Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -82,7 +82,7 @@
                     <DataGridTemplateColumn Header="Статус" Width="100">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Name="EditUser" Content="Изменить статус" Click="BtnEditUser_Click" ></Button>
+                                <Button Name="EditUser" Content="Изменить статус" Click="BtnEditUser_Click" Foreground="Black"></Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

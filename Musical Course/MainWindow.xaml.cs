@@ -1,4 +1,5 @@
 ﻿using AmRoMessageDialog;
+using Musical_Course.Database;
 using Musical_Course.Pages;
 using Musical_Course.Pages.UsersPage;
 using System;
@@ -21,9 +22,9 @@ namespace Musical_Course
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
+    
     public partial class MainWindow : Window
     {
-        
         public MainWindow()
         {
             InitializeComponent();

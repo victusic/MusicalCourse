@@ -36,7 +36,7 @@
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Изменить статус" Click="BtnEdit_Click"></Button>
+                                <Button Content="Изменить статус" Click="BtnEdit_Click" Foreground="Black"></Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -70,7 +70,7 @@
                     <DataGridTemplateColumn Header="Статус" Width="100">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Изменить" Click="Button_Click"></Button>
+                                <Button Content="Изменить" Click="Button_Click" Foreground="Black"></Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
