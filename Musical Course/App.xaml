@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:Musical_Course"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        
+
         <Style TargetType="Button">
             <Setter Property="Background" Value="Transparent"></Setter>
             <Setter Property="Foreground" Value="White"></Setter>
@@ -36,10 +36,6 @@
                     <Setter Property="Foreground" Value="White"></Setter>
                 </Trigger>
             </Style.Triggers>
-        </Style>
-
-        <Style TargetType="TextBox">
-            <Setter Property="MaxLength" Value="25"></Setter>
         </Style>
 
         <ImageBrush x:Key="tb_mouse_over"

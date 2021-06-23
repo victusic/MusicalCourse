@@ -18,11 +18,10 @@
                    FontFamily="Arial" VerticalAlignment="Top"
                    Margin="30,30,30,0" TextAlignment="Center"/>
 
-            <ComboBox Margin="25,0,0,280" SelectedIndex="0"
-                          x:Name="ComboUsers" SelectionChanged="UpdateChart" HorizontalAlignment="Left" Width="400" Height="25" FontSize="16" Foreground="Black" VerticalAlignment="Bottom"/>
-            <ComboBox Margin="0,0,25,280" SelectedIndex="0"
-                          x:Name="ComboChartTypes" SelectionChanged="UpdateChart" HorizontalAlignment="Right" Width="400" FontSize="16" Foreground="Black" Height="25" VerticalAlignment="Bottom"/>
-            <WindowsFormsHost Margin="25,0,25,25" Height="250" VerticalAlignment="Bottom" >
+
+            <ComboBox Margin="0,0,25,282" SelectedIndex="0" Background="Transparent"
+                          x:Name="ComboChartTypes" SelectionChanged="UpdateChart" HorizontalAlignment="Right" Width="400" FontSize="16" Height="31" VerticalAlignment="Bottom"/>
+            <WindowsFormsHost Margin="25,0,25,27" Height="250" VerticalAlignment="Bottom" >
                 <charts:Chart x:Name="ChartPayments">
                     <charts:Chart.Legends>
                         <charts:Legend>

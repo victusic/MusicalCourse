@@ -34,9 +34,9 @@
         <TextBox Background="#00DDDDDD" BorderBrush="White" Text="{Binding DescriptionAreas}"
             BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
             Margin="534,373,0,0" x:Name="AddBox_Work" HorizontalAlignment="Left" Width="375" Height="54" VerticalAlignment="Top" />
-        <TextBlock Foreground ="White" Text="Продюсер:" FontSize="36"
-            FontFamily="Arial" Margin="347,319,0,0" HorizontalAlignment="Left" Height="40"  Width="182" VerticalAlignment="Top" />
         <TextBlock Foreground ="White" Text="Описание:" FontSize="36"
-            FontFamily="Arial" Margin="353,379,0,0" HorizontalAlignment="Left" Height="40"  Width="176" VerticalAlignment="Top" />
+            FontFamily="Arial" Margin="347,319,0,0" HorizontalAlignment="Left" Height="40"  Width="182" VerticalAlignment="Top" />
+        <TextBlock Foreground ="White" Text="Желаемая площадка:" FontSize="36"
+            FontFamily="Arial" Margin="164,379,0,0" HorizontalAlignment="Left" Height="40"  Width="365" VerticalAlignment="Top" />
     </Grid>
 </Page>

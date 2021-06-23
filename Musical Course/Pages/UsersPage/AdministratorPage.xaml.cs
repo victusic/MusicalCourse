@@ -73,12 +73,12 @@ namespace Musical_Course
 
             ChartPayments.ChartAreas.Add(new ChartArea("Main"));
 
-            var currentSeries = new Series("Payments")
+            var currentSeries = new Series("Количество объявлений")
             {
                 IsValueShownAsLabel = true
             };
             ChartPayments.Series.Add(currentSeries);
-            ComboUsers.ItemsSource = _contextS.Users.ToList();
+            //ComboUsers.ItemsSource = _contextS.Users.ToList();
             ComboChartTypes.ItemsSource = Enum.GetValues(typeof(SeriesChartType));
 
 
@@ -279,17 +279,17 @@ namespace Musical_Course
 
         private void UpdateChart(object sender, SelectionChangedEventArgs e)
         {
-            if (ComboUsers.SelectedItem is Users currentUser && ComboChartTypes.SelectedItem is SeriesChartType currentType)
+            if (ComboChartTypes.SelectedItem is SeriesChartType currentType)
             {
                 Series CurrentSeries = ChartPayments.Series.FirstOrDefault();
                 CurrentSeries.ChartType = currentType;
                 CurrentSeries.Points.Clear();
 
                 var categoriesList = _contextS.Users.ToList();
-                /*foreach(var category in categoriesList)
+                foreach(var category in categoriesList)
                 {
-                    CurrentSeries.Points.AddXY(category.Login, _contextS.Users.ToList().Where(p=>p.UserId == 2 && p.Login == "Victusic"));
-                }*/
+                    CurrentSeries.Points.AddXY(category.Login, category.CountAdvertisement);
+                }
             }
         }
     }
