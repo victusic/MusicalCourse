@@ -11,14 +11,14 @@
       >
 
     <Grid>
-        <Grid Margin="65,0,0,0" Name="PreviewGrid" Panel.ZIndex="100">
-            <Image Source="/Musical Course;component/Resources/HelloBackground.jpg" 
-               Stretch="UniformToFill"></Image>
+        <Grid Margin="65,0,0,0" Name="PreviewGrid" Panel.ZIndex="100" Style="{DynamicResource GridStyle}">
+            <!--<Image Source="/Musical Course;component/Resources/HelloBackground.jpg" 
+               Stretch="UniformToFill"></Image>-->
             <TextBlock Name="HelloText" Text="Добро пожаловать!" Foreground ="White" FontSize="84"
                    FontFamily="Arial" VerticalAlignment="Top"
                    Margin="30,30,30,0" TextAlignment="Center"/>
 
-
+           
             <ComboBox Margin="0,0,25,282" SelectedIndex="0" Background="Transparent"
                           x:Name="ComboChartTypes" SelectionChanged="UpdateChart" HorizontalAlignment="Right" Width="400" FontSize="16" Height="31" VerticalAlignment="Bottom"/>
             <WindowsFormsHost Margin="25,0,25,27" Height="250" VerticalAlignment="Bottom" >
@@ -33,9 +33,9 @@
 
         </Grid>
 
-        <Grid Margin="65,0,0,0" Name="AdvertisementGrid" Panel.ZIndex="10">
-            <Image Source="/Musical Course;component/Resources/AdvertisimentBackground.jpg" 
-               Stretch="UniformToFill"></Image>
+        <Grid Margin="65,0,0,0" Name="AdvertisementGrid" Panel.ZIndex="10" Style="{DynamicResource GridStyle}">
+            <!--<Image Source="/Musical Course;component/Resources/AdvertisimentBackground.jpg" 
+               Stretch="UniformToFill"></Image>-->
             <TextBlock Name="HelloText2" Text="Управление объявлениями" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 20"></TextBlock>
@@ -58,9 +58,9 @@
             </DataGrid>
         </Grid>
 
-        <Grid Margin="65,0,0,0" Name="UsersGrid" Panel.ZIndex="10">
-            <Image Source="/Musical Course;component/Resources/UsersBackground.jpg"
-                    Stretch="UniformToFill"></Image>
+        <Grid Margin="65,0,0,0" Name="UsersGrid" Panel.ZIndex="10" Style="{DynamicResource GridStyle}">
+            <!--<Image Source="/Musical Course;component/Resources/UsersBackground.jpg"
+                    Stretch="UniformToFill"></Image>-->
             <TextBlock Name="HelloText3" Text="Просмотр базы пользователей" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 20"></TextBlock>
@@ -90,9 +90,9 @@
             </DataGrid>
         </Grid>
 
-        <Grid Margin="65,0,0,0" Name="GroupGrid" Panel.ZIndex="10">
-            <Image Source="/Musical Course;component/Resources/GroupsBackground.jpg"
-                    Stretch="UniformToFill"></Image>
+        <Grid Margin="65,0,0,0" Name="GroupGrid" Panel.ZIndex="10" Style="{DynamicResource GridStyle}">
+            <!--<Image Source="/Musical Course;component/Resources/GroupsBackground.jpg"
+                    Stretch="UniformToFill"></Image>-->
             <TextBlock Name="HelloText4" Text="Просмотр групп" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 20"></TextBlock>
@@ -108,9 +108,9 @@
             </DataGrid>
         </Grid>
 
-        <Grid Margin="65,0,0,0" Name="AreaGrid" Panel.ZIndex="10">
-            <Image Source="/Musical Course;component/Resources/AreasBackground.jpg" 
-               Stretch="UniformToFill" Panel.ZIndex="-1000"></Image>
+        <Grid Margin="65,0,0,0" Name="AreaGrid" Panel.ZIndex="10" Style="{DynamicResource GridStyle}">
+            <!--<Image Source="/Musical Course;component/Resources/AreasBackground.jpg" 
+               Stretch="UniformToFill" Panel.ZIndex="-1000"></Image>-->
             <TextBlock Name="HelloText5" Text="Просмотр площадок" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 20"></TextBlock>
@@ -126,9 +126,9 @@
             </DataGrid>
         </Grid>
 
-        <Grid Margin="65,0,0,0" Name="AutorisationHistoryGrid" Panel.ZIndex="10">
-            <Image Source="/Musical Course;component/Resources/AutorisationHistoryBackground.jpg" 
-               Stretch="UniformToFill" Panel.ZIndex="-1000"></Image>
+        <Grid Margin="65,0,0,0" Name="AutorisationHistoryGrid" Panel.ZIndex="10" Style="{DynamicResource GridStyle}">
+            <!--<Image Source="/Musical Course;component/Resources/AutorisationHistoryBackground.jpg" 
+               Stretch="UniformToFill" Panel.ZIndex="-1000"></Image>-->
             <TextBlock Name="HelloText6" Text="Журнал авторизации" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 20"></TextBlock>
@@ -142,9 +142,9 @@
             </DataGrid>
         </Grid>
 
-        <Grid Margin="65,0,0,0" Name="RegistrationHistoryGrid" Panel.ZIndex="10">
-            <Image Source="/Musical Course;component/Resources/RegistrationHistoryBackground.jpg"
-                    Stretch="UniformToFill"></Image>
+        <Grid Margin="65,0,0,0" Name="RegistrationHistoryGrid" Panel.ZIndex="10" Style="{DynamicResource GridStyle}">
+            <!--<Image Source="/Musical Course;component/Resources/RegistrationHistoryBackground.jpg"
+                    Stretch="UniformToFill"></Image>-->
             <TextBlock Name="HelloText7" Text="Журнал регистрации" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 20"></TextBlock>

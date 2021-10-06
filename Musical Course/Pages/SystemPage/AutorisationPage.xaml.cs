@@ -106,7 +106,7 @@ namespace Musical_Course.Pages
                                 messageBox.Show("Вы успешно вошли", "Вход выполнен успешно");
                                 Application.Current.MainWindow.ResizeMode = System.Windows.ResizeMode.CanResize;
                             }
-                            else if (rol == 3)
+                            /*else if (rol == 3)
                             {
                                 Manager.Frame.Navigate(new ProducerPage());
                                 messageBox.Show("Вы успешно вошли", "Вход выполнен успешно");
@@ -141,7 +141,7 @@ namespace Musical_Course.Pages
                                 smtp.Credentials = new NetworkCredential("dlya_d_raboty_raboty@mail.ru", "DHDKI55544DIEJDO5854565");
                                 smtp.EnableSsl = true;
                                 smtp.Send(m);
-                            }
+                            }*/
                         }
                         else
                         {

@@ -138,23 +138,8 @@
     <Compile Include="Database\Users.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SystemPage\AboutProgramPage.xaml.cs">
-      <DependentUpon>AboutProgramPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\UsersPage\AddAdsPage.xaml.cs">
-      <DependentUpon>AddAdsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\UsersPage\AddAreaPage.xaml.cs">
-      <DependentUpon>AddAreaPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\UsersPage\AddGroupManagerPage.xaml.cs">
-      <DependentUpon>AddGroupManagerPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\UsersPage\AddUserPage.xaml.cs">
       <DependentUpon>AddUserPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\UsersPage\ManagerPage.xaml.cs">
-      <DependentUpon>ManagerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\UsersPage\ModerAdvPage.xaml.cs">
       <DependentUpon>ModerAdvPage.xaml</DependentUpon>
@@ -165,38 +150,20 @@
     <Compile Include="Pages\UsersPage\AdministratorPage.xaml.cs">
       <DependentUpon>AdministratorPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\UsersPage\PrintManagerPage.xaml.cs">
-      <DependentUpon>PrintManagerPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\UsersPage\PrintProducerPage.xaml.cs">
-      <DependentUpon>PrintProducerPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Page Include="Pages\SystemPage\AboutProgramPage.xaml">
+    <Page Include="dark.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\UsersPage\AddAdsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\UsersPage\AddAreaPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\UsersPage\AddGroupManagerPage.xaml">
+    <Page Include="light.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\UsersPage\AddUserPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\UsersPage\ManagerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -236,18 +203,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\UsersPage\PrintManagerPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\UsersPage\PrintProducerPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\UsersPage\ProducerPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Manager.cs" />
@@ -259,9 +214,6 @@
     </Compile>
     <Compile Include="Pages\SystemPage\RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\UsersPage\ProducerPage.xaml.cs">
-      <DependentUpon>ProducerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -322,23 +274,6 @@
     <Resource Include="logotype.ico" />
     <Resource Include="Resources\logotype.ico" />
     <Resource Include="Resources\logotype.png" />
-    <Resource Include="Resources\UsersBackground.jpg" />
-    <Resource Include="Resources\RegistrationHistoryBackground.jpg" />
-    <Resource Include="Resources\RegistrationBackground.jpg" />
-    <Resource Include="Resources\ModerationAdvertisementBackground.jpg" />
-    <Resource Include="Resources\IntroBackground.jpg" />
-    <Resource Include="Resources\HelloBackground.jpg" />
-    <Resource Include="Resources\GroupsBackground.jpg" />
-    <Resource Include="Resources\DopBackground.jpg" />
-    <Resource Include="Resources\AutorisationHistoryBackground.jpg" />
-    <Resource Include="Resources\AutorisationBackground.jpg" />
-    <Resource Include="Resources\AreasBackground.jpg" />
-    <Resource Include="Resources\AdvertisimentBackground.jpg" />
-    <Resource Include="Resources\AddUsersBackground.png" />
-    <Resource Include="Resources\AddGroupsBackground.jpg" />
-    <Resource Include="Resources\AddAreasBackground.jpg" />
-    <Resource Include="Resources\AddAdvertisementBackground.jpg" />
-    <Resource Include="Resources\AboutBackground.png" />
     <Resource Include="Resources\WeAdvertisementIcon.png" />
   </ItemGroup>
   <ItemGroup>

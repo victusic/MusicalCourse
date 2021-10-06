@@ -8,18 +8,11 @@
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="IntroPage" WindowTitle="">
 
-    <Grid>
-        <Image Source="/Musical Course;component/Resources/IntroBackground.jpg" Stretch="UniformToFill"/>
-        <TextBlock Foreground ="White" Text="Sound Production" FontSize="84"
-                   FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Center"
-                   Margin="0, 0, 0, 280"></TextBlock>
-        <Button Width="300" Height="60" BorderBrush="White" 
-                BorderThickness="3" Margin="0, 120, 310, 0" Content="Войти"
-                FontFamily="Arial" FontSize="42"
-                Name="BtnGo" Click="BtnGo_Click"></Button>
-        <Button Width="300" Height="60" BorderBrush="White"
-                BorderThickness="3" Margin="310, 120, 0, 0" Content="О программе"
-                FontFamily="Arial" FontSize="42"
-                Name="BtnAboutGo" Click="BtnAboutGo_Click"></Button>
+    <Grid Style="{DynamicResource GridStyle}">
+        <ComboBox x:Name="styleBox" Width="400" Height="31" Margin="0,0,0,0" FontSize="16"/>
+        <TextBlock Style="{DynamicResource ZaglTextStyle}" Text="Sound Production" FontSize="72"
+                   FontFamily="Arial" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="306,46,306,0"></TextBlock>
+        <Button Style="{DynamicResource ButtonStyle}" VerticalAlignment="Center" Margin="0,200,0,0"
+                HorizontalAlignment="Center" Content="Войти" Name="BtnGo" Click="BtnGo_Click"></Button>
     </Grid>
 </Page>

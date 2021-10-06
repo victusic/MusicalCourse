@@ -12,7 +12,7 @@
         <!--Главная страница-->
 
         <Grid Margin="65,0,0,0" Name="PreviewGrid" Panel.ZIndex="100">
-            <Image Source="/Musical Course;component/Resources/HelloBackground.jpg" Stretch="UniformToFill"></Image>
+            <!--<Image Source="/Musical Course;component/Resources/HelloBackground.jpg" Stretch="UniformToFill"></Image>-->
             <TextBlock Name="HelloText" Text="Приветствеующий текст" Foreground ="White" FontSize="84"
                    FontFamily="Arial" VerticalAlignment="Bottom" HorizontalAlignment="Center"
                    Margin="31,0,10,582" Width="1174" TextAlignment="Center"></TextBlock>
@@ -21,7 +21,7 @@
         <!--Объявления-->
 
         <Grid Margin="65,0,0,0" Name="AdvertisementGrid" Panel.ZIndex="10">
-            <Image Source="/Musical Course;component/Resources/AdvertisimentBackground.jpg"></Image>
+            <!--<Image Source="/Musical Course;component/Resources/AdvertisimentBackground.jpg"></Image>-->
             <TextBlock Name="HelloText2" Text="Управление объвлениями" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 20"></TextBlock>
@@ -47,8 +47,8 @@
         <!--Пользователи-->
 
         <Grid Margin="65,0,0,0" Name="UsersGrid" Panel.ZIndex="10">
-            <Image Source="/Musical Course;component/Resources/UsersBackground.jpg"
-                    Stretch="UniformToFill"></Image>
+            <!--<Image Source="/Musical Course;component/Resources/UsersBackground.jpg"
+                    Stretch="UniformToFill"></Image>-->
             <TextBlock Name="HelloText3" Text="Просмотр базы пользователей" Foreground ="White" FontSize="84"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 0, 0, 20"></TextBlock>

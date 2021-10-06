@@ -15,8 +15,8 @@
         2 - заблокированно
         (возможно в будущем указать причины блокировки по разным числам)
         -->
-        <Image Source="/Musical Course;component/Resources/ModerationAdvertisementBackground.jpg"
-               Stretch="UniformToFill"></Image>
+        <!--<Image Source="/Musical Course;component/Resources/ModerationAdvertisementBackground.jpg"
+               Stretch="UniformToFill"></Image>-->
         <TextBlock x:Name="HelloText4" Foreground ="White" FontSize="42"
                    FontFamily="Arial" HorizontalAlignment="Center"
                    Margin="0, 60, 0, 20"><Run Text="Допуск объявления"/></TextBlock>

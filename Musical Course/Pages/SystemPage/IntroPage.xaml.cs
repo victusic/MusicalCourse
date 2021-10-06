@@ -1,18 +1,7 @@
-﻿using Musical_Course.Pages.SystemPage;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Musical_Course.Pages
 {
@@ -24,6 +13,10 @@ namespace Musical_Course.Pages
         public IntroPage()
         {
             InitializeComponent();
+            List<string> styles = new List<string> { "light", "dark" };
+            styleBox.SelectionChanged += ThemeChange;
+            styleBox.ItemsSource = styles;
+            styleBox.SelectedItem = "dark";
         }
 
         private void BtnGo_Click(object sender, RoutedEventArgs e)
@@ -31,9 +24,17 @@ namespace Musical_Course.Pages
             Manager.Frame.Navigate(new AutorisationPage());
         }
 
-        private void BtnAboutGo_Click(object sender, RoutedEventArgs e)
+        private void ThemeChange(object sender, SelectionChangedEventArgs e)
         {
-            Manager.Frame.Navigate(new AboutProgramPage());
+            string style = styleBox.SelectedItem as string;
+            // определяем путь к файлу ресурсов
+            var uri = new Uri(style + ".xaml", UriKind.Relative);
+            // загружаем словарь ресурсов
+            ResourceDictionary resourceDict = Application.LoadComponent(uri) as ResourceDictionary;
+            // очищаем коллекцию ресурсов приложения
+            Application.Current.Resources.Clear();
+            // добавляем загруженный словарь ресурсов
+            Application.Current.Resources.MergedDictionaries.Add(resourceDict);
         }
     }
 }

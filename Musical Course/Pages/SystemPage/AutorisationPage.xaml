@@ -7,36 +7,24 @@
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="AutorisationPage">
-    <Grid>
-        <Image Source="/Musical Course;component/Resources/AutorisationBackground.jpg" 
-               Stretch="UniformToFill" Panel.ZIndex="-1000"></Image>
-        <TextBlock Foreground ="White" Text="Авторизация" FontSize="64"
+    <Grid Style="{DynamicResource GridStyle}">
+        <TextBlock Style="{DynamicResource ZaglTextStyle}" Text="Авторизация" FontSize="64"
                    FontFamily="Arial" VerticalAlignment="Top" Margin="0, 50, 0, 0" 
                    HorizontalAlignment="Center" ></TextBlock>
-        <TextBlock Foreground ="White" Text="Логин:" FontSize="36"
-                   FontFamily="Arial" Height="41" Margin="0,0,870,438" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="107" />
-        <TextBlock Foreground ="White" Text="Пароль:" FontSize="36"
-                   FontFamily="Arial" Height="41"  Width="136" Margin="0,0,870,339" VerticalAlignment="Bottom" HorizontalAlignment="Right" />
-        <TextBox Background="#00DDDDDD" BorderBrush="White"
-                 BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
-                 Margin="0,0,415,430" Name="LoginBox_Auth" Height="60" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="450"/>
-        <PasswordBox Height="60" Background="#00DDDDDD" BorderBrush="White"
-                 BorderThickness="3" Foreground="White" FontFamily="Arial" FontSize="42"
-                 Margin="0,0,415,327" Name="PasswordBox_Auth" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="450"/>
-        <Button Width="300" Height="60" BorderBrush="White"
-                BorderThickness="3" Margin="0, 280, 0, 0" Content="Войти"
-               FontFamily="Arial" FontSize="42"
+        <TextBlock Style="{DynamicResource TextStyle}" Text="Логин:" FontSize="36"
+                  Height="41" Margin="0,0,870,438" 
+                   VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="107" />
+        <TextBlock Style="{DynamicResource TextStyle}" Text="Пароль:" FontSize="36"
+                   Height="41" Width="136" Margin="0,0,870,339" 
+                   VerticalAlignment="Bottom" HorizontalAlignment="Right" />
+        <TextBox Style="{DynamicResource InputStyle}" Margin="0,0,415,438"
+                 Name="LoginBox_Auth" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+        <PasswordBox Style="{DynamicResource PasswordStyle}" Margin="0,0,415,338" 
+                     Name="PasswordBox_Auth" VerticalAlignment="Bottom" HorizontalAlignment="Right" />
+        <Button Style="{DynamicResource ButtonStyle}" Margin="0, 280, 0, 0" Content="Войти"
                 Name="Log_BtnGo" Click="Log_BtnGo_Click"></Button>
-        <!--<Rectangle Panel.ZIndex="-100" Fill="#99666666" Width="600" Height="600" 
-        RadiusX="50" RadiusY="50" Margin="340,48,340,72" />-->
-        <Button Content="Нет аккаунта? Зарегистрироваться"
-                   FontFamily="Arial" FontSize="16" HorizontalAlignment="Center"
-                   VerticalAlignment="Bottom" Margin="0, 0, 0, 5"
-                  BorderThickness="0" Name="HyperGo" 
-                Click="HyperGo_Click"></Button>
-        <Button BorderBrush="White"
-                BorderThickness="3" Content="Назад"
-                FontFamily="Arial" FontSize="26"
-                Name="BtnGoBack" Click="BtnGoBack_Click" Width="151" Margin="0,0,21,10" HorizontalAlignment="Right" Height="43" VerticalAlignment="Bottom"/>
+        <Button Style="{DynamicResource ButtonStyle}" Content="Назад"
+                Name="BtnGoBack" Click="BtnGoBack_Click" HorizontalAlignment="Center" 
+                VerticalAlignment="Bottom"/>
     </Grid>
 </Page>
